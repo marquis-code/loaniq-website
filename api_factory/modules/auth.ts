@@ -1,51 +1,44 @@
-import { GATEWAY_ENDPOINT, GATEWAY_ENDPOINT_V2 } from '../axios.config'
-import { useUser } from '@/composables/auth/user'
-
-const { user } = useUser()
+import { GATEWAY_ENDPOINT } from '../axios.config'
 
 export const auth_api = {
-	 $_register: (credential: any) => {
-		const url = '/auth/users/invitations'
-		return GATEWAY_ENDPOINT.post(url, credential)
+	 $_register: (payload: any) => {
+		const url = '/auth/signup'
+		return GATEWAY_ENDPOINT.post(url, payload)
+	},
+	$_verify_otp: (payload: any) => {
+		const url = '/auth/verify-otp'
+		return GATEWAY_ENDPOINT.post(url, payload)
+	},
+	$_resend_otp: (payload: any) => {
+		const url = '/auth/resend-otp'
+		return GATEWAY_ENDPOINT.post(url, payload)
+	},
+	$_create_passcode: (payload: any) => {
+		const url = '/auth/create-passcode'
+		return GATEWAY_ENDPOINT.post(url, payload)
+	},
+	$_set_transaction_pin: (payload: any) => {
+		const url = '/auth/create-pin'
+		return GATEWAY_ENDPOINT.post(url, payload)
+	},
+	$_recover_passcode: (payload: any) => {
+		const url = '/auth/forgot-passcode'
+		return GATEWAY_ENDPOINT.post(url, payload)
+	},
+	$_create_new_passcode: (payload: any) => {
+		const url = '/auth/new-passcode'
+		return GATEWAY_ENDPOINT.post(url, payload)
 	},
 	$_login: (credential: any) => {
 		const url = '/auth/login'
 		return GATEWAY_ENDPOINT.post(url, credential)
 	},
-	$_reset_password: (credential: any) => {
-		const url = '/tenants/password-reset/verify'
-		return GATEWAY_ENDPOINT_V2.patch(url, credential)
-	},
-	$_confirm_otp: (credential: any) => {
-		const url = '/auth/email-verification/verify'
-		return GATEWAY_ENDPOINT.patch(url, credential)
-	},
-	$_verify_email: (payload:any) => {
-		const url = '/auth/email-verification/initiate'
-		return GATEWAY_ENDPOINT.post(url, payload)
-	},
-	$_social_signin: (credential: any) => {
-		const url = '/auth/social-signin'
+	$_validate_wema_otp_creation: (credential: any) => {
+		const url = '/auth/confirm-account-creation-otp'
 		return GATEWAY_ENDPOINT.post(url, credential)
 	},
-	$_social_signup: (credential: any) => {
-		const url = '/auth/social-signup'
+	$_liveliness_check: (credential: any) => {
+		const url = '/auth/liveliness-check'
 		return GATEWAY_ENDPOINT.post(url, credential)
-	},
-	$_tenant_exist: (email: any) => {
-          const url = `/tenants/exists`
-		  return GATEWAY_ENDPOINT.get(`${url}?email=${encodeURIComponent(email)}`);
-	},
-	$_fetch_profile: () => {
-		const url = '/tenants/profile'
-		return GATEWAY_ENDPOINT.get(url);
-  },
-  $_update_profile: (payload: any) => {
-	const url = '/tenants/profile'
-	return GATEWAY_ENDPOINT.patch(url, payload);
-},
-$_change_password: (payload: any) => {
-	const url = '/tenants/password'
-	return GATEWAY_ENDPOINT.patch(url, payload);
-}
+	}
 }

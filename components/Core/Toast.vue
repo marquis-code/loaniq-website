@@ -1,7 +1,6 @@
 <template>
   <transition name="fade">
     <div
-      class="z-50"
       v-if="toastVisible"
       :class="[
         'fixed top-4 right-4 rounded-lg shadow-lg flex items-center p-4 max-w-sm w-full',

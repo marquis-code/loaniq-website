@@ -1,8 +1,8 @@
 import { GATEWAY_ENDPOINT } from '../axios.config'
 
-export const core_apis = {
-	$_upload: (payload: any) => {
-		const url = '/utilities/files'
+export const upload_api = {
+	 $_upload_file: (payload: any) => {
+		const url = '/upload-file'
 		return GATEWAY_ENDPOINT.post(url, payload)
 	}
 }

@@ -1,5 +1,12 @@
 <template>
-<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-   <slot />
+  <div class="lg:flex h-screen">
+    <!-- Static Carousel Section -->
+    <div class="lg:w-1/2 hidden lg:block">
+      <AuthCarousel />
+    </div>
+    <!-- Dynamic Form Section -->
+    <div class="lg:w-1/2">
+      <slot />
+    </div>
   </div>
 </template>

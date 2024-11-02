@@ -14,6 +14,9 @@ const $IMAGE_UPLOAD_ENDPOINT = import.meta.env
 
 export const GATEWAY_ENDPOINT = axios.create({
   baseURL: $GATEWAY_ENDPOINT,
+  headers: {
+    'x-api-key': 'bwt2r25gw1hw9WdGWSryW626Th2AHF836dGr',
+  },
 });
 
 export const GATEWAY_ENDPOINT_V2 = axios.create({
@@ -23,6 +26,7 @@ export const GATEWAY_ENDPOINT_V2 = axios.create({
 export const GATEWAY_ENDPOINT_WITH_AUTH = axios.create({
   baseURL: $GATEWAY_ENDPOINT,
   headers: {
+    'x-api-key': 'bwt2r25gw1hw9WdGWSryW626Th2AHF836dGr',
     Authorization: `Bearer ${token.value}`,
   },
 });
@@ -30,6 +34,7 @@ export const GATEWAY_ENDPOINT_WITH_AUTH = axios.create({
 export const GATEWAY_ENDPOINT_WITH_AUTH_FORM_DATA = axios.create({
   baseURL: $GATEWAY_ENDPOINT,
   headers: {
+    'x-api-key': 'bwt2r25gw1hw9WdGWSryW626Th2AHF836dGr',
     Authorization: `Bearer ${token.value}`,
     "Content-Type": "multipart/form-data",
   },
@@ -41,10 +46,12 @@ export const GATEWAY_ENDPOINT_WITHOUT_VERSION = axios.create({
 export const GATEWAY_ENDPOINT_WITHOUT_VERSION_WITH_AUTH = axios.create({
   baseURL: $GATEWAY_ENDPOINT_WITHOUT_VERSION,
   headers: {
+    'x-api-key': 'bwt2r25gw1hw9WdGWSryW626Th2AHF836dGr',
     Authorization: `Bearer ${token.value}`,
   },
 });
 export const IMAGE_UPLOAD_ENDPOINT = axios.create({
+
   baseURL: $IMAGE_UPLOAD_ENDPOINT,
 });
 export interface CustomAxiosResponse extends AxiosResponse {

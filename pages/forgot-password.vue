@@ -1,5 +1,10 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center">
-    <AuthForgotPasswordForm />
-  </div>
-</template>
+    <ForgotPassword />
+  </template>
+  
+  <script setup lang="ts">
+ definePageMeta({
+    layout: 'auth',
+ })
+  </script>
+  
