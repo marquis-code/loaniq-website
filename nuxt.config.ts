@@ -4,7 +4,7 @@ export default {
 
   app: {
     head: {
-      title: "Black Country",
+      title: "LoanIQ",
       htmlAttrs: { lang: "en" },
       meta: [
         { charset: "utf-8" },
