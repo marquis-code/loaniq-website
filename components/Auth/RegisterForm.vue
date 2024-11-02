@@ -17,6 +17,7 @@
         />
       </svg>
       <h2 class="text-2xl font-medium text-[#1D2739]">Create an account</h2>
+      {{ route.query.email }}
     </div>
 
     <!-- Registration Form -->
@@ -41,9 +42,10 @@
         <input
         type="email"
         id="email"
+        :disabled="route?.query?.email?.length"
         v-model.trim="payload.email.value"
         placeholder="Enter your email address"
-        class="mt-1 block w-full bg-[#E4E7EC] text-sm px-4 py-4 border-[0.5px] border-gray-100 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+        class="mt-1 block w-full bg-[#E4E7EC] disabled:cursor-not-allowed disabled:opacity-70 text-sm px-4 py-4 border-[0.5px] border-gray-100 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
       />
         <!-- <input
           type="email"
@@ -330,6 +332,8 @@
 import { use_auth_register } from "@/composables/auth/register";
 import { use_tenant_exist } from "@/composables/auth/tenantExist";
 
+const route = useRoute()
+
 // Credential data and state from composables
 const {
   credential,
@@ -359,6 +363,19 @@ const toggleShowPassword = () => {
 const toggleConfirmShowPassword = () => {
   showConfirmPassword.value = !showConfirmPassword.value;
 };
+
+watch(() => route.query, (newValue: any) => {
+  payload.inviteId.value = newValue?.inviteId
+})
+
+
+watch(() => route.query, newValue => {
+  if(newValue.email){
+    payload.email.value = newValue?.email
+  } else {
+    payload.email.value = ""
+  }  
+}, {deep: true, immediate: true})
 
 // Watcher for email input
 watch(
@@ -398,6 +415,7 @@ const handleRegister = () => {
     fullName: credential.fullName.value,
     email: data.email.value,
     password: credential.password.value,
+    inviteId: route.query.inviteId,
     confirmPassword: credential.confirmPassword.value,
     agreement: credential.agreement.value,
   };

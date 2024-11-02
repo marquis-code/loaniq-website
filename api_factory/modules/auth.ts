@@ -5,7 +5,7 @@ const { user } = useUser()
 
 export const auth_api = {
 	 $_register: (credential: any) => {
-		const url = '/auth/tenants/register'
+		const url = '/auth/users/invitations'
 		return GATEWAY_ENDPOINT.post(url, credential)
 	},
 	$_login: (credential: any) => {
