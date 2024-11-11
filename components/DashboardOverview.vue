@@ -83,7 +83,7 @@
   
             <!-- Quick Access Section -->
             <h3 class="text- font-medium text-[#2E3A59] mb-4">Quick Access</h3>
-            <div class="bg-white/80 py-6 rounded-xl flex justify-between items-center gap-x-7 lg:w-1/2 px-5">
+            <div class="bg-white/80 py-6 rounded-xl flex justify-between items-center gap-x-7 max-w-lg px-5">
               <button class="text-center flex justify-center items-center flex-col gap-y-3">
               <div class="bg-[#D7FFDD] p-3 px-4 lg:p-4 lg:px-6 rounded-full">
                 <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
