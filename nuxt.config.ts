@@ -25,7 +25,6 @@ export default {
   tailwindcss: {
     cssPath: "@/assets/css/main.css",
   },
-
   axios: {
     // Axios options here
     timeout: 10000, // Example: set timeout to 10 seconds

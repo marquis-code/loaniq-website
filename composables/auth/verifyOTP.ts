@@ -43,7 +43,7 @@ export const use_auth_verify_otp = () => {
         localStorage.setItem("userId", encryptedUserId);
         localStorage.setItem("otp", encryptedOtp);
 
-        Router.push(`/create-password?userId=${res?.data?.data.onboardingId}`);
+        Router.push(`/verify-face?userId=${res?.data?.data.onboardingId}`);
       } else {
         console.log(res.data)
         showToast({

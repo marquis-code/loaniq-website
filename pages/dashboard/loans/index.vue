@@ -1,7 +1,9 @@
 <template>
-    <main class=" min-h-screen bg-gradient-to-br from-[#F1F7FD] via-[#E9F2FA] to-[#D7F4D7] flex justify-center items-center place-content-center">
-       <p class="text-xl">Coming Soon</p>
-    </main>
+  <div class="p-6 bg-gray-100 min-h-screen flex flex-col md:flex-row gap-6">
+    <LoansAvailableLoans />
+    <LoansTransactionHistory />
+    <LoansLoanDetails />
+  </div>
 </template>
 
 <script setup lang="ts">

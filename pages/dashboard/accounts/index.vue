@@ -16,9 +16,9 @@ layout: 'dashboard',
     <div class="bg-white p-6 rounded-lg shadow-md w-full ">
       <div class="flex items-center space-x-4">
         <img src="@/assets/img/avatar.png" alt="Profile" class="h-16 w-16 rounded-full" />
-        <div>
-          <h3 class="text-xl font-bold">{{ user.fullName }}</h3>
-          <p class="text-gray-500">{{ user.email }}</p>
+        <div v-if="profileInfoObj.profile">
+          <h3 class="text-xl font-bold">{{  profileInfoObj.profile?.firstName }} {{  profileInfoObj.profile?.lastName }}</h3>
+          <p class="text-gray-500">{{ profileInfoObj.profile?.email }}</p>
         </div>
       </div>
 
@@ -58,6 +58,8 @@ import LockClosedIcon from '@/assets/icons/account-security.svg'
 import ChartBarIcon from '@/assets/icons/account-statement.svg'
 import BookOpenIcon from '@/assets/icons/account-learning.svg'
 import BellIcon from '@/assets/icons/account-notification.svg'
+import { useFetchStats } from '@/composables/modules/dashboard/fetchStats'
+const { loading, profileInfoObj } = useFetchStats()
 // Import icons
 
 definePageMeta({
@@ -67,8 +69,6 @@ layout: 'dashboard',
 const router = useRouter()
 
 const user = ref({
-  fullName: 'Chinedu Ndukief',
-  email: 'chinedu.ndukiefe@email.com',
   profilePicture: '/profile-pic.jpg',
   notifications: false,
 })

@@ -2,9 +2,13 @@
     <div class="p-4 bg-white rounded-lg shadow-md max-w-6xl">
       <div class="flex items-center space-x-4">
         <img src="@/assets/img/avatar.png" alt="Profile" class="h-16 w-16 rounded-full" />
-        <div>
+        <!-- <div>
           <h3 class="text-xl font-bold">{{ user.fullName }}</h3>
           <p class="text-gray-500">{{ user.email }}</p>
+        </div> -->
+        <div v-if="profileInfoObj.profile">
+          <h3 class="text-xl font-bold">{{  profileInfoObj.profile?.firstName }} {{  profileInfoObj.profile?.lastName }}</h3>
+          <p class="text-gray-500">{{ profileInfoObj.profile?.email }}</p>
         </div>
       </div>
       <div class="mt-6">
@@ -23,10 +27,12 @@
   import GovernmentId from '@/components/Profile/GovernmentId.vue'
   import EmploymentDetails from '@/components/Profile/EmploymentDetails.vue'
   import UpdateSecurity from '@/components/Profile/UpdateSecurity.vue'
+  import { useFetchStats } from '@/composables/modules/dashboard/fetchStats'
+const { loading, profileInfoObj } = useFetchStats()
   
   const user = ref({
-    fullName: 'Chinedu Ndukief',
-    email: 'chinedu.ndukiefe@email.com',
+    // fullName: 'Chinedu Ndukief sss',
+    // email: 'chinedu.ndukiefe@email.com',
     profilePicture: '/profile-pic.jpg'
   })
   

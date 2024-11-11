@@ -2,11 +2,11 @@ import { auth_api } from "@/api_factory/modules/auth";
 import { useCustomToast } from "@/composables/core/useCustomToast";
 import CryptoJS from "crypto-js";
 
-const payload = ref({
-  userId: "c6a45f60-e0b4-44ec-81d8-ea0b5fb804e6",
-  otp: "5178",
-  url: "https://res.cloudinary.com/deh3s35go/image/upload/v1728984119/tractor-min_ioivkd.png",
-});
+// const payload = ref({
+//   userId: "c6a45f60-e0b4-44ec-81d8-ea0b5fb804e6",
+//   otp: "5178",
+//   url: "https://res.cloudinary.com/deh3s35go/image/upload/v1728984119/tractor-min_ioivkd.png",
+// });
 
 const secretKey = "LoanIQEncryption";
 
@@ -71,7 +71,7 @@ export const useLivelinessCheck = () => {
         toastType: "success",
         duration: 3000,
       });
-      router.push(`/verify-account?userId=${res.data.data.userId}`);
+      router.push(`/create-password?userId=${res.data.data.userId}`);
     }
     loading.value = false;
   };

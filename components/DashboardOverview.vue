@@ -1,11 +1,12 @@
 <template>
     <div class="min-h-screen bg-gradient-to-br from-[#F1F7FD] via-[#E9F2FA] to-[#D7F4D7]">
+      <!-- {{ profileObj }} -->
       <!-- Main Container -->
       <div class="flex flex-col lg:flex-row justify-between space-y-8 lg:space-y-0 lg:space-x-8">
         <!-- Left Column (Account Info) -->
         <div class="lg:w-2/3 w-full space-y-8 p-4 lg:p-8 h-screen overflow-y-auto custom-scrollbar no-scrollbar">
           <!-- Account Summary Card -->
-          <div class="bg-white p-4 lg:p-6 rounded-xl lg:w-8/12">
+          <div class="bg-white p-4 lg:p-6 rounded-xl lg:w-10/12">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
               <div class="text-left w-full">
                <div class="flex justify-between items-center w-full">
@@ -25,32 +26,19 @@
                             </defs>
                             </svg>
                             
-                        0125717275</p>
+                        {{ profileObj?.accountNumber || 'Nil' }}</p>
                   </div>
                </div>
-                <h1 class="text-2xl sm:text-4xl text-[#020C24] flex items-center gap-x-2 font-medium mt-2">₦34,950.00 <span><svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <h1 class="text-2xl sm:text-4xl text-[#020C24] flex items-center gap-x-2 font-medium mt-2">₦ {{ profileObj?.wallet?.balance || 'Nil' }} <span><svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.41667 0.625C3.5 0.625 1.00917 2.43917 0 5C1.00917 7.56083 3.5 9.375 6.41667 9.375C9.33333 9.375 11.8242 7.56083 12.8333 5C11.8242 2.43917 9.33333 0.625 6.41667 0.625ZM6.41667 7.91667C4.80667 7.91667 3.5 6.61 3.5 5C3.5 3.39 4.80667 2.08333 6.41667 2.08333C8.02667 2.08333 9.33333 3.39 9.33333 5C9.33333 6.61 8.02667 7.91667 6.41667 7.91667ZM6.41667 3.25C5.44833 3.25 4.66667 4.03167 4.66667 5C4.66667 5.96833 5.44833 6.75 6.41667 6.75C7.385 6.75 8.16667 5.96833 8.16667 5C8.16667 4.03167 7.385 3.25 6.41667 3.25Z" fill="#F2B12E"/>
                     </svg>
                     </span></h1>
-                <p class=""><span class="text-[#C4C4C4] text-sm">Ledger Balance:</span> <span class="text-[#000000] text-xl">₦250,890.00</span></p>
+                    <!-- {{ profileObj }} -->
+                <p class=""><span class="text-[#C4C4C4] text-sm">Ledger Balance:</span> <span class="text-[#000000] text-xl">₦{{  profileObj?.wallet?.ledgerBalance || 'Nil' }}</span></p>
               </div>
-              <!-- <div class="bg-[#020C24] flex items-center py-3 px-3 rounded-lg mt-4 sm:mt-0 sm:ml-4">
-                <p class="font-medium text- text-white flex items-center gap-x-3">
-                    <svg width="15" height="15" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_1_30850)">
-                        <path d="M8 0.5H2C1.45 0.5 1 0.95 1 1.5V8.5H2V1.5H8V0.5ZM9.5 2.5H4C3.45 2.5 3 2.95 3 3.5V10.5C3 11.05 3.45 11.5 4 11.5H9.5C10.05 11.5 10.5 11.05 10.5 10.5V3.5C10.5 2.95 10.05 2.5 9.5 2.5ZM9.5 10.5H4V3.5H9.5V10.5Z" fill="#DFDADA"/>
-                        </g>
-                        <defs>
-                        <clipPath id="clip0_1_30850">
-                        <rect width="12" height="12" fill="white"/>
-                        </clipPath>
-                        </defs>
-                        </svg>
-                        
-                    0125717275</p>
-              </div> -->
+
             </div>
-            <div class="flex flex-wrap space-y-4 sm:space-y-0 sm:space-x-4">
+            <div class="flex  space-y-4 sm:space-y-0 sm:space-x-4">
               <button class="w-full sm:w-auto bg-[#2C64E3] text-white px-4 py-3 rounded-lg flex  items-center gap-x-3">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18.3337 10.0002V14.1668C18.3337 16.6668 16.667 18.3335 14.167 18.3335H5.83366C3.33366 18.3335 1.66699 16.6668 1.66699 14.1668V10.0002C1.66699 7.7335 3.03366 6.15016 5.15866 5.88349C5.37533 5.85016 5.60033 5.8335 5.83366 5.8335H14.167C14.3837 5.8335 14.592 5.84182 14.792 5.87515C16.942 6.12515 18.3337 7.71683 18.3337 10.0002Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -85,12 +73,12 @@
             <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
               <div class="bg-[#E4EEFF] text-center p-2 rounded-full flex items-center gap-x-3">
                 <img src="@/assets/img/todo.png" alt="" class="h-14 w-14" />
-                <p class="text-[#2E3A59] max-w-x text-start w-44 font-medium">Upgrade your account to Tier 2</p>
+                <p class="text-[#2E3A59] max-w-x text-start w-44 font-medium">Upgrade your account to Tier {{ profileObj?.profile?.tier === 1 ? '2' : profileObj?.profile?.tier === 2 ? '3' : 'Nil'  }}</p>
               </div>
-              <div class="bg-[#E4EEFF] text-center p-2 rounded-full flex items-center gap-x-3">
+              <NuxtLink to="/dashboard/accounts" class="bg-[#E4EEFF] block text-center p-2 rounded-full flex items-center gap-x-3">
                 <img src="@/assets/img/complete-profile.png" alt="" class="h-14 w-14" />
                 <p class="text-[#2E3A59] max-w-xs text-start w-44 font-medium">Complete your profile information</p>
-              </div>
+              </NuxtLink>
             </div>
   
             <!-- Quick Access Section -->
@@ -357,6 +345,16 @@
   </template>
   
   <script setup lang="ts">
+  const profile = defineProps({
+    loading: {
+      type: Boolean,
+      default: false
+    },
+    profileObj: {
+      type: Object,
+      default: () => {}
+    }
+  })
 // No specific logic required
 </script>
   

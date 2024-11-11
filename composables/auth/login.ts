@@ -24,9 +24,10 @@ export const use_auth_login = () => {
       passcode: credential.passcode.value,
       email: credential.email.value,
     })) as any;
+    console.log(res, 'res here')
     loading.value = false;
-    if (res.type !== "ERROR") {
-      useUser().createUser(res.data);
+    if (res.status == 200) {
+      useUser().createUser(res.data.data);
       showToast({
         title: "Success",
         message: "Login successful",
@@ -34,6 +35,7 @@ export const use_auth_login = () => {
         duration: 3000
       });
       router.push("/dashboard");
+      // window.location.href = "/dashboard"
     }
   };
   return { credential, login, loading, isFormDisabled };

@@ -1,9 +1,12 @@
 import { auth_api } from "@/api_factory/modules/auth";
+import CryptoJS from "crypto-js"; 
 import { useCustomToast } from "@/composables/core/useCustomToast";
 const credential = {
   bvn: ref(""),
   email: ref(""),
 };
+
+const secretKey = "LoanIQEncryption";
 
 export const use_auth_register = () => {
   const loading = ref(false);
@@ -30,8 +33,22 @@ export const use_auth_register = () => {
           toastType: "success",
           duration: 3000,
         });
-        window.location.href=`/verify-account?userId=${res.data.data.userId}`
-        // router.push(`/verify-account?userId=${res.data.data.userId}`);
+
+
+        // Encrypt and store userId and otp in localStorage
+        const encryptedUserId = CryptoJS.AES.encrypt(res.data.data.userId, secretKey).toString();
+        const encryptedOtp = CryptoJS.AES.encrypt(res.data.data.otp, secretKey).toString();
+        localStorage.setItem("userId", encryptedUserId);
+        localStorage.setItem("otp", encryptedOtp);
+
+        if(res.data.data.statusCode === 'LIVELINESS_CHECK'){
+          router.push('/verify-face');
+        }else if(res.data.data.statusCode === 'SET_PASSCODE'){
+          router.push("/create-password");
+        } else {
+          router.push('/verify-account');
+        }
+
       } else {
         console.log(res.data, 'error here')
         showToast({

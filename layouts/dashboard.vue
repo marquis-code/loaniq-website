@@ -241,7 +241,7 @@
               <span class="sr-only">Open user menu</span>
               <img class="h-8 w-8 rounded-full bg-gray-50" :src="avatarImage" alt="">
               <span class="hidden lg:flex lg:items-center">
-                <span class="ml-4 text-sm font-semibold leading-6 text-gray-900" aria-hidden="true">Chinedu Ndukife</span>
+                <span class="ml-4 text-sm font-semibold leading-6 text-gray-900" aria-hidden="true">{{ `${user?.firstName} ${user?.lastName}` || 'Nil' }}</span>
                 <!-- <svg class="ml-2 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
                 </svg> -->
@@ -262,11 +262,13 @@
 </template>
 
 <script setup lang="ts">
+import { useUser } from '@/composables/auth/user'
 import Swal from "sweetalert2";
 import { dynamicIcons } from "@/utils/assets";
 import avatarImage from '~/assets/img/avatar.png';
 import { logOut } from '@/composables/core/useLogout'
 const isOpen = ref(false)
+const { user } = useUser()
 
 const mainSidebarItems = ref([
   {
