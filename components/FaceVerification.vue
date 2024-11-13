@@ -118,12 +118,36 @@ const setupCamera = async () => {
 //   faceDetector = await faceDetection.createDetector(model, detectorConfig);
 // };
 
+// const setupModel = async () => {
+//   const model = faceDetection.SupportedModels.MediaPipeFaceDetector;
+//   const detectorConfig = {
+//     runtime: "mediapipe",
+//     modelType: "short", // Optional: Use 'full' for higher accuracy but slower processing
+//     solutionPath: `https://cdn.jsdelivr.net/npm/@mediapipe/face_detection`,
+//   };
+
+//   try {
+//     faceDetector = await faceDetection.createDetector(model, detectorConfig);
+//   } catch (error) {
+//     console.error("Error initializing face detector:", error);
+//     showToast({
+//       title: "Error",
+//       message: "Failed to load face detection model.",
+//       toastType: "error",
+//       duration: 3000,
+//     });
+//   }
+// };
+
 const setupModel = async () => {
   const model = faceDetection.SupportedModels.MediaPipeFaceDetector;
   const detectorConfig = {
     runtime: "mediapipe",
-    modelType: "short", // Optional: Use 'full' for higher accuracy but slower processing
-    solutionPath: `https://cdn.jsdelivr.net/npm/@mediapipe/face_detection`,
+    modelType: "full", // 'short' or 'full' based on desired accuracy and speed
+    solutionPath: "https://cdn.jsdelivr.net/npm/@mediapipe/face_detection",
+    maxFaces: 1, // Detect only one face; increase for multiple face detection
+    minDetectionConfidence: 0.7, // Adjust to balance detection sensitivity
+    minSuppressionThreshold: 0.3, // For non-max suppression when detecting multiple faces
   };
 
   try {
@@ -138,6 +162,7 @@ const setupModel = async () => {
     });
   }
 };
+
 
 
 // Setup the canvas dimensions
