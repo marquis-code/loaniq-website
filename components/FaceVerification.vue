@@ -108,37 +108,6 @@ const setupCamera = async () => {
   }
 };
 
-// Initialize the face detection model
-// const setupModel = async () => {
-//   const model = faceDetection.SupportedModels.MediaPipeFaceDetector;
-//   const detectorConfig = {
-//     runtime: "mediapipe",
-//     solutionPath: "https://cdn.jsdelivr.net/npm/@mediapipe/face_detection",
-//   };
-//   faceDetector = await faceDetection.createDetector(model, detectorConfig);
-// };
-
-// const setupModel = async () => {
-//   const model = faceDetection.SupportedModels.MediaPipeFaceDetector;
-//   const detectorConfig = {
-//     runtime: "mediapipe",
-//     modelType: "short", // Optional: Use 'full' for higher accuracy but slower processing
-//     solutionPath: `https://cdn.jsdelivr.net/npm/@mediapipe/face_detection`,
-//   };
-
-//   try {
-//     faceDetector = await faceDetection.createDetector(model, detectorConfig);
-//   } catch (error) {
-//     console.error("Error initializing face detector:", error);
-//     showToast({
-//       title: "Error",
-//       message: "Failed to load face detection model.",
-//       toastType: "error",
-//       duration: 3000,
-//     });
-//   }
-// };
-
 const setupModel = async () => {
   const model = faceDetection.SupportedModels.MediaPipeFaceDetector;
   const detectorConfig = {
@@ -148,6 +117,7 @@ const setupModel = async () => {
     maxFaces: 1, // Detect only one face; increase for multiple face detection
     minDetectionConfidence: 0.7, // Adjust to balance detection sensitivity
     minSuppressionThreshold: 0.3, // For non-max suppression when detecting multiple faces
+    withFaceLandmarks: true
   };
 
   try {
@@ -162,7 +132,6 @@ const setupModel = async () => {
     });
   }
 };
-
 
 
 // Setup the canvas dimensions
@@ -251,14 +220,51 @@ const showLoaderAndRedirect = async () => {
   // router.push("/create-password"); // Redirect to homepage
 };
 
-// Function to draw bounding boxes and update face detection state
+// // Function to draw bounding boxes and update face detection state
+// const drawFaceBounds = async () => {
+//   if (!video.value || !canvas.value || !faceDetector) return;
+
+//   const ctx = canvas.value.getContext("2d");
+//   if (!ctx) return;
+
+//   const faces = await faceDetector.estimateFaces(video.value);
+
+//   ctx.clearRect(0, 0, canvas.value.width, canvas.value.height);
+//   ctx.drawImage(video.value, 0, 0, canvas.value.width, canvas.value.height);
+
+//   if (faces.length > 0) {
+//     isFaceDetected.value = true;
+//     detectedFace = faces[0];
+
+//     faces.forEach((face) => {
+//       const { xMin, yMin, width, height } = face.box;
+//       ctx.strokeStyle = "red";
+//       ctx.lineWidth = 2;
+//       ctx.strokeRect(xMin, yMin, width, height);
+//     });
+//   } else {
+//     if (isFaceDetected.value) {
+//       showToast({
+//         title: "Error",
+//         message: "No face detected. Please adjust your position.",
+//         toastType: "error",
+//         duration: 3000,
+//       });
+//     }
+//     isFaceDetected.value = false;
+//     detectedFace = null;
+//   }
+
+//   window.requestAnimationFrame(drawFaceBounds);
+// };
+
 const drawFaceBounds = async () => {
   if (!video.value || !canvas.value || !faceDetector) return;
 
   const ctx = canvas.value.getContext("2d");
   if (!ctx) return;
 
-  const faces = await faceDetector.estimateFaces(video.value);
+  const faces = await faceDetector.estimateFaces(video.value, { flipHorizontal: false });
 
   ctx.clearRect(0, 0, canvas.value.width, canvas.value.height);
   ctx.drawImage(video.value, 0, 0, canvas.value.width, canvas.value.height);
@@ -269,9 +275,22 @@ const drawFaceBounds = async () => {
 
     faces.forEach((face) => {
       const { xMin, yMin, width, height } = face.box;
+      
+      // Draw the bounding box
       ctx.strokeStyle = "red";
       ctx.lineWidth = 2;
       ctx.strokeRect(xMin, yMin, width, height);
+
+      // Draw landmarks (face points)
+      if (face.keypoints) {
+        ctx.fillStyle = "blue"; // Color for landmarks
+        face.keypoints.forEach((keypoint) => {
+          const { x, y } = keypoint;
+          ctx.beginPath();
+          ctx.arc(x, y, 3, 0, 2 * Math.PI); // Draw a small circle for each landmark
+          ctx.fill();
+        });
+      }
     });
   } else {
     if (isFaceDetected.value) {
@@ -288,6 +307,8 @@ const drawFaceBounds = async () => {
 
   window.requestAnimationFrame(drawFaceBounds);
 };
+
+
 
 // Start drawing face bounds when the video is loaded
 const onVideoLoaded = () => {
