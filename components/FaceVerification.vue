@@ -74,8 +74,8 @@ import { useLivelinessCheck } from "@/composables/auth/liveliness_check";
 import { useUploadFile } from "@/composables/core/upload";
 import "@mediapipe/face_detection";
 import "@tensorflow/tfjs-core";
-import "@tensorflow/tfjs-backend-webgl";
 import * as faceDetection from "@tensorflow-models/face-detection";
+import "@tensorflow/tfjs-backend-webgl";
 import { useCustomToast } from "@/composables/core/useCustomToast";
 
 const router = useRouter();
