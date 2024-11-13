@@ -113,7 +113,8 @@ const setupModel = async () => {
   const detectorConfig = {
     runtime: "mediapipe",
     modelType: "full", // 'short' or 'full' based on desired accuracy and speed
-    solutionPath: "https://cdn.jsdelivr.net/npm/@mediapipe/face_detection",
+    // solutionPath: "https://cdn.jsdelivr.net/npm/@mediapipe/face_detection",
+    solutionPath: 'https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh',
     maxFaces: 1, // Detect only one face; increase for multiple face detection
     minDetectionConfidence: 0.7, // Adjust to balance detection sensitivity
     minSuppressionThreshold: 0.3, // For non-max suppression when detecting multiple faces

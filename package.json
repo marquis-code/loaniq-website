@@ -20,6 +20,7 @@
   "dependencies": {
     "@heroicons/vue": "v1",
     "@mediapipe/face_detection": "^0.4.1646425229",
+    "@mediapipe/tasks-vision": "^0.10.18",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@tensorflow-models/face-detection": "^1.0.3",
     "@tensorflow/tfjs": "^4.22.0",
