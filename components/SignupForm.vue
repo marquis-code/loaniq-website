@@ -19,11 +19,11 @@
             <input type="text" id="bvn" v-model="credential.bvn.value"
               class="w-full px-4 py-4 bg-[#F4F5F7] outline-none border-[0.5px] border-[#F4F5F7] rounded-md focus:outline-none focus:border-green-500" />
             <p class="text-[#8F9BB3] text-sm mt-1">
-              Check your BVN via *565*0# {{ isFormDisabled }}
+              Check your BVN via *565*0#
             </p>
           </div>
           <div class="pt-6">
-            <button type="submit"
+            <button :disabled="isFormDisabled || loading" type="submit"
               class="w-full disabled:cursor-not-allowed disabled:opacity-25 bg-[#2F6D67] text-white py-3.5 rounded-md hover:bg-[#2F6D67] transition">
               {{ loading ? "Processing..." : "Create New Account" }}
             </button>

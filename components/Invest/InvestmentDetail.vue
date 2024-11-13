@@ -167,7 +167,7 @@ function calculateROI() {
 }
 
 const breadcrumbItems = ref([
-  { label: 'Investments', path: '/investments' },
+  { label: 'Investments', path: '/dashboard/invest' },
   { label: 'Flexi Grow Savings Note' }
 ])
 </script>

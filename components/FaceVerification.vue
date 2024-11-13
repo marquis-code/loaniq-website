@@ -109,14 +109,36 @@ const setupCamera = async () => {
 };
 
 // Initialize the face detection model
+// const setupModel = async () => {
+//   const model = faceDetection.SupportedModels.MediaPipeFaceDetector;
+//   const detectorConfig = {
+//     runtime: "mediapipe",
+//     solutionPath: "https://cdn.jsdelivr.net/npm/@mediapipe/face_detection",
+//   };
+//   faceDetector = await faceDetection.createDetector(model, detectorConfig);
+// };
+
 const setupModel = async () => {
   const model = faceDetection.SupportedModels.MediaPipeFaceDetector;
   const detectorConfig = {
     runtime: "mediapipe",
-    solutionPath: "https://cdn.jsdelivr.net/npm/@mediapipe/face_detection",
+    modelType: "short", // Optional: Use 'full' for higher accuracy but slower processing
+    solutionPath: `https://cdn.jsdelivr.net/npm/@mediapipe/face_detection`,
   };
-  faceDetector = await faceDetection.createDetector(model, detectorConfig);
+
+  try {
+    faceDetector = await faceDetection.createDetector(model, detectorConfig);
+  } catch (error) {
+    console.error("Error initializing face detector:", error);
+    showToast({
+      title: "Error",
+      message: "Failed to load face detection model.",
+      toastType: "error",
+      duration: 3000,
+    });
+  }
 };
+
 
 // Setup the canvas dimensions
 const setupCanvas = () => {
