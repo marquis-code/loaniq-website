@@ -40,6 +40,7 @@ export const use_set_transaction_pin = () => {
         });
 
         Router.push("/account-success");
+        localStorage.clear()
       } else {
         showToast({
           title: "Error",

@@ -12,11 +12,11 @@
           Account creation successful. Kindly click the button below to proceed
         </p>
      <div class="w-full pt-4">
-        <button
-        class="mt-6 bg-[#2F6D67] hover:bg-[#2F6D67] w-full text-white font-semibold py-4 text-sm px-4 rounded-lg"
+        <NuxtLink to="/login"
+        class="mt-6 block w-full bg-[#2F6D67] hover:bg-[#2F6D67] w-full text-white font-semibold py-4 text-sm px-4 rounded-lg"
       >
         Continue to account
-      </button>
+      </NuxtLink>
      </div>
       </div>
     </div>

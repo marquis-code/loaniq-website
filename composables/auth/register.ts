@@ -25,6 +25,7 @@ export const use_auth_register = () => {
       const res = (await auth_api.$_register(payload)) as any;
 
       loading.value = false;
+      console.log(res, 'tes hee')
 
       if (res.type !== "ERROR") {
         showToast({
@@ -41,10 +42,18 @@ export const use_auth_register = () => {
         localStorage.setItem("userId", encryptedUserId);
         localStorage.setItem("otp", encryptedOtp);
 
-        if(res.data.data.statusCode === 'LIVELINESS_CHECK'){
-          router.push('/verifyface');
-        }else if(res.data.data.statusCode === 'SET_PASSCODE'){
-          router.push("/create-password");
+        // Corrected statusMap that only stores paths, without executing router.push
+        const statusMap = {
+          'LIVELINESS_CHECK': '/verifyface',
+          'SET_PASSCODE': '/create-password',
+          'WEMA_OTP_SCREEN': '/verify-wema-otp',
+        };
+
+        // Check the status and redirect accordingly
+        const statusCode = res.data.data.statusCode;
+
+        if (statusCode in statusMap) {
+          router.push(statusMap[statusCode]);
         } else {
           router.push('/verify-account');
         }

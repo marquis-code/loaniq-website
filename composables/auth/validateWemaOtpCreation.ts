@@ -2,6 +2,7 @@ import { useUser } from "@/composables/auth/user";
 import { auth_api } from "@/api_factory/modules/auth";
 import { useCustomToast } from '@/composables/core/useCustomToast';
 import CryptoJS from "crypto-js";
+const { setToken } = useUser()
 
 
 const secretKey = "LoanIQEncryption";
@@ -40,7 +41,6 @@ export const use_validate_wema_otp = () => {
 
   const { userId, trackingId } = getEncryptedData() || {};
 
-
   const validateWemaOtp = async (otp: string) => {
     loading.value = true;
     try {
@@ -49,18 +49,20 @@ export const use_validate_wema_otp = () => {
         otp,
         userId,
       }) as any;
-
-      if (res.type !== "ERROR") {
+       console.log(res, 'res here')
+      if (res.status == 200) {
         showToast({
           title: "Success",
-          message: "Login successful",
+          message: res?.data?.message || "Account creation was successful.",
           toastType: "success",
           duration: 3000,
         });
+        console.log(res.data, 'vefore set')
+        setToken(res?.data?.data?.token)
         router.push("/secure-transactions");
         return { success: true, data: res.data };
       } else {
-        const errorMessage = res?.data?.errors[0]?.msg || "An error occurred during OTP validation.";
+        const errorMessage = res?.data?.message || "An error occurred during OTP validation.";
         showToast({
           title: "Error",
           message: errorMessage,
@@ -82,12 +84,6 @@ export const use_validate_wema_otp = () => {
       loading.value = false;
     }
   };
-
-  // const setPayloadObj = (data: any) => {
-  //   credential.trackingId.value = data.trackingId;
-  //   credential.otp.value = data.otp;
-  //   credential.userId.value = data.userId;
-  // };
 
   return { validateWemaOtp, loading };
 };

@@ -59,6 +59,7 @@ export const useUser = () => {
   };
 
   const setToken = (token: string) => {
+    console.log(token, 'token recieved')
     runtimeData.token.value = token;
     localStorageData.token.value = token;
   };

@@ -75,9 +75,7 @@
   import { useResendOtp } from "@/composables/auth/resendOtp";
   import { use_validate_wema_otp } from "@/composables/auth/validateWemaOtpCreation";
   const { resendOtp, loading } = useResendOtp();
-  const {
-    credential, validateWemaOtp, loading: verifying
-  } = use_validate_wema_otp();
+  const { validateWemaOtp, loading: verifying } = use_validate_wema_otp();
   
   const otpResendTimer = ref(96); // 01:36 (96 seconds)
   const otp = ref(Array(6).fill(""));
@@ -97,8 +95,8 @@
   const verifyOtp = async () => {
     if (isOtpIncomplete.value) return;
     console.log(otp.value.join(""), 'otp here')
-    credential.code.value = otp.value.join("");
-    await validateWemaOtp(credential.code.value);
+    const userOtp = otp.value.join("");
+    await validateWemaOtp(userOtp);
   };
   
   const handleResendOtp = async () => {

@@ -1,5 +1,6 @@
 import CryptoJS from "crypto-js"; // You can install this package for encryption
 import { auth_api } from "@/api_factory/modules/auth";
+import { decryptData } from '@/utils/crypto-utils';
 import { useCustomToast } from "@/composables/core/useCustomToast";
 
 // Encryption key - Store this securely
@@ -11,19 +12,49 @@ const credential = {
 } as any;
 
 
+
 export const use_auth_verify_otp = () => {
   const Router = useRouter();
   const { showToast } = useCustomToast();
-  const route = useRoute()
-
   const loading = ref(false);
+
+  const getEncryptedData = () => {
+    try {
+      const encryptedUserId = localStorage.getItem("userId");
+
+      if (encryptedUserId) {
+        const userId = CryptoJS.AES.decrypt(
+          encryptedUserId,
+          secretKey
+        ).toString(CryptoJS.enc.Utf8);
+        return { userId };
+      }
+
+      showToast({
+        title: "Error",
+        message: "User ID not found in local storage.",
+        toastType: "error",
+        duration: 3000,
+      });
+    } catch (error) {
+      showToast({
+        title: "Error",
+        message: "Failed to retrieve encrypted data.",
+        toastType: "error",
+        duration: 3000,
+      });
+      return null;
+    }
+  };
+
+  const { userId } = getEncryptedData() || {};
 
   const verify_OTP = async () => {
     loading.value = true;
 
     try {
       const res = (await auth_api.$_verify_otp({
-        userId: route.query.userId,
+        userId,
         code: credential.code.value
       })) as any;
 
