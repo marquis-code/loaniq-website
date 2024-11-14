@@ -41,12 +41,13 @@
           <div>
             <p class="text-sm">Available balance</p>
             <p class="text-3xl font-semibold flex items-baseline">
-              ₦2,157,000<span class="text-xl font-normal ml-1">.56</span>
+              {{ formatCurrency(profileInfoObj?.wallet?.balance) }}
             </p>
           </div>
 
           <!-- Bank Logo -->
-          <svg
+           <img src="@/assets/img/wema-logo2.png" class="h-5"/>
+          <!-- <svg
             width="64"
             height="28"
             viewBox="0 0 64 28"
@@ -63,30 +64,20 @@
               d="M24.6424 5.45408L25.9054 3.26648H38.2103L38.526 3.81277L39.4734 5.45408H24.6424ZM26.3887 2.42936L27.6529 0.239746H36.4624L37.7267 2.42936H26.3887ZM36.4628 14.5322H29.2658C29.1267 14.5322 29.0095 14.6042 28.9457 14.7116L28.0691 16.2301H25.5682L27.631 12.6575C27.7245 12.4952 27.9759 12.3638 28.1919 12.3638L37.7133 12.3662L36.4628 14.5322ZM39.4652 9.33213L38.1965 11.5295H27.4963C27.3597 11.5295 27.2454 11.597 27.1803 11.6991L26.3159 13.196H23.815L25.8778 9.62382C25.9713 9.46152 26.2227 9.33009 26.4387 9.33009L39.4652 9.33213ZM25.7289 8.49545C25.5947 8.49545 25.4775 8.56745 25.4137 8.67484L24.5594 10.1542H22.0586L24.1209 6.58244C24.2145 6.42014 24.4659 6.28831 24.6819 6.28831L39.9562 6.2916L40.5883 7.38621L39.9481 8.49505H25.7415L25.7289 8.49545Z"
               fill="#FEC23B"
             />
-          </svg>
+          </svg> -->
           <!-- <img src="/path-to-your-logo/providus-bank-logo.png" alt="Providus Bank Logo" class="w-10 h-10" /> -->
         </div>
 
         <!-- User Information -->
         <div class="mt-8">
-          <p>Chinedu Ndukife - LoaniQ</p>
+          <p>{{ profileInfoObj?.profile?.firstName }} {{ profileInfoObj?.profile?.lastName }} - LoaniQ</p>
           <div class="flex items-center gap-1 text-sm mt-1">
-            <span>0221117895</span>
+            <span>{{ profileInfoObj?.wallet?.accountNumber ?? 'Nil' }}</span>
             <!-- Copy Icon -->
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 cursor-pointer"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M8 16H5a2 2 0 01-2-2V5a2 2 0 012-2h9a2 2 0 012 2v3m-6 12h6a2 2 0 002-2v-7a2 2 0 00-2-2h-3l-5 5v4a2 2 0 002 2z"
-              />
-            </svg>
+            <svg class="cursor-pointer" @click="handleCopy(profileInfoObj?.wallet?.accountNumber)" width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5.84586 3.4002H12.2222C13.5089 3.4002 14.5595 4.45082 14.5595 5.73749V12.3293C14.5595 13.616 13.5089 14.6666 12.2222 14.6666H5.84586C4.55918 14.6666 3.50856 13.616 3.50856 12.3293V5.73749C3.50856 4.45082 4.55873 3.4002 5.84586 3.4002ZM1.3335 10.2623V3.67055C1.3335 2.38533 2.38512 1.33325 3.67079 1.33325H10.0472V2.40835H3.67079C2.9762 2.40835 2.40859 2.97607 2.40859 3.67055V10.2623H1.3335ZM12.2215 4.47572H5.84512C5.15198 4.47572 4.58292 5.04489 4.58292 5.73792V12.3297C4.58292 13.0229 5.15209 13.5919 5.84512 13.5919H12.2215C12.9146 13.5919 13.4837 13.0227 13.4837 12.3297V5.73792C13.4837 5.04478 12.9145 4.47572 12.2215 4.47572Z" fill="#EAF0FA"/>
+</svg>
+
           </div>
         </div>
 
@@ -167,7 +158,7 @@
           <div>
             <p class="text-sm">Available balance</p>
             <p class="text-3xl font-semibold flex items-baseline">
-              ₦2,157,000<span class="text-xl font-normal ml-1">.56</span>
+              {{ formatCurrency(profileInfoObj?.wallet?.balance) }}
             </p>
           </div>
 
@@ -195,9 +186,9 @@
 
         <!-- User Information -->
         <div class="mt-8">
-          <p>Chinedu Ndukife - LoaniQ</p>
+          <p>{{ profileInfoObj?.profile?.firstName }} {{ profileInfoObj?.profile?.lastName }} - LoaniQ</p>
           <div class="flex items-center gap-1 text-sm mt-1">
-            <span>0221117895</span>
+            <span>{{ profileInfoObj?.wallet?.accountNumber ?? 'Nil' }}</span>
             <!-- Copy Icon -->
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -287,9 +278,19 @@
 </template>
 
 <script setup lang="ts">
+import { copyToClipboard } from '@/utils/copy-clipboard';
+  import { formatCurrency } from '@/utils/currencyUtils';
+  import { useFetchStats } from '@/composables/modules/dashboard/fetchStats'
+  const { loading, profileInfoObj } = useFetchStats()
 const router = useRouter();
 definePageMeta({
   layout: "dashboard",
 });
+
+// Handler to call the copy utility
+function handleCopy(text: string | undefined) {
+  copyToClipboard(text);
+}
+
 const activeTab = ref("My wallet");
 </script>

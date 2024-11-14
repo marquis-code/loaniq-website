@@ -12,12 +12,12 @@
 
 <section class="lg:flex gap-x-10 space-y-6 lg:space-y-0">
   <section class="lg:w-6/12">
-<div class="border-b pb-3">
+<div class="border-b pb-3 ">
         <!-- Investment Title and Details -->
-        <h2 class="text-xl font-semibold text-gray-800 mb-5">Flexi Grow Savings Note <span
-        class="text-xs bg-[#EEEFF2] text-gray-600 px-3 py-2 rounded-full">8% Annual returns</span></h2>
+        <h2 class="text-xl font-semibold text-gray-800 mb-5 space-x-3">{{ product.name ??= 'Nil' }}<span
+        class="text-xs bg-[#EEEFF2] text-gray-600 px-3 py-2 rounded-full ml-4">{{ product.interestRate ??= 'Nil' }}% Annual returns</span></h2>
     <p class="text-gray-600 text-sm leading-loose text-justify">
-      The Flexi Grow Savings Note is a flexible financial product that allows investors to make deposits and withdrawals while enjoying high returns. With a minimum balance of N10,000, it offers the liquidity of a savings account and competitive interest rates that exceed those of traditional accounts. There’s no lock-in period, so investors can access their funds without penalties. Interest is calculated daily, maximizing earnings even with early withdrawals.
+      {{ product.description ??= 'Nil' }}
     </p>
 </div>
 
@@ -90,14 +90,20 @@
       <div class="space-y-6">
       <div>
         <label class="text-[#7D8799] text-sm">Name This Investment For Identification</label>
-        <input type="text" v-model="investmentName" placeholder="Rent Payment"
+        <input type="text" v-model="form.name" placeholder="Rent Payment"
           class="w-full p-2 py-3.5 text-sm border border-gray-300 outline-none border-none bg-[#F4F5F7] rounded" />
       </div>
       <div>
         <label class="text-[#7D8799] text-sm">Frequency</label>
-        <select v-model="frequency" class="w-full outline-none border-none p-2 py-3.5 text-sm border bg-[#F4F5F7] border-gray-300 rounded">
-          <option>One off</option>
-          <option>Monthly</option>
+        <select v-model="form.frequency" class="w-full outline-none border-none p-2 py-3.5 text-sm border bg-[#F4F5F7] border-gray-300 rounded">
+          <option :value="item.code" v-for="(item, idx) in investmentFrequency" :key="idx">{{ item.name }}</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="text-[#7D8799] text-sm">Interest payment option</label>
+        <select value="" v-model="form.interestPaymentOption" class="w-full outline-none border-none p-2 py-3.5 text-sm border bg-[#F4F5F7] border-gray-300 rounded">
+          <option :value="item.code" v-for="(item, idx) in interestOption" :key="idx">{{ item.name }}</option>
         </select>
       </div>
 
@@ -156,6 +162,55 @@ function openSummaryModal() {
   showSummary.value = true;
 }
 
+const form = ref({
+  name: '',
+  frequency: '',
+  interestPaymentOption: ''
+})
+
+const investmentFrequency = ref([
+  {
+    name: 'One Off',
+    code: ''
+  },
+  {
+    name: 'Daily',
+    code: ''
+  },
+  {
+    name: 'Weekly',
+    code: ''
+  },
+  {
+    name: 'Monthly',
+    code: ''
+  }
+])
+
+const interestOption = ref([
+  {
+    name: 'UpFront',
+    code: 'upfront'
+  },
+  {
+    name: 'Monthly',
+    code: 'monthly'
+  },
+  {
+    name: 'After Maturity',
+    code: 'after-matrity'
+  }
+])
+
+const props = defineProps({
+  loading: {
+    type: Boolean
+  },
+  product: {
+    type: Object
+  }
+})
+
 function increaseAmount() {
   amount.value += 100000;
   roi.value = calculateROI();
@@ -172,6 +227,6 @@ function calculateROI() {
 
 const breadcrumbItems = ref([
   { label: 'Investments', path: '/dashboard/invest' },
-  { label: 'Flexi Grow Savings Note' }
+  { label: props?.product?.name  }
 ])
 </script>

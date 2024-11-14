@@ -30,7 +30,7 @@
         />
       </div> -->
 
-      <InvestExploreInvestments v-else-if="activeTab === 'Explore investments'" />
+      <InvestExploreInvestments :loading="loading" :products="products" v-else-if="activeTab === 'Explore investments'" />
 
       <div v-else-if="activeTab === 'Completed investments'" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
         <InvestInvestmentCard
