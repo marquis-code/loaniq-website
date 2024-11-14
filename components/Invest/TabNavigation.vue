@@ -1,6 +1,6 @@
 <!-- components/TabNavigation.vue -->
 <template>
-    <div class="flex space-x-4 mt-6">
+    <div class="flex space-x-4 mt-6 overflow-x-auto whitespace-nowrap">
       <button
         v-for="(tab, index) in tabs"
         :key="index"

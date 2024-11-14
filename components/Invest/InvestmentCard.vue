@@ -11,7 +11,7 @@
                 <p class="text-[#434E61] font-medium text-lg">{{ amount }}</p>
                 <p class="text-[#7D8799] text-sm">{{ duration }}</p>
             </div>
-            <InvestBadge class="absolute top-0 right-6" status="Pending" backgroundColor="bg-yellow-100"
+            <InvestBadge class="absolute top-0 right-6" :status="status" backgroundColor="bg-yellow-100"
                 dotColor="bg-yellow-500" textColor="text-yellow-800" />
         </div>
     </div>
@@ -20,6 +20,8 @@
 <script setup lang="ts">
 import { defineProps } from 'vue';
 
+const router = useRouter()
+
 defineProps({
     image: String,
     status: String,
@@ -27,5 +29,6 @@ defineProps({
     returnRate: String,
     amount: String,
     duration: String,
+    path: String
 });
 </script>

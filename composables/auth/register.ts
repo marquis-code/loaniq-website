@@ -42,7 +42,7 @@ export const use_auth_register = () => {
         localStorage.setItem("otp", encryptedOtp);
 
         if(res.data.data.statusCode === 'LIVELINESS_CHECK'){
-          router.push('/verify-face');
+          router.push('/verifyface');
         }else if(res.data.data.statusCode === 'SET_PASSCODE'){
           router.push("/create-password");
         } else {

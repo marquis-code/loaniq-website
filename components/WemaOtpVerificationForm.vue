@@ -12,8 +12,7 @@
         </div>
         <h2 class="text-2xl font-bold mb-2 text-[#333333]">Verify account</h2>
         <p class="text-[#687181] mb-4">
-          Please enter the verification code sent to your ******8564 attached to
-          your BVN
+          Please enter the verification code sent to your mobile number.
         </p>
   
         <!-- OTP Input Fields -->
@@ -32,10 +31,10 @@
         <div class="pt-10">
           <button
             @click="verifyOtp"
-            :disabled="isOtpIncomplete || loadingVerify"
+            :disabled="isOtpIncomplete || verifying"
             class="w-full bg-[#2F6D67] disabled:cursor-not-allowed disabled:opacity-25 text-white py-3.5 rounded-md mb-4"
           >
-            {{ loadingVerify ? "Verifying..." : "Verify and continue" }}
+            {{ verifying ? "Verifying..." : "Verify and continue" }}
           </button>
         </div>
   

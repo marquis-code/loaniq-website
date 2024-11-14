@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="space-y-3" :class="['p-4 rounded-lg shadow-sm', colorClass, 'max-w-lg']">
       <img src="@/assets/icons/flexi-grow.svg" />
       <h3 class="text-lg font-semibold text-[#333333]">{{ item.name || 'Nil' }}</h3>
@@ -17,14 +17,39 @@
       type: Object
      }
   });
-
-   // Mock data for Explore Investments
- const exploreInvestments = ref([
-   { colorClass: 'bg-[#E0EBFF]', title: 'Flexi Grow Savings Note', minInvestment: 'Minimum investment of N10,000', description: 'Deposit & Withdraw anytime', icon: flex_grow },
-   { colorClass: 'bg-[#E0FFE6]', title: 'Fixed Investment Note', minInvestment: 'Minimum investment of N100,000', description: 'Minimum tenor of 3 months', icon: fixed_investment },
-   { colorClass: 'bg-[#FFE5E5]', title: 'Maximum Yield Note', minInvestment: 'Minimum investment of N5 million', description: 'Minimum tenor of 2 Year', icon: fixed_investment },
-   { colorClass: 'bg-[#FFF1E0]', title: 'Discount Note', minInvestment: 'Upfront interest payments', description: 'Minimum investment of N500,000', icon: discount_note },
-   { colorClass: 'bg-[#F1F2F5]', title: 'Target Savings Note', minInvestment: 'Minimum investment of N50,000', description: 'Minimum tenor of 3 months', icon: target_savings }
- ]);
+  </script>
+   -->
+   <template>
+    <div :class="['p-4 rounded-lg shadow-sm space-y-3', colorClass, 'max-w-lg']">
+      <!-- Dynamic Image Handling -->
+      <img src="@/assets/img/investment-cover.png" alt="Investment Icon" class="w-8 h-8" />
+  
+      <!-- Title and Status -->
+      <h3 class="text-lg font-semibold text-[#333333]">{{ item.title || 'No Title' }}</h3>
+  
+      <!-- Investment Details -->
+      <div class="space-y-1">
+        <p class="text-sm font-medium">Status: {{ item.status || 'Unknown' }}</p>
+        <p class="text-sm">Return Rate: {{ item.returnRate || 'N/A' }}</p>
+        <p class="text-sm">Amount: {{ item.amount || 'N/A' }}</p>
+        <p class="text-sm">Duration: {{ item.duration || 'N/A' }}</p>
+      </div>
+    </div>
+  </template>
+  
+  <script setup lang="ts">
+  import { defineProps } from 'vue';
+  
+  const props = defineProps<{
+    item: {
+      image: string;
+      status: string;
+      title: string;
+      returnRate: string;
+      amount: string;
+      duration: string;
+    };
+    colorClass?: string;
+  }>();
   </script>
   

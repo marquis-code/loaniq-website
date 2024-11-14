@@ -1,14 +1,17 @@
 <template>
   <div class="p-6 max-w-4xl space-y-8 bg-white rounded-lg">
     <!-- Back Navigation -->
-    <button class="text-gray-500 flex items-center space-x-2">
-      <i class="fas fa-arrow-left"></i>
-      <span>Back to Investments</span>
+    <button @click="router.back()" class="text-gray-500 flex items-center space-x-2">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="32" height="32" rx="4" fill="#EEEFF2"/>
+<path d="M19 23L12 16L19 9" stroke="#323740" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
     </button>
     <CoreBreadcrumb :items="breadcrumbItems" />
 
-<section class=" flex gap-x-10">
-  <section class="w-6/12">
+<section class="lg:flex gap-x-10 space-y-6 lg:space-y-0">
+  <section class="lg:w-6/12">
 <div class="border-b pb-3">
         <!-- Investment Title and Details -->
         <h2 class="text-xl font-semibold text-gray-800 mb-5">Flexi Grow Savings Note <span
@@ -82,7 +85,7 @@
     </div>
 </section>
 
-<section class="w-6/12">
+<section class="lg:w-6/12">
       <!-- Form Section -->
       <div class="space-y-6">
       <div>
@@ -128,19 +131,20 @@
 
     <!-- Submit Button -->
 <div class="pt-6">
-  <button @click="openSummaryModal" class="w-full py-3.5 bg-[#2F6D67] text-white rounded-md">Submit</button>
+  <button @click="router.push(`/dashboard/investments/explore-investments/4/summary`)" class="w-full py-3.5 bg-[#2F6D67] text-white rounded-md">Submit</button>
 </div>
 </section>
 </section>
 
     <!-- Summary Modal -->
-    <InvestSummaryModal v-if="showSummary" :investmentName="investmentName" :amount="amount"
-      @close="showSummary = false" />
+    <!-- <InvestSummaryModal v-if="showSummary" :investmentName="investmentName" :amount="amount"
+      @close="showSummary = false" /> -->
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
+const router = useRouter()
 
 const investmentName = ref('Rent Payment');
 const frequency = ref('One off');

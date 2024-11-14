@@ -2,6 +2,8 @@
 
 import { ref } from 'vue';
 import { upload_api } from '@/api_factory/core/upload';
+import { useCustomToast } from "@/composables/core/useCustomToast";
+const { showToast } = useCustomToast();
 
 export const useUploadFile = () => {
   const loading = ref(false);
@@ -19,12 +21,23 @@ export const useUploadFile = () => {
       // Make the API call with FormData
       const res = await $_upload_file(formData) as any;
       console.log(res, 'upload response')
+      showToast({
+        title: "Success",
+        message: "Upload was successful",
+        toastType: "success",
+        duration: 3000,
+      });
 
       if (res.type !== 'ERROR') {
         uploadResponse.value = res.data.data ?? {};
       }
     } catch (error) {
-      console.error('Error uploading file:', error);
+      showToast({
+        title: "Error",
+        message: "Error uploading file",
+        toastType: "error",
+        duration: 3000,
+      });
     } finally {
       loading.value = false;
     }

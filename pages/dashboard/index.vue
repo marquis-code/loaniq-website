@@ -7,6 +7,6 @@
   const { loading, profileInfoObj } = useFetchStats()
  definePageMeta({
     layout: 'dashboard',
-    middleware: 'auth'
+   //  middleware: 'auth'
  })
   </script>

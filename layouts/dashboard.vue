@@ -279,7 +279,7 @@ const mainSidebarItems = ref([
   {
     name: "Invest",
     icon: "invest",
-    url: "/dashboard/invest",
+    url: "/dashboard/investments",
   },
   {
     name: "Loans",

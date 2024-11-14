@@ -12,8 +12,7 @@
       </div>
       <h2 class="text-2xl font-bold mb-2 text-[#333333]">Verify account</h2>
       <p class="text-[#687181] mb-4">
-        Please enter the verification code sent to your ******8564 attached to
-        your BVN
+        Please enter the verification code sent to your mobile number.
       </p>
 
       <!-- OTP Input Fields -->
