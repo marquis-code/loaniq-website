@@ -29,12 +29,12 @@
                         {{ profileObj?.accountNumber || 'Nil' }}</p>
                   </div>
                </div>
-                <h1 class="text-2xl sm:text-4xl text-[#020C24] flex items-center gap-x-2 font-medium mt-2">₦ {{ profileObj?.wallet?.balance || 'Nil' }} <span><svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <h1 class="text-2xl sm:text-4xl text-[#020C24] flex items-center gap-x-2 font-medium mt-2">{{ formattedWalletBalance || 'Nil' }} <span><svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.41667 0.625C3.5 0.625 1.00917 2.43917 0 5C1.00917 7.56083 3.5 9.375 6.41667 9.375C9.33333 9.375 11.8242 7.56083 12.8333 5C11.8242 2.43917 9.33333 0.625 6.41667 0.625ZM6.41667 7.91667C4.80667 7.91667 3.5 6.61 3.5 5C3.5 3.39 4.80667 2.08333 6.41667 2.08333C8.02667 2.08333 9.33333 3.39 9.33333 5C9.33333 6.61 8.02667 7.91667 6.41667 7.91667ZM6.41667 3.25C5.44833 3.25 4.66667 4.03167 4.66667 5C4.66667 5.96833 5.44833 6.75 6.41667 6.75C7.385 6.75 8.16667 5.96833 8.16667 5C8.16667 4.03167 7.385 3.25 6.41667 3.25Z" fill="#F2B12E"/>
                     </svg>
                     </span></h1>
                     <!-- {{ profileObj }} -->
-                <p class=""><span class="text-[#C4C4C4] text-sm">Ledger Balance:</span> <span class="text-[#000000] text-xl">₦{{  profileObj?.wallet?.ledgerBalance || 'Nil' }}</span></p>
+                <p class=""><span class="text-[#C4C4C4] text-sm">Ledger Balance:</span> <span class="text-[#000000] text-xl">{{  formattedLedgerBalance || 'Nil' }}</span></p>
               </div>
 
             </div>
@@ -355,6 +355,18 @@
       default: () => {}
     }
   })
+
+
+  const formattedWalletBalance = computed(() => {
+  const balance = profileObj?.value?.wallet?.balance || 0;  
+  return new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(balance);
+});
+
+const formattedLedgerBalance = computed(() => {
+  const balance = profileObj?.value?.wallet?.ledgerBalance || 0;  
+  return new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(balance);
+});
+
 // No specific logic required
 </script>
   
