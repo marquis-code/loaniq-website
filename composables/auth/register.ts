@@ -21,6 +21,8 @@ export const use_auth_register = () => {
       email: credential.email.value,
     };
 
+    localStorage.setItem('userEmail', credential.email.value)
+
     try {
       const res = (await auth_api.$_register(payload)) as any;
 

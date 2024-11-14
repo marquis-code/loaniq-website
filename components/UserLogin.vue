@@ -15,7 +15,12 @@
           <input type="text" id="email" v-model="credential.email.value" class="w-full px-4 py-4  bg-[#F4F5F7] outline-none border-[0.5px] border-[#F4F5F7] rounded-md focus:outline-none focus:border-green-500" />
         </div>
         <div class="mb-4 relative">
-          <label class="block text-[#7D8799] font-medium mb-1 text-sm" for="passcode">Enter Your four-digit passcode</label>
+       <div class="flex items-center justify-between">
+        <label class="block text-[#7D8799] font-medium mb-1 text-sm" for="passcode">Enter Your six-digit passcode</label>
+          <div class="text-sm">
+            <NuxtLink to="/recover-password" class="font-semibold text-[#2F6D67] hover:text-[#2F6D67]">Forgot password?</NuxtLink>
+          </div>
+       </div>
           <input :type="showPassword ? 'text' : 'password'" id="passcode" v-model="credential.passcode.value" class="w-full px-4 py-4  bg-[#F4F5F7] outline-none border-[0.5px] border-[#F4F5F7] rounded-md focus:outline-none focus:border-green-500" />
           <div
           @click="toggleShowPassword"

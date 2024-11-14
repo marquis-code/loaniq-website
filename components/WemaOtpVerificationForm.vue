@@ -12,7 +12,7 @@
         </div>
         <h2 class="text-2xl font-bold mb-2 text-[#333333]">Verify account</h2>
         <p class="text-[#687181] mb-4">
-          Please enter the verification code sent to your mobile number.
+          Please enter the verification code sent to your {{ maskEmail(email) }} email address
         </p>
   
         <!-- OTP Input Fields -->
@@ -87,6 +87,26 @@
       nextInput?.focus();
     }
   };
+
+  // Function to mask the email
+function maskEmail(email) {
+  const [localPart, domain] = email.split('@');
+  const maskedLocal = `${localPart.slice(0, 2)}****`;
+  const [domainName, domainExtension] = domain.split('.');
+  const maskedDomain = `${domainName.slice(0, 2)}**.${domainExtension}`;
+  
+  return `${maskedLocal}@${maskedDomain}`;
+}
+
+// Retrieve email from local storage
+const email = localStorage.getItem('userEmail') || 'marquis@gmail.com';
+
+// Check if the email exists in local storage
+if (email) {
+  console.log(maskEmail(email)); // Output: Masked email
+} else {
+  console.log("Email not found in local storage");
+}
   
   
   const isOtpIncomplete = computed(() => otp.value.some((digit) => digit === ""));

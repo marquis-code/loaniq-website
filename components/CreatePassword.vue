@@ -176,7 +176,7 @@
                     <p v-if="!isPasscodeMatching" class="text-red-500 text-sm">Passcodes must match.</p>
             
                     <!-- Error Message for Passcode Length -->
-                    <p v-if="!isValidLength" class="text-red-500 text-sm">Passcode must be exactly 4 characters.</p>
+                    <p v-if="!isValidLength" class="text-red-500 text-sm">Passcode must be exactly six numeric characters.</p>
           </div>
             
           <!-- Submit Button -->
@@ -225,10 +225,17 @@
   const isPasscodeMatching = computed(() => {
     return credential.passcode.value === confirmPasscode.value;
   });
+
+  // Validate passcode length (exactly 6 numeric characters)
+const isValidLength = computed(() => {
+  const numericRegex = /^\d{6}$/; // Regex to ensure exactly 6 digits
+  return numericRegex.test(credential.passcode.value) && numericRegex.test(confirmPasscode.value);
+});
+
   
-  // Validate passcode length (exactly 4 characters)
-  const isValidLength = computed(() => {
-    return credential.passcode.value.length === 4 && confirmPasscode.value.length === 4;
-  });
+  // // Validate passcode length (exactly 4 characters)
+  // const isValidLength = computed(() => {
+  //   return credential.passcode.value.length === 6 && confirmPasscode.value.length === 6;
+  // });
   </script>
   

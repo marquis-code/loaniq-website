@@ -14,6 +14,7 @@ export const useResendOtp = () => {
       userId: route.query.userId,
     };
     const res = (await auth_api.$_resend_otp(payload)) as any;
+    console.log(res, 'here')
     if (res.type !== "ERROR") {
       showToast({
         title: "Success",
@@ -22,6 +23,13 @@ export const useResendOtp = () => {
         duration: 3000,
       });
       router.push(`/verify-account?userId=${res.data.data.userId}`);
+    } else {
+      showToast({
+        title: "Error",
+        message: res.data.errors[0].msg || 'Something went wrong',
+        toastType: "error",
+        duration: 3000,
+      });
     }
     loading.value = false;
   };

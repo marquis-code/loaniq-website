@@ -1,16 +1,19 @@
 import { auth_api } from "@/api_factory/modules/auth";
 import { useCustomToast } from "@/composables/core/useCustomToast";
+import CryptoJS from "crypto-js"; 
+
+const secretKey = "LoanIQEncryption";
 
 export const use_recover_passcode = () => {
   const Router = useRouter();
   const loading = ref(false);
   const { showToast } = useCustomToast();
   const credential = {
-    phoneNumber: ref(""),
+    email: ref(""),
   };
 
   const recoverPasscode = async () => {
-    if (!credential.phoneNumber.value) {
+    if (!credential.email.value) {
       showToast({
         title: "Error",
         message: "Phone number is required.",
@@ -24,17 +27,24 @@ export const use_recover_passcode = () => {
 
     try {
       const res = (await auth_api.$_recover_passcode({
-        phoneNumber: credential.phoneNumber.value,
+        email: credential.email.value,
       })) as any;
 
-      if (res.type !== "ERROR") {
+      console.log(res, 'res here')
+
+      if (res.status == 200) {
         showToast({
           title: "Success",
-          message: "OTP sent to your phone number",
+          message: res.data.message || "OTP sent to your phone number",
           toastType: "success",
           duration: 3000,
         });
 
+        // Encrypt and store userId and otp in localStorage
+        const encryptedUserId = CryptoJS.AES.encrypt(res.data.data.userId, secretKey).toString();
+        localStorage.setItem("userId", encryptedUserId);
+
+                
         // Redirect to the verify OTP page
         Router.push("/verify-account");
       } else {

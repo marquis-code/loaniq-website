@@ -81,36 +81,6 @@ export const use_create_passcode = () => {
         localStorage.setItem("userId", encryptedUserId);
 
          router.push('/verify-wema-otp')
-
-        // const payload = {
-        //   trackingId: res?.data?.data?.trackingId,
-        //   otp: "123456",
-        //   userId: res?.data.data?.userId,
-        // };
-        // setPayloadObj(payload);
-
-        // try {
-        //   const wemaResponse = (await validateWemaOtp()) as any;
-        //   if (wemaResponse.success) {
-        //     showToast({
-        //       title: "Success",
-        //       message:
-        //         "Your wallet will be created shortly. Kindly proceed to the dashboard.",
-        //       toastType: "success",
-        //       duration: 3000,
-        //     });
-        //     router.push("/account-creation-success");
-        //   }
-        // } catch (wemaError: any) {
-        //   showToast({
-        //     title: "Error",
-        //     message:
-        //       wemaError?.response?.data?.message ||
-        //       "An error occurred during OTP validation.",
-        //     toastType: "error",
-        //     duration: 3000,
-        //   });
-        // }
       } else {
         handleApiError(res);
       }

@@ -10,12 +10,12 @@
         </p>
         <form class="w-full space-y-6" @submit.prevent="recoverPasscode">
           <div class="mb-4">
-            <label class="block text-[#7D8799] font-medium mb-1 text-sm" for="phone">Phone number</label>
-            <input type="text" id="phone" v-model="credential.phoneNumber.value" class="w-full px-4 py-4  bg-[#F4F5F7] outline-none border-[0.5px] border-[#F4F5F7] rounded-md focus:outline-none focus:border-green-500" />
+            <label class="block text-[#7D8799] font-medium mb-1 text-sm" for="phone">Email Address</label>
+            <input type="email" id="email" v-model="credential.email.value" class="w-full px-4 py-4  bg-[#F4F5F7] outline-none border-[0.5px] border-[#F4F5F7] rounded-md focus:outline-none focus:border-green-500" />
           </div>
         
           <div class="pt-6">
-            <button :disabled="loading || !credential.phoneNumber.value" type="submit" class="w-full disabled:cursor-not-allowed disabled:opacity-25 bg-[#2F6D67] text-white py-3.5 rounded-md hover:bg-[#2F6D67] transition">{{!loading ? 'Send OTP' : 'processing..'}}</button>
+            <button :disabled="loading || !credential.email.value" type="submit" class="w-full disabled:cursor-not-allowed disabled:opacity-25 bg-[#2F6D67] text-white py-3.5 rounded-md hover:bg-[#2F6D67] transition">{{!loading ? 'Send OTP' : 'processing..'}}</button>
           </div>
         </form>
         <div class="mt-4 flex justify-between items-center w-full">

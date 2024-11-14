@@ -24,6 +24,7 @@ export const use_auth_login = () => {
       passcode: credential.passcode.value,
       email: credential.email.value,
     })) as any;
+    localStorage.setItem('userEmail', credential.email.value)
     console.log(res, 'res here')
     loading.value = false;
     if (res.status == 200) {
