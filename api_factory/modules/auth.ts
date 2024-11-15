@@ -9,6 +9,10 @@ export const auth_api = {
 		const url = '/auth/verify-otp'
 		return GATEWAY_ENDPOINT.post(url, payload)
 	},
+	$_verify_existing_user_otp: (payload: any) => {
+		const url = '/auth/confirm-otp'
+		return GATEWAY_ENDPOINT.post(url, payload)
+	},
 	$_resend_otp: (payload: any) => {
 		const url = '/auth/resend-otp'
 		return GATEWAY_ENDPOINT.post(url, payload)

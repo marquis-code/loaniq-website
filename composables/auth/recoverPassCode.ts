@@ -46,7 +46,7 @@ export const use_recover_passcode = () => {
 
                 
         // Redirect to the verify OTP page
-        Router.push("/verify-account");
+        Router.push("/verify-account?userType=existing");
       } else {
         showToast({
           title: "Error",
