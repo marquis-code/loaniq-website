@@ -3,6 +3,7 @@
       <!-- Display the list of accounts or the add bank account form based on query parameter -->
       <div v-if="!isAddingAccount" class="space-y-3">
         <div 
+         v-if="!loading && accounts?.length"
           v-for="(account, index) in accountsWithColors" 
           :key="index" 
           class="relative p-6 rounded-lg text-white" 
@@ -20,6 +21,15 @@
             <div class="w-20 h-20 rounded-full" :class="account.circleClass"></div>
           </div>
         </div>
+        <section class="w-full rounded-lg max-w-lg" v-else-if="loading && !accounts.length">
+        <div
+          class="rounded-md h-24 bg-gray-100 animate-pulse p-4 w-full mx-auto mt-10"
+        ></div>
+      </section>
+        <div v-else class="border rounded-lg py-10 flex justify-center items-center gap-y-3 flex-col border-gray-50 w-full">
+        <img src="@/assets/img/empty-state.png" class="h-20 w-20" />
+        <h2 class="text-gray-800 text-sm">No transactions available</h2>
+      </div>
         <div>
           <h2 class="text-lg font-semibold mb-4 text-center">Add bank account</h2>
           <div class="flex justify-center">

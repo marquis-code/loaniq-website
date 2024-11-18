@@ -215,7 +215,7 @@
                           <!-- Cardholder Name -->
                           <p class="font-semibold absolute top-4 left-6">
                             <span v-if="profileInfoObj?.profile?.firstName || profileInfoObj?.profile?.lastName ">{{ profileInfoObj?.profile?.firstName }} {{ profileInfoObj?.profile?.lastName }}</span>
-                            <span>Nil</span>
+                            <span v-else>Nil</span>
                           </p>
                     
                           <!-- Navigation Arrows -->

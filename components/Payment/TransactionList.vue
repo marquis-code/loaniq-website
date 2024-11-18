@@ -61,7 +61,7 @@
             <div class="rounded-md h-60 bg-gray-100 animate-pulse p-4 w-full mx-auto mt-10"></div>
       </section>
 
-      <div v-else class="border rounded-lg py-10 flex flex-col border-gray-50 w-full">
+      <div v-else class="border rounded-lg py-10 flex justify-center items-center gap-y-3 flex-col border-gray-50 w-full">
         <img src="@/assets/img/empty-state.png" class="h-20 w-20" />
         <h2 class="text-gray-800 text-sm">No transactions available</h2>
       </div>
