@@ -11,7 +11,8 @@ export const useFetchSavedAccounts = () => {
         loading.value = true;
         try {
             const res = await payment_api.$_fetch_saved_account();
-            accounts.value = res.data;
+            console.log(res.data.data, 'hee')
+            accounts.value = res?.data?.data || [];
         } catch (error: any) {
             showToast({
                 title: "Error",
@@ -23,6 +24,10 @@ export const useFetchSavedAccounts = () => {
             loading.value = false;
         }
     };
+
+    onMounted(() => {
+        fetchSavedAccounts()
+    })
 
     return {
         fetchSavedAccounts,

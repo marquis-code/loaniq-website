@@ -20,6 +20,8 @@
         Select Payment Method
       </h2>
 
+      {{ profileInfoObj?.wallet?.balance }}
+      {{ typeof payload?.principal }}
 
       <div>
         <!-- TabToggle Component -->
@@ -30,9 +32,9 @@
         />
       </div>
 
-<section class="space-y-8" v-if="activeTab === 'My wallet'">
+    <section class="space-y-8" v-if="activeTab === 'My wallet'">
           <!-- Bank Card Display -->
-          <div
+          <div v-if="!loading && Object.keys(profileInfoObj)?.length"
         class="bg-[#2560B8] rounded-lg p-6 relative text-white max-w-md w-full shadow-lg"
       >
         <!-- Top Section -->
@@ -88,28 +90,17 @@
         <div
           class="absolute bottom-4 right-4 w-24 h-24 bg-blue-700 opacity-30 rounded-full"
         ></div>
-      </div>
-      <!-- <div class="bg-blue-600 rounded-lg p-4 text-white mb-6 shadow-md">
-        <p class="text-sm">Available balance</p>
-        <p class="text-2xl font-semibold">₦2,157,000.56</p>
-        <div class="mt-4">
-          <p>Chinedu Ndukife - LoaniQ</p>
-          <p class="text-sm">0221117895 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M5.84586 3.4002H12.2222C13.5089 3.4002 14.5595 4.45082 14.5595 5.73749V12.3293C14.5595 13.616 13.5089 14.6666 12.2222 14.6666H5.84586C4.55918 14.6666 3.50856 13.616 3.50856 12.3293V5.73749C3.50856 4.45082 4.55873 3.4002 5.84586 3.4002ZM1.3335 10.2623V3.67055C1.3335 2.38533 2.38512 1.33325 3.67079 1.33325H10.0472V2.40835H3.67079C2.9762 2.40835 2.40859 2.97607 2.40859 3.67055V10.2623H1.3335ZM12.2215 4.47572H5.84512C5.15198 4.47572 4.58292 5.04489 4.58292 5.73792V12.3297C4.58292 13.0229 5.15209 13.5919 5.84512 13.5919H12.2215C12.9146 13.5919 13.4837 13.0227 13.4837 12.3297V5.73792C13.4837 5.04478 12.9145 4.47572 12.2215 4.47572Z" fill="#EAF0FA"/>
-</svg>
-</p>
-        </div>
-        <div class="flex justify-end">
-            <svg width="64" height="28" viewBox="0 0 64 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M58.8248 26.8874V21.558H59.7425V24.2377L62.2271 21.558H63.3538L61.1825 23.8497L63.4506 26.8874H62.3389L60.5556 24.4891L59.7421 25.3417V26.8874H58.8248ZM1.55115 26.8874H0.636719V21.078H2.85282C4.16791 21.078 4.98675 21.8395 4.98675 22.9886V23.0053C4.98675 24.2837 3.98447 24.9577 2.73811 24.9577H1.55115V26.8874ZM1.55115 21.9208V24.1234H2.77065C3.55247 24.1234 4.05565 23.6736 4.05565 23.0305V23.0138C4.05565 22.2934 3.54149 21.9208 2.77065 21.9208H1.55115ZM5.91866 26.8874V21.558H8.24663C8.90356 21.558 9.41813 21.7561 9.75413 22.0908C10.0303 22.3801 10.1869 22.7762 10.1869 23.2404C10.1869 24.1312 9.67196 24.6563 8.94099 24.8695L10.3513 26.887H9.26925L7.98588 25.0293H6.83675V26.887L5.91866 26.8874ZM6.83675 24.1999H8.17991C8.83645 24.1999 9.2542 23.8497 9.2542 23.3091C9.2542 22.723 8.85109 22.4106 8.17219 22.4106H6.83675V24.1999ZM13.7299 26.9789C12.1256 26.9789 11.0066 25.7379 11.0066 24.2382C11.0066 22.7234 12.1407 21.4669 13.745 21.4669C15.3493 21.4669 16.4683 22.7079 16.4683 24.2076C16.4683 25.7224 15.3342 26.9789 13.7299 26.9789ZM13.745 26.1186C14.7822 26.1186 15.5059 25.2734 15.5059 24.2377C15.5059 23.1871 14.7672 22.3268 13.7299 22.3268C12.6927 22.3268 11.969 23.1716 11.969 24.2072C11.9694 25.2579 12.7081 26.1186 13.745 26.1186ZM19.2283 26.9256L17.0569 21.558H18.0718L19.646 25.6541L21.2129 21.558H22.2054L20.0341 26.9256H19.2283ZM23.0788 26.8874V21.558H23.9965V26.8874H23.0788ZM25.3169 26.8874V21.558H27.2641C28.9054 21.558 30.0399 22.7075 30.0399 24.2072C30.0399 25.7224 28.9058 26.8874 27.2641 26.8874H25.3169ZM26.2345 26.0348H27.2641C28.3607 26.0348 29.0771 25.2811 29.0771 24.2382C29.0771 23.1798 28.3607 22.411 27.2641 22.411H26.2345V26.0348ZM33.2184 26.9712C31.8606 26.9712 30.995 26.1719 30.995 24.6262V21.558H31.9127V24.588C31.9127 25.5776 32.4126 26.1105 33.2335 26.1105C34.047 26.1105 34.5465 25.6081 34.5465 24.6258V21.5576H35.4642V24.5802C35.4642 26.1719 34.5835 26.9712 33.2184 26.9712ZM38.478 26.9635C37.6795 26.9635 36.9262 26.6816 36.2993 26.1109L36.8513 25.441C37.3512 25.8823 37.8512 26.1337 38.5004 26.1337C39.0674 26.1337 39.4258 25.8672 39.4258 25.4637C39.4258 25.068 39.2171 24.8621 38.2469 24.6339C37.1352 24.3598 36.5084 24.025 36.5084 23.0427C36.5084 22.1136 37.2544 21.4819 38.2917 21.4819C39.0528 21.4819 39.6572 21.7178 40.1868 22.1519L39.6947 22.8596C39.2244 22.5017 38.7546 22.3117 38.277 22.3117C37.7397 22.3117 37.4265 22.5936 37.4265 22.9434C37.4265 23.3697 37.6653 23.5528 38.6651 23.796C39.7695 24.0702 40.3439 24.4737 40.3439 25.3568C40.3435 26.3696 39.5746 26.9635 38.478 26.9635ZM44.0728 26.8858H41.4633V21.1236H43.991C44.6386 21.1236 45.1414 21.3054 45.4579 21.6284C45.7031 21.8785 45.8296 22.1844 45.8296 22.5659V22.5826C45.8296 23.2595 45.4867 23.6064 44.9392 23.8969C45.6417 24.1418 46.1494 24.4753 46.1494 25.3104V25.3271C46.1494 26.3334 45.3407 26.8858 44.0728 26.8858ZM42.3611 21.9412V23.5914H43.7856C44.4421 23.5914 44.9152 23.325 44.9152 22.7494V22.7327C44.9152 22.2348 44.5198 21.9412 43.8596 21.9412H42.3611ZM42.3611 24.3675V26.0678H44.0809C44.7794 26.0678 45.2349 25.7843 45.2349 25.2176V25.201C45.2349 24.6665 44.8111 24.3675 44.0073 24.3675H42.3611ZM46.7392 26.8874L49.0375 21.5197H49.888L52.1863 26.8874H51.2165L50.6869 25.6008H48.217L47.68 26.8874H46.7392ZM48.5526 24.771H50.3509L49.4479 22.6392L48.5526 24.771ZM53.0055 26.8874V21.558H53.8561L56.6539 25.2429V21.558H57.5569V26.8874H56.7885L53.9081 23.096V26.8874H53.0055Z" fill="white"/>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M24.6424 5.45408L25.9054 3.26648H38.2103L38.526 3.81277L39.4734 5.45408H24.6424ZM26.3887 2.42936L27.6529 0.239746H36.4624L37.7267 2.42936H26.3887ZM36.4628 14.5322H29.2658C29.1267 14.5322 29.0095 14.6042 28.9457 14.7116L28.0691 16.2301H25.5682L27.631 12.6575C27.7245 12.4952 27.9759 12.3638 28.1919 12.3638L37.7133 12.3662L36.4628 14.5322ZM39.4652 9.33213L38.1965 11.5295H27.4963C27.3597 11.5295 27.2454 11.597 27.1803 11.6991L26.3159 13.196H23.815L25.8778 9.62382C25.9713 9.46152 26.2227 9.33009 26.4387 9.33009L39.4652 9.33213ZM25.7289 8.49545C25.5947 8.49545 25.4775 8.56745 25.4137 8.67484L24.5594 10.1542H22.0586L24.1209 6.58244C24.2145 6.42014 24.4659 6.28831 24.6819 6.28831L39.9562 6.2916L40.5883 7.38621L39.9481 8.49505H25.7415L25.7289 8.49545Z" fill="#FEC23B"/>
-            </svg>
+         </div>
 
-        </div>
-      </div> -->
+         <section class="w-full rounded-lg" v-else-if="loading && !Object.keys(profileInfoObj)?.length">
+        <div
+          class="rounded-md h-32 bg-gray-100 animate-pulse p-4 w-full mx-auto mt-10"
+         ></div>
+        </section>
+
 
       <!-- Balance Warning -->
-      <div
+      <div v-if="!canInvest.canProceed"
         class="bg-[#FFF8E7] border-l-4 border-yellow-500 text-yellow-700 p-4 rounded-lg mb-6"
       >
         <div class="flex items-center gap-2">
@@ -133,18 +124,25 @@
         </div>
         <p class="text-sm text-[#323740] mt-1">
           Kindly top up your wallet with additional
-          <span class="font-semibold text-[#323740]">₦2,445,098</span> to
+          <span class="font-semibold text-[#323740]">{{ formatCurrency(canInvest?.topUpAmount) ?? 'Nil' }}</span> to
           complete your transaction for this order.
         </p>
       </div>
 
       <!-- Make Payment Button -->
       <div class="pt-6 flex justify-center items-center">
-        <NuxtLink to="/dashboard/investments/explore-investments/2/success"
-          class="w-full block text-center py-4 text-white font-medium bg-[#82A6A2] rounded-lg hover:bg-[#2F6D67]"
-        >
-          Make payment
-        </NuxtLink >
+        <button
+        type="button"
+        @click="handleClick"
+        :disabled="isButtonDisabled"
+        class="w-full block text-center py-4 text-white font-medium rounded-lg"
+        :class="{
+          'bg-[#2F6D67]': !isButtonDisabled,
+          'bg-gray-400 cursor-not-allowed opacity-25': isButtonDisabled,
+        }"
+      >
+        {{ processing ? 'Processing...' : 'Make payment' }}
+      </button>
       </div>
 </section>
 <section class="space-y-8" v-else-if="activeTab === 'My debit card'" >
@@ -278,11 +276,15 @@
 </template>
 
 <script setup lang="ts">
+  import { useCreateInvestment } from '@/composables/modules/investment/create'
 import { copyToClipboard } from '@/utils/copy-clipboard';
   import { formatCurrency } from '@/utils/currencyUtils';
+  import { parseCurrencyToNumber } from '@/utils/parseCurrencyToNumber'
   import { useFetchStats } from '@/composables/modules/dashboard/fetchStats'
   const { loading, profileInfoObj } = useFetchStats()
+  const { payload, createInvestment, setPayload, loading: processing } = useCreateInvestment()
 const router = useRouter();
+const route = useRoute()
 definePageMeta({
   layout: "dashboard",
 });
@@ -291,6 +293,40 @@ definePageMeta({
 function handleCopy(text: string | undefined) {
   copyToClipboard(text);
 }
+
+const handleClick = () => {
+  const payloadObj = {
+  name: payload.value.name,
+  productId: route.params.id,
+  principal: payload.value.principal,
+  automatedFrequency: payload.value.automatedFrequency,
+  interestPaymentSchedule: payload.value.interestPaymentSchedule
+};
+  setPayload(payloadObj)
+  createInvestment()
+}
+
+// Computed property to check if the user can invest
+const canInvest = computed(() => {
+  const walletBalance = Number(profileInfoObj?.value?.wallet?.balance);
+  const investmentAmount = payload?.value?.principal;
+
+  if (walletBalance >= investmentAmount) {
+    return { canProceed: true, topUpAmount: 0 };
+  } else {
+    const topUpAmount = investmentAmount - walletBalance;
+    return { canProceed: false, topUpAmount };
+  }
+});
+
+// Computed property for button disabled state
+const isButtonDisabled = computed(() => {
+  return processing.value || !canInvest.value.canProceed;
+});
+
+// const handleCreateInvestment = () => {
+//   router.push(`/dashboard/investments/explore-investments/2/success`)
+// }
 
 const activeTab = ref("My wallet");
 </script>

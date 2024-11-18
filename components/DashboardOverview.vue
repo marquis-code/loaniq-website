@@ -6,7 +6,7 @@
         <!-- Left Column (Account Info) -->
         <div class="lg:w-2/3 w-full space-y-8 p-4 lg:p-8 h-screen overflow-y-auto custom-scrollbar no-scrollbar">
           <!-- Account Summary Card -->
-          <div class="bg-white p-4 lg:p-6 rounded-xl lg:w-10/12">
+          <div v-if="!loading" class="bg-white p-4 lg:p-6 rounded-xl lg:w-10/12">
             <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
               <div class="text-left w-full">
                <div class="flex justify-between items-center w-full">
@@ -15,7 +15,7 @@
                 </div>
                 <div class="bg-[#020C24] flex items-center py-2 px-3 rounded-lg mt-4 sm:mt-0 sm:ml-4">
                     <p class="font- text-sm text-white flex items-center gap-x-3">
-                        <svg width="15" height="15" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg @click="handleCopy(profileObj?.wallet?.accountNumber)" class="cursor-pointer" width="15" height="15" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_1_30850)">
                             <path d="M8 0.5H2C1.45 0.5 1 0.95 1 1.5V8.5H2V1.5H8V0.5ZM9.5 2.5H4C3.45 2.5 3 2.95 3 3.5V10.5C3 11.05 3.45 11.5 4 11.5H9.5C10.05 11.5 10.5 11.05 10.5 10.5V3.5C10.5 2.95 10.05 2.5 9.5 2.5ZM9.5 10.5H4V3.5H9.5V10.5Z" fill="#DFDADA"/>
                             </g>
@@ -26,7 +26,7 @@
                             </defs>
                             </svg>
                             
-                        {{ profileObj?.accountNumber || 'Nil' }}</p>
+                        {{ profileObj?.wallet?.accountNumber || 'Nil' }}</p>
                   </div>
                </div>
                 <h1 class="text-2xl sm:text-4xl text-[#020C24] flex items-center gap-x-2 font-medium mt-2">{{ formatCurrency(profileObj?.wallet?.balance || 0) || 'Nil' }} <span><svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,6 +66,11 @@
                 Account details</button>
             </div>
           </div>
+          <section class="w-full rounded-lg max-w-lg" v-else-if="loading">
+              <div
+                class="rounded-md h-60 bg-gray-100 animate-pulse p-4 w-full mx-auto mt-10"
+              ></div>
+            </section>
   
           <!-- Quick Access and Suggestions -->
           <div>
@@ -208,7 +213,10 @@
                         <!-- Card Container -->
                         <div class="relative bg-blue-600 text-white rounded-2xl p-6 shadow-lg w-full max-w-md">
                           <!-- Cardholder Name -->
-                          <p class="font-semibold absolute top-4 left-6">Taiwo Obasan</p>
+                          <p class="font-semibold absolute top-4 left-6">
+                            <span v-if="profileInfoObj?.profile?.firstName || profileInfoObj?.profile?.lastName ">{{ profileInfoObj?.profile?.firstName }} {{ profileInfoObj?.profile?.lastName }}</span>
+                            <span>Nil</span>
+                          </p>
                     
                           <!-- Navigation Arrows -->
                           <div class="absolute top-4 right-6 flex space-x-2">
@@ -236,11 +244,11 @@
                                 <img src="@/assets/img/mastercard.png" alt="Mastercard" class="w-12 h-8" />
                                 <div>
                                   <p class="font-semibold">Mastercard</p>
-                                  <p class="text-gray-500">**** 6098</p>
+                                  <p class="text-gray-500">{{ profileObj?.wallet?.accountNumber || 'Nil' }}</p>
                                 </div>
                               </div>
                               <!-- Balance -->
-                              <p class="text-green-500 text-xl font-bold">$20 750</p>
+                              <p class="text-green-500 text-xl font-bold">{{ formatCurrency(profileObj?.wallet?.balance || 0) || 'Nil' }}</p>
                             </div>
                           </div>
                         </div>
@@ -345,17 +353,24 @@
   </template>
   
   <script setup lang="ts">
+  import { copyToClipboard } from '@/utils/copy-clipboard';
   import { formatCurrency } from '@/utils/currencyUtils';
-  const profile = defineProps({
-    loading: {
-      type: Boolean,
-      default: false
-    },
-    profileObj: {
-      type: Object,
-      default: () => {}
-    }
-  })
+  import { useFetchStats } from '@/composables/modules/dashboard/fetchStats'
+  const { loading, profileInfoObj } = useFetchStats()
+  // const profile = defineProps({
+  //   loading: {
+  //     type: Boolean,
+  //     default: false
+  //   },
+  //   profileObj: {
+  //     type: Object,
+  //     default: () => {}
+  //   }
+  // })
+
+  function handleCopy(text: string | undefined) {
+  copyToClipboard(text);
+}
 
 
 //   const formattedWalletBalance = computed(() => {

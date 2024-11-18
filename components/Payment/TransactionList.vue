@@ -4,12 +4,12 @@
       <PaymentFilterButton />
   
       <!-- Transaction List -->
-     <section class="max-w-3xl mx-auto" >
+     <section v-if="!fetching && transactionHistory.length" class="max-w-3xl mx-auto" >
       <ul class="">
-        <li v-for="(transaction, index) in transactions" :key="index" class="flex justify-between items-center py-4">
+        <li v-for="(transaction, index) in transactionHistory" :key="index" class="flex justify-between items-center py-4">
           <div class="flex items-center space-x-2">
             <div>
-              <svg v-if="transaction.type === 'Withdrawal'"  width="40" height="40" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg v-if="transaction.transactionType === 'debit'"  width="40" height="40" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="14" cy="14" r="14" fill="#EB3A3A" fill-opacity="0.2"/>
                 <path d="M17.914 15.811C17.8356 15.8894 17.7284 15.9389 17.6046 15.9389C17.3654 15.9389 17.1674 15.7409 17.1674 15.5016L17.1674 10.9314L12.5971 10.9314C12.3579 10.9314 12.1599 10.7334 12.1599 10.4941C12.1599 10.2549 12.3579 10.0569 12.5971 10.0569L17.6046 10.0569C17.8439 10.0569 18.0418 10.2549 18.0418 10.4941L18.0418 15.5016C18.0418 15.6254 17.9923 15.7326 17.914 15.811Z" fill="#EB3A3A"/>
                 <path d="M17.8447 10.8732L10.9027 17.8152C10.7336 17.9843 10.4531 17.9843 10.284 17.8152C10.1149 17.6461 10.1149 17.3656 10.284 17.1965L17.226 10.2545C17.3951 10.0854 17.6756 10.0854 17.8447 10.2545C18.0138 10.4236 18.0138 10.7041 17.8447 10.8732Z" fill="#EB3A3A"/>
@@ -22,13 +22,13 @@
                   </svg>
             </div>
             <div>
-              <p class="font- text-[#434E61]">{{ transaction.type }}</p>
-              <p class="text-xs text-gray-500">{{ transaction.date }}</p>
+              <p class="font- text-[#434E61]">{{ transaction?.transactionReason ?? 'Nil' }}</p>
+              <p class="text-xs text-gray-500">{{ formatDate(transaction?.createdAt) ?? 'Nil' }}</p>
             </div>
           </div>
           <div class="text-right">
-            <p class="font-medium text-[#434E61]">{{ transaction.amount }}</p>
-            <p class="text-xs text-[#7D8799]">{{ transaction.method }}</p>
+            <p class="font-medium text-[#434E61]">{{ formatCurrency(transaction?.amount) ?? 'Nil' }}</p>
+            <p class="text-xs text-[#7D8799]">{{ transaction.transactionChannel ?? 'Nil' }}</p>
           </div>
         </li>
       </ul>
@@ -56,26 +56,32 @@
         </button>
       </div>
      </section>
+
+     <section class="w-full rounded-lg" v-else-if="loading && !transactionHistory?.length">
+            <div class="rounded-md h-60 bg-gray-100 animate-pulse p-4 w-full mx-auto mt-10"></div>
+      </section>
+
+      <div v-else class="border rounded-lg py-10 flex flex-col border-gray-50 w-full">
+        <img src="@/assets/img/empty-state.png" class="h-20 w-20" />
+        <h2 class="text-gray-800 text-sm">No transactions available</h2>
+      </div>
     </div>
   </template>
   
   <script setup lang="ts">
   import { ref } from 'vue';
-  
+  import { useFetchTransactionHistory } from '@/composables/modules/wallet/useFetchTransactionHistory'
+  import { useFetchStats } from '@/composables/modules/dashboard/fetchStats'
+  import { useDateFormatter } from "@/composables/core/useDateFormatter";
+  import { formatCurrency } from '@/utils/currencyUtils';
+  const { loading, profileInfoObj } = useFetchStats()
+  const { formatDate } = useDateFormatter()
+  const { transactionHistory, loading: fetching } = useFetchTransactionHistory()
+
   const selectedFilter = ref('Bank transfer');
   const currentPage = ref(2);
   const totalPages = 11;
   
-  const transactions = ref([
-    { type: 'Withdrawal', date: '23 Mar, 2023', amount: '₦420,000.00', method: 'Bank transfer' },
-    { type: 'Funding', date: '23 Mar, 2023', amount: '₦224,000.00', method: 'Bank transfer' },
-    { type: 'Funding', date: '23 Mar, 2023', amount: '₦224,000.00', method: 'Bank transfer' },
-    { type: 'Withdrawal', date: '23 Mar, 2023', amount: '₦420,000.00', method: 'Bank transfer' },
-    { type: 'Withdrawal', date: '23 Mar, 2023', amount: '₦420,000.00', method: 'Bank transfer' },
-    { type: 'Withdrawal', date: '23 Mar, 2023', amount: '₦420,000.00', method: 'Bank transfer' },
-    { type: 'Funding', date: '23 Mar, 2023', amount: '₦224,000.00', method: 'Bank transfer' },
-    { type: 'Funding', date: '23 Mar, 2023', amount: '₦224,000.00', method: 'Bank transfer' }
-  ]);
   
   const setPage = (page: number) => {
     currentPage.value = page;

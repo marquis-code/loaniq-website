@@ -6,9 +6,9 @@ const route = useRoute();
 const payload = ref({
   name: "",
   productId: "",
-  principal: 200000,
+  principal: '',
   automatedFrequency: "",
-  interestPaymentSchedule: "",
+  interestPaymentSchedule: ""
 });
 
 export const useCreateInvestment = () => {
@@ -19,7 +19,7 @@ export const useCreateInvestment = () => {
   const createInvestment = async () => {
     loading.value = true;
     const res = await investment_api.$_create_investment(
-        payload
+        payload.value
       );
 
       if(res.status == 200) {
@@ -29,7 +29,7 @@ export const useCreateInvestment = () => {
             toastType: "success",
             duration: 3000,
           });
-          router.push('/dashboard/investments')
+          router.push(`/dashboard/investments/explore-investments/${route?.params?.id}/success`)
       }else {
         showToast({
             title: "Error",
@@ -38,11 +38,21 @@ export const useCreateInvestment = () => {
             duration: 3000,
           });
       }
+      loading.value = false
   };
+
+  const setPayload = (data: any) => {
+    payload.value.name = data.name,
+    payload.value.productId = data.productId,
+    payload.value.principal = data.principal
+    payload.value.automatedFrequency = data.automatedFrequency
+    payload.value.interestPaymentSchedule = data.interestPaymentSchedule
+  }
 
   return {
     createInvestment,
     loading,
-    payload
+    payload,
+    setPayload
   };
 };

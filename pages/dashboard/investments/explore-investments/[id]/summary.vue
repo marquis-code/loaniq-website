@@ -10,6 +10,7 @@
       <div class="mb-4">
         <h2 class="text-[#434E61] text-2xl font-semibold mb-2">Investment Summary</h2>
         <p class="text-[#687181] text-sm">
+          <!-- {{ product?.description ?? 'Nil' }} -->
           This investment offers the best of both worlds by combining liquidity and attractive returns on investment.
         </p>
       </div>
@@ -24,19 +25,19 @@
         >
           <div>
             <p class="font-medium text-[#687181] text-sm">Investment amount</p>
-            <p class="text-base font-semibold text-gray-900">₦208,000.00</p>
+            <p class="text-base font-semibold text-gray-900">{{ formatCurrency(payload.principal) ?? 'Nil' }}</p>
           </div>
           <div>
             <p class="font-medium text-[#687181] text-sm">Investment type</p>
-            <p class="text-base font-semibold text-gray-900">Flexi Grow Savings</p>
+            <p class="text-base font-semibold text-gray-900">{{ product?.name ?? 'Nil' }}</p>
           </div>
           <div>
             <p class="font-medium text-[#687181] text-sm">Interest rate</p>
-            <p class="text-base font-semibold text-gray-900">16.0% per annum</p>
+            <p class="text-base font-semibold text-gray-900">{{product?.interestRate ?? 'Nil'}}% per annum</p>
           </div>
           <div>
             <p class="font-medium text-[#687181] text-sm">Total payout accrued</p>
-            <p class="text-base font-semibold text-gray-900">4,134,300.00</p>
+            <p class="text-base font-semibold text-gray-900">{{ computedRoi ?? 'Nil' }}</p>
           </div>
           <div>
             <p class="font-medium text-[#687181] text-sm">
@@ -51,7 +52,7 @@
       <div class="my-6">
         <h3 class="text-gray-700 font-medium text-lg mb-2">Benefits</h3>
         <ul class="space-y-2 grid grid-cols-2 gap-4">
-          <li class="flex items-center gap-2">
+          <li v-for="(item, idx) in product?.benefits" :key="idx" class="flex items-center gap-2">
             <span class="text-red-500">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_520_12640)">
@@ -65,62 +66,14 @@
 </svg>
 
             </span>
-            <span class="text-gray-700">No lock-in period</span>
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-red-500">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_520_12640)">
-<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM9.29 16.29L5.7 12.7C5.31 12.31 5.31 11.68 5.7 11.29C6.09 10.9 6.72 10.9 7.11 11.29L10 14.17L16.88 7.29C17.27 6.9 17.9 6.9 18.29 7.29C18.68 7.68 18.68 8.31 18.29 8.7L10.7 16.29C10.32 16.68 9.68 16.68 9.29 16.29Z" fill="#D80032"/>
-</g>
-<defs>
-<clipPath id="clip0_520_12640">
-<rect width="24" height="24" fill="white"/>
-</clipPath>
-</defs>
-</svg>
-
-            </span>
-            <span class="text-gray-700">No early liquidation penalty</span>
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-red-500">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_520_12640)">
-<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM9.29 16.29L5.7 12.7C5.31 12.31 5.31 11.68 5.7 11.29C6.09 10.9 6.72 10.9 7.11 11.29L10 14.17L16.88 7.29C17.27 6.9 17.9 6.9 18.29 7.29C18.68 7.68 18.68 8.31 18.29 8.7L10.7 16.29C10.32 16.68 9.68 16.68 9.29 16.29Z" fill="#D80032"/>
-</g>
-<defs>
-<clipPath id="clip0_520_12640">
-<rect width="24" height="24" fill="white"/>
-</clipPath>
-</defs>
-</svg>
-
-            </span>
-            <span class="text-gray-700">Interest is calculated daily</span>
-          </li>
-          <li class="flex items-center gap-2">
-            <span class="text-red-500">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_520_12640)">
-<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM9.29 16.29L5.7 12.7C5.31 12.31 5.31 11.68 5.7 11.29C6.09 10.9 6.72 10.9 7.11 11.29L10 14.17L16.88 7.29C17.27 6.9 17.9 6.9 18.29 7.29C18.68 7.68 18.68 8.31 18.29 8.7L10.7 16.29C10.32 16.68 9.68 16.68 9.29 16.29Z" fill="#D80032"/>
-</g>
-<defs>
-<clipPath id="clip0_520_12640">
-<rect width="24" height="24" fill="white"/>
-</clipPath>
-</defs>
-</svg>
-
-            </span>
-            <span class="text-gray-700">Minimum balance of N10,000</span>
+            <span class="text-gray-700">{{ item ?? 'Nil' }}</span>
           </li>
         </ul>
       </div>
   
       <!-- Action Buttons -->
       <div class="flex items-center gap-x-8 pt-6">
-        <button class="text-[#2F6D67] hover:text-gray-900 flex items-center gap-2 font-medium">
+        <button @click="router.back()" class="text-[#2F6D67] hover:text-gray-900 flex items-center gap-2 font-medium">
           <span>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M12.5 15.8334L6.66667 10L12.5 4.16669" stroke="#2F6D67" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -134,11 +87,28 @@
       </div>
     </div>
 </div>
-<ModalsPaymentModal @close="showPaymentModal = false" v-if="showPaymentModal" />
+<ModalsPaymentModal :product="product" @close="showPaymentModal = false" v-if="showPaymentModal" />
   </template>
   
   <script setup lang="ts">
+  import { useCreateInvestment } from '@/composables/modules/investment/create'
+import { useFetchInvestmentProduct } from '@/composables/modules/investment/details';
+import { calculate_roi } from '@/utils/calculateROI';
+const { product, loading } = useFetchInvestmentProduct();
+import { formatCurrency } from '@/utils/currencyUtils';
+const { payload } = useCreateInvestment()
   const showPaymentModal = ref(false)
+  const router = useRouter()
+  const roi = ref({})
+
+const computedRoi = computed(() => {
+  const principal = payload.value.principal;
+  const annual_rate = product?.value?.interestRate / 100 || 0;
+  const days = product?.value?.tenor || 0;
+  const roi = calculate_roi(Number(principal), annual_rate, days);
+  return formatCurrency(roi)
+})
+
  definePageMeta({
     layout: 'dashboard',
    //  middleware: 'auth'

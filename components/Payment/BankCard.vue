@@ -3,15 +3,15 @@
       <!-- Display the list of accounts or the add bank account form based on query parameter -->
       <div v-if="!isAddingAccount" class="space-y-3">
         <div 
-          v-for="(account, index) in accounts" 
+          v-for="(account, index) in accountsWithColors" 
           :key="index" 
           class="relative p-6 rounded-lg text-white" 
           :class="account.bgColor"
         >
           <div class="flex flex-col space-y-2">
-            <p class="text-xl font-semibold">{{ account.name }}</p>
-            <p class="text-base">{{ account.accountNumber }}</p>
-            <p class="text-base">{{ account.bankName }}</p>
+            <p class="text-xl font-semibold">{{ account?.accountName || 'Nil' }}</p>
+            <p class="text-base">{{ account?.accountNumber || 'Nil' }}</p>
+            <p class="text-base">{{ account?.bankName || 'Nil' }}</p>
           </div>
           <div class="absolute bottom-0 right-0 opacity-20">
             <div class="w-32 h-32 rounded-full" :class="account.circleClass"></div>
@@ -116,25 +116,39 @@
   </template>
   
   <script setup lang="ts">
+  import { useFetchSavedAccounts } from '@/composables/modules/payment/useFetchSavedAccounts'
+  const { accounts, loading } = useFetchSavedAccounts()
   import { ref, computed } from 'vue';
   import { useRoute, useRouter } from 'vue-router';
   
-  const accounts = ref([
-    {
-      name: 'Chinedu Ndukife .E.',
-      accountNumber: '8455601187',
-      bankName: 'Wema Bank',
-      bgColor: 'bg-teal-700',
-      circleClass: 'bg-teal-600',
-    },
-    {
-      name: 'Chinedu Ndukife',
-      accountNumber: '0221117895',
-      bankName: 'Standard Chartered Bank Of Nigeria',
-      bgColor: 'bg-rose-500',
-      circleClass: 'bg-rose-400',
-    },
-  ]);
+// Define an array of possible colors
+const colorOptions = [
+  { bgColor: 'bg-teal-700', circleClass: 'bg-teal-600' },
+  { bgColor: 'bg-rose-500', circleClass: 'bg-rose-400' },
+  { bgColor: 'bg-blue-500', circleClass: 'bg-blue-400' },
+  { bgColor: 'bg-green-500', circleClass: 'bg-green-400' },
+  { bgColor: 'bg-yellow-500', circleClass: 'bg-yellow-400' },
+];
+
+// Function to assign random colors
+const assignRandomColors = (accounts) => {
+  return accounts.map((account) => {
+    const randomColor = colorOptions[Math.floor(Math.random() * colorOptions.length)];
+    return {
+      ...account,
+      bgColor: randomColor.bgColor,
+      circleClass: randomColor.circleClass,
+    };
+  });
+};
+
+// Computed accounts with random colors assigned
+const accountsWithColors = computed(() => {
+  if (accounts.value) {
+    return assignRandomColors(accounts.value);
+  }
+  return [];
+});
   
   const accountNumber = ref<string>('');
   const selectedBank = ref<string>('');

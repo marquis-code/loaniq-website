@@ -87,6 +87,7 @@ instanceArray.forEach((instance) => {
           toastType: "error",
           duration: 3000
         });
+        logOut()
         return {
           type: "ERROR",
           ...err.response,

@@ -20,7 +20,7 @@
           </h3>
         </div>
         <p class="text-sm text-gray-700">
-          Minimum investment of ₦{{ formatCurrency(product?.minInvestment) }}
+          Minimum investment of {{ formatCurrency(product?.minInvestment) }}
         </p>
         <p v-if="product.description" class="text-sm text-gray-500">{{ product.description.length > 70 ? `${product.description.slice(0, 70)}...` : product.description  }}</p>
         <p v-else>Nil</p>

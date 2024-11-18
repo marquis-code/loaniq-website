@@ -15,7 +15,7 @@ export const payment_api = {
 	},
     $_fetch_saved_account: () => {
 		const url = '/payment/saved-accounts'
-		return GATEWAY_ENDPOINT.post(url)
+		return GATEWAY_ENDPOINT.get(url)
 	},
     $_fetch_transaction_history: () => {
 		const url = '/payment/transaction-history'

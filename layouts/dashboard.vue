@@ -239,7 +239,8 @@
           <div class="relative">
             <button type="button" class="-m-1.5 flex items-center p-1.5" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
               <span class="sr-only">Open user menu</span>
-              <img class="h-8 w-8 rounded-full bg-gray-50" :src="avatarImage" alt="">
+              <img v-if="profileInfoObj?.profile?.avatar" :src="profileInfoObj?.profile?.avatar" class="h-8 w-8 rounded-full bg-gray-50"  />
+              <img v-else class="h-8 w-8 rounded-full bg-gray-50" :src="avatarImage" alt="">
               <span class="hidden lg:flex lg:items-center">
                 <span class="ml-4 text-sm font-semibold leading-6 text-gray-900" aria-hidden="true">{{ `${user?.firstName} ${user?.lastName}` || 'Nil' }}</span>
                 <!-- <svg class="ml-2 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -262,6 +263,8 @@
 </template>
 
 <script setup lang="ts">
+import { useFetchStats } from '@/composables/modules/dashboard/fetchStats'
+const { loading, profileInfoObj } = useFetchStats()
 import { useUser } from '@/composables/auth/user'
 import Swal from "sweetalert2";
 import { dynamicIcons } from "@/utils/assets";
