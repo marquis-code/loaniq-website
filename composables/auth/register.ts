@@ -37,12 +37,15 @@ export const use_auth_register = () => {
           duration: 3000,
         });
 
+         console.log(res.data, 'here ---------')
 
         // Encrypt and store userId and otp in localStorage
         const encryptedUserId = CryptoJS.AES.encrypt(res.data.data.userId, secretKey).toString();
         const encryptedOtp = CryptoJS.AES.encrypt(res.data.data.otp, secretKey).toString();
+        const encryptedTrackingId = CryptoJS.AES.encrypt(res.data.data.trackingId, secretKey).toString();
         localStorage.setItem("userId", encryptedUserId);
         localStorage.setItem("otp", encryptedOtp);
+        localStorage.setItem("trackingId", encryptedTrackingId);
 
         // Corrected statusMap that only stores paths, without executing router.push
         const statusMap = {
