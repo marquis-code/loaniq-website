@@ -8,6 +8,7 @@ import CryptoJS from "crypto-js";
 //   url: "https://res.cloudinary.com/deh3s35go/image/upload/v1728984119/tractor-min_ioivkd.png",
 // });
 
+const verifiedUser = ref({})
 const secretKey = "LoanIQEncryption";
 
 export const useLivelinessCheck = () => {
@@ -64,6 +65,7 @@ export const useLivelinessCheck = () => {
       loading.value = true;
 
     const res = (await auth_api.$_liveliness_check(payload)) as any;
+    console.log(res, 'error')
     if (res.type !== "ERROR") {
       showToast({
         title: "Success",
@@ -71,7 +73,15 @@ export const useLivelinessCheck = () => {
         toastType: "success",
         duration: 3000,
       });
-      router.push(`/create-password?userId=${res.data.data.userId}`);
+      verifiedUser.value = res?.data?.data?.user || {}
+      router.push(`/verify-success?userId=${res?.data?.data?.userId}`);
+    } else {
+      showToast({
+        title: "Error",
+        message: res.data.message,
+        toastType: "error",
+        duration: 3000,
+      });
     }
     loading.value = false;
   };
@@ -79,5 +89,6 @@ export const useLivelinessCheck = () => {
   return {
     loading,
     livelinessCheck,
+    verifiedUser
   };
 };

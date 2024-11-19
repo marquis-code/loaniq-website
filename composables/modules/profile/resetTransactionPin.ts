@@ -1,4 +1,4 @@
-import { profile_api } from "@/api_factory/modules/profile";
+import { user_api } from "@/api_factory/modules/user";
 import { useCustomToast } from "@/composables/core/useCustomToast";
 const { showToast } = useCustomToast();
 
@@ -9,7 +9,7 @@ const payloadObj = ref({
 
 export const useResetPin = () => {
   const loading = ref(false);
-  const { $_reset_transaction_pin } = profile_api;
+  const { $_reset_transaction_pin } = user_api;
   const resetTransactionPin = async (id: any) => {
     loading.value = true;
     try {

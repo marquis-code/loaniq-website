@@ -1,7 +1,7 @@
 import { ref, watch } from "vue";
 import { useStorage } from "@vueuse/core";
 const user = ref(null);
-const router = useRouter()
+// const router = useRouter()
 
 const runtimeData = {
   auth: ref(),
@@ -57,7 +57,8 @@ export const useUser = () => {
 
   const logOut = () => {
     localStorage.clear();
-    // router.push('/login')
+    window.location.href = "/login"
+    router.push('/login')
     runtimeData.user.value = null;
   };
 

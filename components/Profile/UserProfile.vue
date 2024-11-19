@@ -1,7 +1,8 @@
 <template>
     <div class="p-4 bg-white rounded-lg shadow-md max-w-6xl">
       <div class="flex items-center space-x-4">
-        <img src="@/assets/img/avatar.png" alt="Profile" class="h-16 w-16 rounded-full" />
+        <img v-if="profileInfoObj?.profile?.profilePicture" :src="avatarImage" alt="Profile" class="h-16 w-16 rounded-full" />
+        <img v-else :src="avatarImage" alt="Profile" class="h-16 w-16 rounded-full" />
         <!-- <div>
           <h3 class="text-xl font-bold">{{ user.fullName }}</h3>
           <p class="text-gray-500">{{ user.email }}</p>
@@ -29,6 +30,7 @@
   import UpdateSecurity from '@/components/Profile/UpdateSecurity.vue'
   import { useFetchStats } from '@/composables/modules/dashboard/fetchStats'
 const { loading, profileInfoObj } = useFetchStats()
+import avatarImage from '~/assets/icons/user-avatar.svg';
   
   const user = ref({
     // fullName: 'Chinedu Ndukief sss',

@@ -15,7 +15,8 @@ layout: 'dashboard',
   <div class="max-w-4xl">
     <div class="bg-white p-6 rounded-lg shadow-md w-full ">
       <div class="flex items-center space-x-4">
-        <img src="@/assets/img/avatar.png" alt="Profile" class="h-16 w-16 rounded-full" />
+        <img v-if="profileInfoObj.profile?.profilePicture" :src="avatarImage" alt="Profile" class="h-16 w-16 rounded-full" />
+        <img v-else :src="avatarImage" alt="Profile" class="h-16 w-16 rounded-full" />
         <div v-if="profileInfoObj.profile">
           <h3 class="text-xl font-bold">{{  profileInfoObj.profile?.firstName }} {{  profileInfoObj.profile?.lastName }}</h3>
           <p class="text-gray-500">{{ profileInfoObj.profile?.email }}</p>
@@ -60,6 +61,7 @@ import BookOpenIcon from '@/assets/icons/account-learning.svg'
 import BellIcon from '@/assets/icons/account-notification.svg'
 import { useFetchStats } from '@/composables/modules/dashboard/fetchStats'
 const { loading, profileInfoObj } = useFetchStats()
+import avatarImage from '~/assets/icons/user-avatar.svg';
 // Import icons
 
 definePageMeta({

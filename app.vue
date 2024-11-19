@@ -7,6 +7,7 @@
     <NuxtLayout class="z-10">
       <CoreSplashScreen />
       <NuxtPage class="z-10" />
+      <CoreIdleWarningModal />
     </NuxtLayout>
   </div>
   </main>

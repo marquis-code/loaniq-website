@@ -49,7 +49,7 @@ export const use_auth_register = () => {
 
         // Corrected statusMap that only stores paths, without executing router.push
         const statusMap = {
-          'LIVELINESS_CHECK': '/verifyface',
+          'LIVELINESS_CHECK': '/verify',
           'SET_PASSCODE': '/create-password',
           'WEMA_OTP_SCREEN': '/verify-wema-otp',
         };

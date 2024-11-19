@@ -1,14 +1,14 @@
-import { profile_api } from '@/api_factory/modules/profile'
+import { user_api } from '@/api_factory/modules/user'
 import { useCustomToast } from "@/composables/core/useCustomToast";
 const { showToast } = useCustomToast();
 
 export const useForgotPin = () => {
     const loading = ref(false);
-    const { $_get_next_of_kin_profile } = profile_api
+    const { $_forgot_transaction_pin } = user_api
     const forgotPin = async () => {
         loading.value = true;
         try {
-            const res = await $_get_next_of_kin_profile() as any;
+            const res = await $_forgot_transaction_pin() as any;
     
             if (res.type !== 'ERROR') {
                 showToast({

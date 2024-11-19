@@ -38,8 +38,8 @@
               </div>
 
             </div>
-            <div class="flex flex-wrap  space-y-4 sm:space-y-0 sm:space-x-4">
-              <button class="w-full text-xs sm:w-auto bg-[#2C64E3] text-white px-4 py-3 rounded-lg flex  items-center gap-x-3">
+            <div class="flex flex-wrap space-y-2 sm:space-y-0 sm:space-x-2">
+              <button class="w-full text-sm sm:w-auto bg-[#2C64E3] text-white px-4 py-3 rounded-lg flex  items-center gap-x-3">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18.3337 10.0002V14.1668C18.3337 16.6668 16.667 18.3335 14.167 18.3335H5.83366C3.33366 18.3335 1.66699 16.6668 1.66699 14.1668V10.0002C1.66699 7.7335 3.03366 6.15016 5.15866 5.88349C5.37533 5.85016 5.60033 5.8335 5.83366 5.8335H14.167C14.3837 5.8335 14.592 5.84182 14.792 5.87515C16.942 6.12515 18.3337 7.71683 18.3337 10.0002Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M14.7925 5.87484C14.5925 5.8415 14.3842 5.83318 14.1675 5.83318H5.83418C5.60085 5.83318 5.37585 5.84984 5.15918 5.88318C5.27585 5.64984 5.44251 5.43318 5.64251 5.23318L8.35085 2.5165C9.49251 1.38317 11.3425 1.38317 12.4842 2.5165L13.9425 3.99152C14.4758 4.51652 14.7592 5.18317 14.7925 5.87484Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -47,7 +47,7 @@
                     </svg>
                     
                 Fund account</button>
-              <button class="w-full text-xs sm:w-auto bg-[#D7E5FF] text-[#2C64E3] px-4 py-3 rounded-lg flex  items-center gap-x-3">
+              <button class="w-full text-sm sm:w-auto bg-[#D7E5FF] text-[#2C64E3] px-4 py-3 rounded-lg flex  items-center gap-x-3">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10.0003 18.3332C14.6027 18.3332 18.3337 14.6022 18.3337 9.99984C18.3337 5.39746 14.6027 1.6665 10.0003 1.6665C5.39795 1.6665 1.66699 5.39746 1.66699 9.99984C1.66699 14.6022 5.39795 18.3332 10.0003 18.3332Z" stroke="#2C64E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M7.08301 10H12.083" stroke="#2C64E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -55,7 +55,7 @@
                     </svg>
                     
                 Transfer</button>
-              <button class="w-full text-xs sm:w-auto bg-[#D7E5FF] text-[#2C64E3] px-4 py-3 rounded-lg flex  items-center gap-x-3">
+              <button class="w-full text-sm sm:w-auto bg-[#D7E5FF] text-[#2C64E3] px-4 py-3 rounded-lg flex  items-center gap-x-3">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10.0003 18.3332C14.5837 18.3332 18.3337 14.5832 18.3337 9.99984C18.3337 5.4165 14.5837 1.6665 10.0003 1.6665C5.41699 1.6665 1.66699 5.4165 1.66699 9.99984C1.66699 14.5832 5.41699 18.3332 10.0003 18.3332Z" stroke="#2C64E3" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M13.3301 10.0002H13.3375" stroke="#2C64E3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -78,11 +78,21 @@
             <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
               <div class="bg-[#E4EEFF] text-center p-2 rounded-full flex items-center gap-x-3">
                 <img src="@/assets/img/todo.png" alt="" class="h-14 w-14" />
-                <p class="text-[#2E3A59] max-w-x text-start w-44 font-medium">Upgrade your account to Tier {{ profileObj?.profile?.tier === 1 ? '2' : profileObj?.profile?.tier === 2 ? '3' : 'Nil'  }}</p>
+                <p class="text-[#2E3A59] max-w-x text-start w-44 font-medium">
+  Upgrade your account to Tier 
+  {{ 
+    profileInfoObj?.profile?.tier === 1 
+      ? '2' 
+      : profileInfoObj?.profile?.tier === 2 
+        ? '3' 
+        : 'Nil' 
+  }}
+</p>
+                <!-- <p class="text-[#2E3A59] max-w-x text-start w-44 font-medium">Upgrade your account to Tier {{ profileObj?.profile?.tier === 1 ? '2' : profileObj?.profile?.tier === 2 ? '3' : 'Nil'  }}</p> -->
               </div>
               <NuxtLink to="/dashboard/accounts" class="bg-[#E4EEFF] block text-center p-2 rounded-full flex items-center gap-x-3">
                 <img src="@/assets/img/complete-profile.png" alt="" class="h-14 w-14" />
-                <p class="text-[#2E3A59] max-w-xs text-start w-44 font-medium">Complete your profile information</p>
+                <p class="text-[#2E3A59] max-w-sm text-start w-44 font-medium">Complete your profile information</p>
               </NuxtLink>
             </div>
   
@@ -134,9 +144,9 @@
   
           <!-- Suggestions Section -->
           <div class="lg:flex lg:space-x-3 space-y-6 lg:space-y-0 lg:gap-x-3">
-            <div class="bg-[#D8FF6F] lg:w-96 h-96 border-white border-2 rounded-3xl p-6 lg:p-8 relative flex flex-col justify-between">
+            <div @click="router.push('/dashboard/investments')" class="bg-[#D8FF6F] cursor-pointer lg:w-96 h-96 border-white border-2 rounded-3xl p-6 lg:p-8 relative flex flex-col justify-between">
                 <!-- Title -->
-                <h3 class="text-2xl lg:text-2xl font-medium text-[#2E3A59]  max-w-xs">
+                <h3 class="text-2xl lg:text-2xl font-medium text-[#2E3A59]  max-w-sm">
                     Set up an Investment Account
                 </h3>
             
@@ -167,9 +177,9 @@
                   </svg>
                 </button>
               </div>
-              <div class="bg-[#D7E5FF] lg:w-96 h-96 border-white border-2 rounded-3xl p-6 lg:p-8 relative flex flex-col justify-between">
+              <div @click="router.push('/dashboard/loans')" class="bg-[#D7E5FF] cursor-pointer lg:w-96 h-96 border-white border-2 rounded-3xl p-6 lg:p-8 relative flex flex-col justify-between">
                 <!-- Title -->
-                <h3 class="text-2xl lg:text-2xl font-medium text-[#2E3A59]  max-w-xs">
+                <h3 class="text-2xl lg:text-2xl font-medium text-[#2E3A59]  max-w-sm">
                     Don’t get stranded, access Loans
                 </h3>
             
@@ -357,6 +367,7 @@
   import { formatCurrency } from '@/utils/currencyUtils';
   import { useFetchStats } from '@/composables/modules/dashboard/fetchStats'
   const { loading, profileInfoObj } = useFetchStats()
+  const router = useRouter()
   // const profile = defineProps({
   //   loading: {
   //     type: Boolean,

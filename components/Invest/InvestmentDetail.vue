@@ -48,7 +48,7 @@
       
 
       <section class="lg:w-6/12">
-        {{ payload }}
+        <!-- {{ payload }} -->
         <!-- Form Section -->
         <div class="space-y-6">
           <div>
@@ -164,24 +164,14 @@ const formatToNaira = (value) => {
 
 // Calculate and set ROI
 function calculateAndSetROI() {
-  const principal = amount.value;
-  const annual_rate = product?.value?.interestRate / 100 || 0;
-  const days = product?.value?.tenor || 0;
-  roi.value = calculate_roi(principal, annual_rate, days);
+  const principal = Number(amount.value) || 0; // Ensure `principal` is a number
+  const annual_rate = Number(product?.value?.interestRate) / 100 || 0; // Ensure `annual_rate` is a number
+  const days = Number(product?.value?.tenor) || 0; // Ensure `days` is a number
+  const months = days / 30; // Convert tenor to months
+  roi.value = calculate_roi(principal, annual_rate, months);
 }
 
-// // Update the raw value and reformat as user types
-// const updateAmount = (event) => {
-//   // Only allow numeric characters by replacing non-numeric ones
-//   const input = event.target.value.replace(/[^0-9]/g, "");
-//   rawAmount.value = parseInt(input, 10) || 0; // Update raw value
-//   formattedAmount.value = formatToNaira(rawAmount.value); // Format as Naira
-//   console.log(event.target.value, 'here again', formattedAmount.value)
-//   event.target.value = formattedAmount.value; // Ensure the input field shows the formatted value
-//   payload.value.principal = formattedAmount.value
-//   amount.value = 500000
-//   calculateAndSetROI();
-// };
+
 
 const updateAmount = (event) => {
   // Only allow numeric characters by replacing non-numeric ones
@@ -270,71 +260,6 @@ const breadcrumbItems = computed(() => [
   { label: product?.value?.name || 'Unnamed Product' }, // Fallback for undefined product name
 ]);
 
-// // Increase investment amount
-// function increaseAmount() {
-//   const incrementValue = 100000; // Increment value
-//   amount.value += incrementValue;
-//   form.value.amount = formatCurrency(amount.value); // Update formatted value
-//   calculateAndSetROI();
-// }
-
-// // Decrease investment amount
-// function decreaseAmount() {
-//   const decrementValue = 100000; // Decrement value
-//   if (amount.value > (product?.value?.minInvestment || 0)) {
-//     amount.value -= decrementValue;
-//     form.value.amount = formatCurrency(amount.value); // Update formatted value
-//     calculateAndSetROI();
-//   }
-// }
-
-// // Increase investment amount
-// function increaseAmount() {
-//   const incrementValue = 100000; // Increment value
-
-//   // Ensure raw numeric value is synced with the input
-//   const parsedValue = parseInt(form.value.amount.toString().replace(/[₦,]/g, ""), 10);
-//   if (!isNaN(parsedValue)) {
-//     amount.value = parsedValue; // Sync amount.value with the input field
-//   }
-
-//   amount.value += incrementValue; // Increment the amount
-//   form.value.amount = formatCurrency(amount.value); // Update formatted value in the input
-//   calculateAndSetROI(); // Recalculate ROI
-// }
-
-// // Decrease investment amount
-// function decreaseAmount() {
-//   const decrementValue = 100000; // Decrement value
-
-//   // Ensure raw numeric value is synced with the input
-//   const parsedValue = parseInt(form.value.amount.toString().replace(/[₦,]/g, ""), 10);
-//   if (!isNaN(parsedValue)) {
-//     amount.value = parsedValue; // Sync amount.value with the input field
-//   }
-
-//   // Only decrease if the value is greater than the minimum investment
-//   if (amount.value > (product?.value?.minInvestment || 0)) {
-//     amount.value -= decrementValue; // Decrement the amount
-//     form.value.amount = formatCurrency(amount.value); // Update formatted value in the input
-//     calculateAndSetROI(); // Recalculate ROI
-//   }
-// }
-
-// Update the raw value and reformat as user types
-// const updateAmount = (event) => {
-//   const input = event.target.value.replace(/[^0-9]/g, ""); // Strip non-numeric characters
-//   rawAmount.value = parseInt(input, 10) || 0; // Update raw numeric value
-
-//   // Format the raw amount to Naira
-//   formattedAmount.value = formatToNaira(rawAmount.value);
-//   event.target.value = formattedAmount.value; // Update the input field with the formatted value
-
-//   // Sync other states
-//   payload.value.principal = rawAmount.value;
-//   amount.value = rawAmount.value; // Sync rawAmount with amount
-//   calculateAndSetROI();
-// };
 
 // Increase investment amount
 function increaseAmount() {

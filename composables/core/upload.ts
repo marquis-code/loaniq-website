@@ -21,12 +21,12 @@ export const useUploadFile = () => {
       // Make the API call with FormData
       const res = await $_upload_file(formData) as any;
       console.log(res, 'upload response')
-      showToast({
-        title: "Success",
-        message: "Upload was successful",
-        toastType: "success",
-        duration: 3000,
-      });
+      // showToast({
+      //   title: "Success",
+      //   message: "Upload was successful",
+      //   toastType: "success",
+      //   duration: 3000,
+      // });
 
       if (res.type !== 'ERROR') {
         uploadResponse.value = res.data.data ?? {};

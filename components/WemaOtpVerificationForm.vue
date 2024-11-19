@@ -1,8 +1,6 @@
 <template>
-    <div
-      class="flex flex-col items-center justify-center w-full h-screen bg-white p-10"
-    >
-      <div class="lg:w-[500px] p-4 bg-white p-8 text-center space-y-6">
+    <div class="flex items-center justify-center w-full h-screen bg-white p-4 overflow-hidden">
+      <div class="max-w-md w-full bg-white p-8 text-center space-y-6 overflow-y-auto">
         <div class="flex justify-center mb-4">
           <img
             src="@/assets/icons/verify-account.svg"
@@ -12,7 +10,7 @@
         </div>
         <h2 class="text-2xl font-bold mb-2 text-[#333333]">Verify account</h2>
         <p class="text-[#687181] mb-4">
-          Please enter the verification code sent to your {{ maskEmail(email) }} email address
+          Please enter the verification code sent to your phone number
         </p>
   
         <!-- OTP Input Fields -->
@@ -24,7 +22,7 @@
             type="password"
             maxlength="1"
             @input="moveToNext(index)"
-            class="w-16 outline-none border-[0.5px] h-16 border-gray-100 rounded-md text-center bg-[#F4F5F7] text-xl"
+            class="w-14 outline-none border-[0.5px] h-14 border-gray-100 rounded-md text-center bg-[#F4F5F7] text-xl"
           />
         </div>
   
@@ -142,3 +140,15 @@ if (email) {
   }, 1000);
   </script>
   
+
+  <style scoped>
+/* Hide the horizontal scrollbar while allowing horizontal scrolling */
+.hide-scrollbar {
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Opera */
+}
+</style>

@@ -1,20 +1,20 @@
 <template>
-    <div class="flex space-x-4 overflow-x-auto scrollbar-hide">
-      <button
-        v-for="tab in tabs"
-        :key="tab.name"
-        :class="[
-          'px-4 py-2 text-sm rounded-md outline-none',
-          tab.name === activeTab
-            ? 'text-red-500 bg-red-100'
-            : 'text-gray-500 bg-gray-100'
-        ]"
-        @click="selectTab(tab.name)"
-      >
-        {{ tab.label }}
-      </button>
-    </div>
-  </template>
+  <div class="flex space-x-4 overflow-x-auto scrollbar-hide">
+    <button
+      v-for="tab in tabs"
+      :key="tab.name"
+      :class="[
+        'flex-shrink-0 px-4 py-2 text-sm rounded-md outline-none',
+        tab.name === activeTab
+          ? 'text-red-500 bg-red-100'
+          : 'text-gray-500 bg-gray-100'
+      ]"
+      @click="selectTab(tab.name)"
+    >
+      {{ tab.label }}
+    </button>
+  </div>
+</template>
   
   <script setup lang="ts">
   import { ref, defineProps, defineEmits } from 'vue'
@@ -31,14 +31,21 @@
   }
   </script>
   
-  <style>
-  /* Hide the scrollbar but keep the scroll functionality */
+  <style scoped>
+  /* Optional styling for the scrollbar (hidden by default in some browsers) */
   .scrollbar-hide {
     -ms-overflow-style: none; /* Internet Explorer 10+ */
     scrollbar-width: none; /* Firefox */
   }
+  
   .scrollbar-hide::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
+    display: none; /* WebKit browsers */
+  }
+  
+  /* Ensure horizontal scroll is enabled */
+  .overflow-x-auto {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
   }
   </style>
-  

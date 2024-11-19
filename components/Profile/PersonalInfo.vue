@@ -1,7 +1,7 @@
 <template>
     <div>
       <h2 class="text- font-medium mb-4">Personal information</h2>
-      <form v-if="!loading && profileInfoObj.profile" @submit.prevent="saveChanges" class="space-y-6">
+      <form v-if="!loading && profileInfoObj?.profile" @submit.prevent="saveChanges" class="space-y-6">
         <div class="grid lg:grid-cols-2 gap-4">
           <div v-if="profileInfoObj.profile">
             <label class="block text-gray-600 text-sm pb-2">First And Last Name</label>
@@ -42,8 +42,8 @@
           <div>
             <label class="block text-gray-600 text-sm pb-2">Phone Number</label>
             <div class="flex items-center">
-              <span class="px-3 py-2 border rounded-l-md bg-gray-100 text-gray-600 text-sm pb-2">+234</span>
-              <input v-model="profileInfoObj.profile.phoneNumber" class="input rounded-l-none" placeholder="Enter your phone number" />
+              <span class="px-3 py-4 border rounded-l-md border-[0.5px] bg-gray-100 text-gray-600 text-sm pb-2">+234</span>
+              <input v-model="profileInfoObj.profile.phoneNumber" class="w-full border border-gray-300 rounded-r-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3" placeholder="Enter your phone number" />
             </div>
           </div>
           <div class="col-span-2">
@@ -65,6 +65,9 @@
             <button type="submit" class="bg-[#2F6D67] text-white px-6 py-3 rounded-md text-sm mt-6">Save changes</button>
            </div>
       </form>
+      <section class="w-full rounded-lg" v-else-if="loading && !Object.keys(profileInfoObj)?.length">
+            <div class="rounded-md h-44 bg-gray-100 animate-pulse p-4 w-full mx-auto mt-10"></div>
+          </section>
     </div>
   </template>
   
