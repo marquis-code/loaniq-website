@@ -74,7 +74,8 @@ export const useLivelinessCheck = () => {
         duration: 3000,
       });
       verifiedUser.value = res?.data?.data?.user || {}
-      router.push(`/verify-success?userId=${res?.data?.data?.userId}`);
+      router.push(`/create-password?userId=${res?.data?.data?.userId}`)
+      // router.push(`/verify-success?userId=${res?.data?.data?.userId}`);
     } else {
       showToast({
         title: "Error",
