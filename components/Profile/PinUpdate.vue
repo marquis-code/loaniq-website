@@ -6,14 +6,14 @@
         <form @submit.prevent="savePin">
           <div class="space-y-4">
             <div>
-              <label for="currentPin" class="text-gray-600 text-sm">Current Pin</label>
+              <label for="otpCode" class="text-gray-600 text-sm">OTP Code</label>
               <div class="flex items-center gap-x-3 gap- mt-2">
                 <input
-                  v-for="(value, index) in currentPin"
+                  v-for="(value, index) in otpCode"
                   :key="'current-' + index"
                   type="password"
                   class="pin-input"
-                  v-model="currentPin[index]"
+                  v-model="otpCode[index]"
                   maxlength="1"
                   inputmode="numeric"
                 />
@@ -49,10 +49,10 @@
             </div>
           </div>
           <p class="text-sm text-gray-500 mt-2">
-            Forgot your pin? <a href="#" class="text-[#2F6D67]">Reset it now</a>
+            Forgot your pin? <button :disabled="processing" @click="forgotTransactionPin()" class="text-[#2F6D67] disabled:cursor-not-allowed disabled:opacity-25"> {{ processing ? 'processing...' : 'Reset it now'  }}</button>
           </p>
-          <button type="submit" class="mt-4 text-sm px-4 py-2 bg-[#2F6D67] text-white rounded-md">
-            Save changes
+          <button :disabled="loading" type="submit" class="mt-4 disabled:cursor-not-allowed disabled:opacity-25 text-sm px-4 py-2 bg-[#2F6D67] text-white rounded-md">
+             {{ loading ? 'processing..' : 'Save changes' }}
           </button>
         </form>
       </section>
@@ -106,20 +106,30 @@
   </template>
   
   <script setup lang="ts">
+  import { useForgotTransactionPin } from '@/composables/auth/forgotPin'
     import { useResetPin } from '@/composables/modules/profile/resetTransactionPin'
-  const { payloadObj, resetTransactionPin, loading } = useResetPin()
+  const { payloadObj, resetTransactionPin, loading, setPayload } = useResetPin()
+  const { forgotTransactionPin, loading: processing } = useForgotTransactionPin()
   
-  const currentPin = ref(['', '', '', ''])
+  const otpCode = ref(['', '', '', ''])
   const newPin = ref(['', '', '', ''])
   const repeatNewPin = ref(['', '', '', ''])
   const isFaceIdEnabled = ref(false)
   const isTouchIdEnabled = ref(false)
   
   const savePin = () => {
-    // Add logic to handle saving the PINs
-    console.log('Current PIN:', currentPin.value.join(''))
-    console.log('New PIN:', newPin.value.join(''))
-    console.log('Repeat New PIN:', repeatNewPin.value.join(''))
+    const otpCodeInfo = otpCode.value.join('')
+    const newPinCodeInfo = newPin.value.join('')
+    // console.log('Current PIN:', otpCode.value.join(''))
+    // console.log('New PIN:', newPin.value.join(''))
+    // console.log('Repeat New PIN:', repeatNewPin.value.join(''))
+    const payload = {
+    otp: otpCodeInfo,
+    newPin: newPinCodeInfo
+    }
+
+    setPayload(payload)
+    resetTransactionPin()
   }
   </script>
   

@@ -10,10 +10,10 @@ const payloadObj = ref({
 export const useResetPin = () => {
   const loading = ref(false);
   const { $_reset_transaction_pin } = user_api;
-  const resetTransactionPin = async (id: any) => {
+  const resetTransactionPin = async () => {
     loading.value = true;
     try {
-      const res = (await $_reset_transaction_pin(payloadObj)) as any;
+      const res = (await $_reset_transaction_pin(payloadObj.value)) as any;
 
       if (res.type !== "ERROR") {
         showToast({
@@ -35,9 +35,14 @@ export const useResetPin = () => {
     }
   };
 
+  const setPayload = (data: any) => {
+    payloadObj.value.otp = data.otp
+    payloadObj.value.newPin = data.newPin
+  }
   return {
     resetTransactionPin,
     loading,
     payloadObj,
+    setPayload
   };
 };

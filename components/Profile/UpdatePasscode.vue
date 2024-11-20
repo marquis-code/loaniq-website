@@ -99,15 +99,17 @@
         </div>
   
         <!-- Save Changes Button -->
-        <button type="submit" class="mt-4 px-4 py-2 bg-[#2F6D67] text-white rounded-md">
-          Save changes
+        <button :disabled="loading" type="submit" class="mt-4 disabled:cursor-not-allowed disabled:opacity-25 px-4 py-2 bg-[#2F6D67] text-white rounded-md">
+           {{ loading ? 'processing...' : 'Save changes' }}
         </button>
       </form>
     </div>
   </template>
   
   <script setup lang="ts">
+  import { useUpdatePasscode } from '@/composables/modules/profile/updatePasscode'
   import { ref, computed } from 'vue'
+  const {updatePasscode, payloadObj, setPayload, loading } = useUpdatePasscode ()
   
   const currentPasscode = ref('')
   const newPasscode = ref('')
@@ -133,6 +135,13 @@
       alert('New passcode and repeated passcode do not match')
       return
     }
+
+    const payloadObj = {
+    currentPasscode: currentPasscode.value,
+    newPasscode: newPasscode.value,
+   };
+    setPayload(payloadObj)
+    updatePasscode()
     console.log('Current Passcode:', currentPasscode.value)
     console.log('New Passcode:', newPasscode.value)
     console.log('Repeat New Passcode:', repeatNewPasscode.value)

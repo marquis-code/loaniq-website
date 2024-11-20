@@ -1,5 +1,5 @@
 <template>
-    <main class="min-h-screen p-6 bg-gradient-to-br from-[#F1F7FD] via-[#E9F2FA] to-[#D7F4D7] ">
+    <main class="min-h-screen pt-6 lg:p-6 bg-gradient-to-br from-[#F1F7FD] via-[#E9F2FA] to-[#D7F4D7] ">
    <ProfileUserProfile />
   </main>
   </template>
