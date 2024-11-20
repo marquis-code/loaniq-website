@@ -14,11 +14,11 @@
         Face Liveness Verification Technology
       </p>
   <div class="mt-6">
-    <NuxtLink to="/verifyface"
+    <button type="button" @click="handleNavigation"
         class="mt-6 px-6 py-3.5 text-white bg-blue-500 hover:bg-blue-600 rounded-lg shadow-md"
       >
         Verify my face
-      </NuxtLink>
+      </button>
   </div>
     </div>
 
@@ -39,3 +39,15 @@
 <style scoped>
 /* Add any additional styles if required */
 </style>
+
+
+<script setup lang="ts">
+const route = useRoute()
+const router = useRouter()
+
+const handleNavigation = () => {
+  if(route.query.userId){
+    router.push(`/verifyface?userId=${route.query.userId}`)
+  }
+}
+</script>

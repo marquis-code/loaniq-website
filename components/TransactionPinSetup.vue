@@ -38,7 +38,7 @@
             :value="pin"
             type="password"
             maxlength="1"
-            class="w-14 h-14 border outline-none rounded-md flex justify-center items-center text-center text-xl"
+            class="w-14 ml-4 h-14 border outline-none rounded-md flex justify-center items-center text-center text-xl"
             readonly
           />
         </div>

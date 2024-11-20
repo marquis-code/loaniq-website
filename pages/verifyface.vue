@@ -71,7 +71,7 @@
     </div>
 
     <div
-      v-if="livelinessLoading"
+      v-if="livelinessLoading || processing"
       class="loader-overlay fixed inset-0 bg-black bg-opacity-75 flex flex-col items-center justify-center z-50 text-white space-y-4"
     >
       <svg
@@ -90,8 +90,10 @@
           stroke-linejoin="round"
         ></path>
       </svg>
-      <p class="text-center text-lg">
-        Please wait while we perform the liveliness check...
+      <p class="text-center text-white text-lg z-50">
+        {{ processing ? 'please wait while we upload your image...' : '' }}
+        {{ livelinessLoading ? 'Please wait while we perform the liveliness check...' : '' }}
+        
       </p>
     </div>
   </section>
@@ -359,7 +361,7 @@ onMounted(() => {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(211, 193, 193, 0.8);
+  background-color: rgba(10, 9, 9, 0.8);
   z-index: 10;
 }
 

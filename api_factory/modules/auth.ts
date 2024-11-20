@@ -44,5 +44,9 @@ export const auth_api = {
 	$_liveliness_check: (credential: any) => {
 		const url = '/auth/liveliness-check'
 		return GATEWAY_ENDPOINT.post(url, credential)
-	}
+	},
+	$_resend_wema_otp: (payload: any) => {
+		const url = '/auth/resend-wema-otp'
+		return GATEWAY_ENDPOINT.post(url, payload)
+	},
 }

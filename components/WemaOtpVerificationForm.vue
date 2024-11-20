@@ -70,10 +70,12 @@
   </template>
   
   <script setup lang="ts">
-  import { useResendOtp } from "@/composables/auth/resendOtp";
+  import { useResendWemaOtp } from '@/composables/auth/resendWemaOTP'
+  // import { useResendOtp } from "@/composables/auth/resendOtp";
   import { use_validate_wema_otp } from "@/composables/auth/validateWemaOtpCreation";
-  const { resendOtp, loading } = useResendOtp();
+  // const { resendOtp, loading } = useResendOtp();
   const { validateWemaOtp, loading: verifying } = use_validate_wema_otp();
+  const { resendWemaOtp, loading } = useResendWemaOtp()
   
   const otpResendTimer = ref(96); // 01:36 (96 seconds)
   const otp = ref(Array(6).fill(""));
@@ -119,7 +121,7 @@ if (email) {
   
   const handleResendOtp = async () => {
     // loading.value = true;
-    await resendOtp();
+    await resendWemaOtp();
     otpResendTimer.value = 96;
     // loading.value = false;
   };

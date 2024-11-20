@@ -77,7 +77,8 @@ export const use_auth_verify_otp = () => {
             "otp",
             CryptoJS.AES.encrypt(credential.code.value, secretKey).toString()
           );
-          router.push(`/verifyface?userId=${onboardingId}`);
+          router.push(`/verify?userId=${onboardingId}`);
+          // router.push(`/verifyface?userId=${onboardingId}`);
         } else {
           // Redirect for existing users
           localStorage.setItem(

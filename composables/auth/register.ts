@@ -37,7 +37,6 @@ export const use_auth_register = () => {
           duration: 3000,
         });
 
-         console.log(res.data, 'here ---------')
 
         // Encrypt and store userId and otp in localStorage
         const encryptedUserId = CryptoJS.AES.encrypt(res.data.data.userId, secretKey).toString();
@@ -49,7 +48,7 @@ export const use_auth_register = () => {
 
         // Corrected statusMap that only stores paths, without executing router.push
         const statusMap = {
-          'LIVELINESS_CHECK': '/verify',
+          'LIVELINESS_CHECK': `/verify?userId=${res.data.data.userId}`,
           'SET_PASSCODE': '/create-password',
           'WEMA_OTP_SCREEN': '/verify-wema-otp',
         };

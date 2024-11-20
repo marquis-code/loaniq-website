@@ -25,14 +25,14 @@
 
   
       <!-- Information Grid -->
-      <div class="mt-6 grid grid-cols-2 gap-x-6 gap-y-4 text-center text-sm max-w-md">
+      <div class="grid grid-cols-2 gap-x-6 gap-y-4 text-center text-sm max-w-md">
         <div>
           <p class="font-semibold">GENDER</p>
           <p class="text-blue-400">{{ verifiedUser?.gender ?? 'Nil' }}</p>
         </div>
         <div>
           <p class="font-semibold">PHONE NUMBER</p>
-          <p class="text-blue-400">{{ verifiedUser?.phone ?? 'Nil' }}</p>
+          <p class="text-blue-400">{{ verifiedUser?.phoneNumber ?? 'Nil' }}</p>
         </div>
         <div>
           <p class="font-semibold">BVN</p>
