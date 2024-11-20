@@ -42,7 +42,7 @@
   
       <!-- Footer -->
       <div class="flex justify-evenly w-full max-w-md pb-10 mt-10">
-       <button @click="router.push(`/create-password?userId=${route?.query?.userId}`)" class="bg-blue-400 text-white rounded-lg px-6 py-3">Continue</button>
+       <button type="button" @click="handleNavigation" class="bg-blue-400 text-white rounded-lg px-6 py-3">Continue</button>
       </div>
     </section>
   </template>
@@ -52,5 +52,9 @@
   const { verifiedUser } = useLivelinessCheck()
  const route = useRoute()
  const router = useRouter()
+
+ const handleNavigation = () => {
+   router.push(`/create-password?userId=${route?.query?.userId}`)
+ }
 </script>
   
