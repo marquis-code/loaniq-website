@@ -1,6 +1,6 @@
 <template>
     <div class="min-h-screen bg-gradient-to-br from-[#F1F7FD] via-[#E9F2FA] to-[#D7F4D7]">
-      <!-- {{ profileObj }} -->
+      <!-- {{ profileInfoObj }} -->
       <!-- Main Container -->
       <div class="flex flex-col lg:flex-row justify-between space-y-8 lg:space-y-0 lg:space-x-8">
         <!-- Left Column (Account Info) -->
@@ -15,7 +15,7 @@
                 </div>
                 <div class="bg-[#020C24] flex items-center py-2 px-3 rounded-lg mt-4 sm:mt-0 sm:ml-4">
                     <p class="font- text-sm text-white flex items-center gap-x-3">
-                        <svg @click="handleCopy(profileObj?.wallet?.accountNumber)" class="cursor-pointer" width="15" height="15" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg @click="handleCopy(profileInfoObj?.wallet?.accountNumber)" class="cursor-pointer" width="15" height="15" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clip-path="url(#clip0_1_30850)">
                             <path d="M8 0.5H2C1.45 0.5 1 0.95 1 1.5V8.5H2V1.5H8V0.5ZM9.5 2.5H4C3.45 2.5 3 2.95 3 3.5V10.5C3 11.05 3.45 11.5 4 11.5H9.5C10.05 11.5 10.5 11.05 10.5 10.5V3.5C10.5 2.95 10.05 2.5 9.5 2.5ZM9.5 10.5H4V3.5H9.5V10.5Z" fill="#DFDADA"/>
                             </g>
@@ -26,15 +26,15 @@
                             </defs>
                             </svg>
                             
-                        {{ profileObj?.wallet?.accountNumber || 'Nil' }}</p>
+                        {{ profileInfoObj?.wallet?.accountNumber || 'Nil' }}</p>
                   </div>
                </div>
-                <h1 class="text-2xl sm:text-4xl text-[#020C24] flex items-center gap-x-2 font-medium mt-2">{{ formatCurrency(profileObj?.wallet?.balance || 0) || 'Nil' }} <span><svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <h1 class="text-2xl sm:text-4xl text-[#020C24] flex items-center gap-x-2 font-medium mt-2">{{ formatCurrency(profileInfoObj?.wallet?.balance || 0) || 'Nil' }} <span><svg width="13" height="10" viewBox="0 0 13 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.41667 0.625C3.5 0.625 1.00917 2.43917 0 5C1.00917 7.56083 3.5 9.375 6.41667 9.375C9.33333 9.375 11.8242 7.56083 12.8333 5C11.8242 2.43917 9.33333 0.625 6.41667 0.625ZM6.41667 7.91667C4.80667 7.91667 3.5 6.61 3.5 5C3.5 3.39 4.80667 2.08333 6.41667 2.08333C8.02667 2.08333 9.33333 3.39 9.33333 5C9.33333 6.61 8.02667 7.91667 6.41667 7.91667ZM6.41667 3.25C5.44833 3.25 4.66667 4.03167 4.66667 5C4.66667 5.96833 5.44833 6.75 6.41667 6.75C7.385 6.75 8.16667 5.96833 8.16667 5C8.16667 4.03167 7.385 3.25 6.41667 3.25Z" fill="#F2B12E"/>
                     </svg>
                     </span></h1>
-                    <!-- {{ profileObj }} -->
-                <p class=""><span class="text-[#C4C4C4] text-sm">Ledger Balance:</span> <span class="text-[#000000] text-xl">{{  formatCurrency(profileObj?.wallet?.ledgerBalance || 0) || 'Nil' }}</span></p>
+                    <!-- {{ profileInfoObj }} -->
+                <p class=""><span class="text-[#C4C4C4] text-sm">Ledger Balance:</span> <span class="text-[#000000] text-xl">{{  formatCurrency(profileInfoObj?.wallet?.ledgerBalance || 0) || 'Nil' }}</span></p>
               </div>
 
             </div>
@@ -88,7 +88,7 @@
         : 'Nil' 
   }}
 </p>
-                <!-- <p class="text-[#2E3A59] max-w-x text-start w-44 font-medium">Upgrade your account to Tier {{ profileObj?.profile?.tier === 1 ? '2' : profileObj?.profile?.tier === 2 ? '3' : 'Nil'  }}</p> -->
+                <!-- <p class="text-[#2E3A59] max-w-x text-start w-44 font-medium">Upgrade your account to Tier {{ profileInfoObj?.profile?.tier === 1 ? '2' : profileInfoObj?.profile?.tier === 2 ? '3' : 'Nil'  }}</p> -->
               </div>
               <NuxtLink to="/dashboard/accounts" class="bg-[#E4EEFF] block text-center p-2 rounded-full flex items-center gap-x-3">
                 <img src="@/assets/img/complete-profile.png" alt="" class="h-14 w-14" />
@@ -254,11 +254,11 @@
                                 <img src="@/assets/img/mastercard.png" alt="Mastercard" class="w-12 h-8" />
                                 <div>
                                   <p class="font-semibold">Mastercard</p>
-                                  <p class="text-gray-500">{{ profileObj?.wallet?.accountNumber || 'Nil' }}</p>
+                                  <p class="text-gray-500 text-sm">{{ profileInfoObj?.wallet?.accountNumber || 'Nil' }}</p>
                                 </div>
                               </div>
                               <!-- Balance -->
-                              <p class="text-green-500 text-xl font-bold">{{ formatCurrency(profileObj?.wallet?.balance || 0) || 'Nil' }}</p>
+                              <p class="text-green-500 font-bold text-sm">{{ formatCurrency(profileInfoObj?.wallet?.balance || 0) || 'Nil' }}</p>
                             </div>
                           </div>
                         </div>
@@ -373,7 +373,7 @@
   //     type: Boolean,
   //     default: false
   //   },
-  //   profileObj: {
+  //   profileInfoObj: {
   //     type: Object,
   //     default: () => {}
   //   }
@@ -385,12 +385,12 @@
 
 
 //   const formattedWalletBalance = computed(() => {
-//   const balance = profileObj?.value?.wallet?.balance || 0;  
+//   const balance = profileInfoObj?.value?.wallet?.balance || 0;  
 //   return new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(balance);
 // });
 
 // const formattedLedgerBalance = computed(() => {
-//   const balance = profileObj?.value?.wallet?.ledgerBalance || 0;  
+//   const balance = profileInfoObj?.value?.wallet?.ledgerBalance || 0;  
 //   return new Intl.NumberFormat('en-NG', { style: 'currency', currency: 'NGN' }).format(balance);
 // });
 

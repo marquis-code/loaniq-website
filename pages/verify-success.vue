@@ -42,7 +42,7 @@
   
       <!-- Footer -->
       <div class="flex justify-evenly w-full max-w-md pb-10 mt-10">
-       <NuxtLink class="bg-blue-400 text-white rounded-lg px-6 py-3" :to="`/create-password?userId=${route?.query?.userId}`">Continue</NuxtLink>
+       <button @click="router.push(`/create-password?userId=${route?.query?.userId}`)" class="bg-blue-400 text-white rounded-lg px-6 py-3">Continue</button>
       </div>
     </section>
   </template>
@@ -51,5 +51,6 @@
   import { useLivelinessCheck } from '@/composables/auth/liveliness_check'
   const { verifiedUser } = useLivelinessCheck()
  const route = useRoute()
+ const router = useRouter()
 </script>
   
