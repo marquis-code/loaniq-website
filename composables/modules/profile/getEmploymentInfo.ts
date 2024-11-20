@@ -2,13 +2,13 @@ import { profile_api } from '@/api_factory/modules/profile'
 import { useCustomToast } from "@/composables/core/useCustomToast";
 const { showToast } = useCustomToast();
 
-export const useFetchNextOfKinProfile = () => {
+export const useFetchEmploymentInfo = () => {
     const loading = ref(false);
     const profileObj = ref({} as any);
-    const { $_get_next_of_kin_profile } = profile_api
-    const getNextOfKinProfileObj = async () => {
+    const { $_get_employmant_info  } = profile_api
+    const getEmploymentObj = async () => {
         loading.value = true;
-        const res = await $_get_next_of_kin_profile() as any;
+        const res = await $_get_employmant_info() as any;
         console.log(res, 'res here')
         if (res.type !== 'ERROR') {
             profileObj.value = res?.data?.data || {}
@@ -23,12 +23,13 @@ export const useFetchNextOfKinProfile = () => {
         loading.value = false
     };
 
+
     onMounted(() => {
-        getNextOfKinProfileObj()
+        getEmploymentObj()
     })
 
     return {
-        getNextOfKinProfileObj,
+        getEmploymentObj,
         loading,
         profileObj
     };

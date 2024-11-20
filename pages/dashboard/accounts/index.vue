@@ -11,7 +11,7 @@ layout: 'dashboard',
 </script> -->
 
 <template>
-  <main class="min-h-screen p-6 bg-gradient-to-br from-[#F1F7FD] via-[#E9F2FA] to-[#D7F4D7] ">
+  <main class="min-h-screen lg:p-6 bg-gradient-to-br from-[#F1F7FD] via-[#E9F2FA] to-[#D7F4D7] ">
   <div class="max-w-4xl">
     <div class="bg-white p-6 rounded-lg shadow-md w-full ">
       <div class="flex items-center space-x-4">

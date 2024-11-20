@@ -15,34 +15,42 @@ const payloadObj = ref({
 export const useUploadNextOfKinProfile = () => {
   const loading = ref(false);
   const { $_upload_next_of_kin_profile } = profile_api;
-  const uploadNextOfKinProfile = async (id: any) => {
+  const uploadNextOfKinProfile = async () => {
     loading.value = true;
-    try {
-      const res = (await $_upload_next_of_kin_profile(payloadObj)) as any;
+    const res = (await $_upload_next_of_kin_profile(payloadObj.value)) as any;
 
-      if (res.type !== "ERROR") {
-        showToast({
-          title: "Success",
-          message: "Next Of Kin was uploaded successfully!",
-          toastType: "success",
-          duration: 3000,
-        });
-      }
-    } catch (error: any) {
+    if (res.type !== "ERROR") {
+      showToast({
+        title: "Success",
+        message: "Next Of Kin was uploaded successfully!",
+        toastType: "success",
+        duration: 3000,
+      });
+    } else {
       showToast({
         title: "Error",
-        message: error.response.data.message,
+        message: res?.data?.errror || 'Somehting went wrong',
         toastType: "error",
         duration: 3000,
       });
-    } finally {
-      loading.value = false;
     }
+    loading.value = false
   };
+
+  const setPayload = (data: any) => {
+   payloadObj.value.fullName = data.fullName,
+    payloadObj.value.relationship = data.relationship,
+    payloadObj.value.gender = data.gender,
+    payloadObj.value.email = data.email,
+    payloadObj.value.phoneNumber = data.phoneNumber,
+    payloadObj.value.residentialAddress = data.residentialAddress,
+    payloadObj.value.stateOfResidence = data.stateOfResidence
+  }
 
   return {
     uploadNextOfKinProfile,
     loading,
-    payloadObj
+    payloadObj,
+    setPayload
   };
 };

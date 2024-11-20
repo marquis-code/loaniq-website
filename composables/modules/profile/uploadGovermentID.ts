@@ -13,34 +13,40 @@ const payloadObj = ref({
 export const useUploadGovernmentID = () => {
   const loading = ref(false);
   const { $_upload_government_id } = profile_api;
-  const uploadGovernmentID = async (id: any) => {
+  const uploadGovernmentID = async () => {
     loading.value = true;
-    try {
-      const res = (await $_upload_government_id(payloadObj)) as any;
+    const res = (await $_upload_government_id(payloadObj.value)) as any;
 
-      if (res.type !== "ERROR") {
-        showToast({
-          title: "Success",
-          message: "Government ID was uploaded successfully!",
-          toastType: "success",
-          duration: 3000,
-        });
-      }
-    } catch (error: any) {
+    if (res.type !== "ERROR") {
+      showToast({
+        title: "Success",
+        message: "Government ID was uploaded successfully!",
+        toastType: "success",
+        duration: 3000,
+      });
+    } else {
       showToast({
         title: "Error",
-        message: error.response.data.message,
+        message: res.data.message || 'Something went wrong',
         toastType: "error",
         duration: 3000,
       });
-    } finally {
-      loading.value = false;
     }
+    loading.value = false;
   };
+
+  const setPayload = (data: any) => {
+    payloadObj.value.idType = data.idType,
+    payloadObj.value.idNumber = data.idNumber,
+    payloadObj.value.issueDate = data.issueDate,
+    payloadObj.value.documentBackCopy = data.documentBackCopy,
+    payloadObj.value.documentFrontCopy = data.documentFrontCopy
+  }
 
   return {
     uploadGovernmentID,
     loading,
     payloadObj,
+    setPayload
   };
 };

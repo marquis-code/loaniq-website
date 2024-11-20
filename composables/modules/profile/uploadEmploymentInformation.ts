@@ -16,10 +16,10 @@ const payloadObj = ref({
 export const useUploadEmploymentInfo = () => {
   const loading = ref(false);
   const { $_upload_employment_info } = profile_api;
-  const uploadEmploymentInfo = async (id: any) => {
+  const uploadEmploymentInfo = async () => {
     loading.value = true;
     try {
-      const res = (await $_upload_employment_info(payloadObj)) as any;
+      const res = (await $_upload_employment_info(payloadObj.value)) as any;
 
       if (res.type !== "ERROR") {
         showToast({
@@ -40,11 +40,23 @@ export const useUploadEmploymentInfo = () => {
       loading.value = false;
     }
   };
+
+  const setPayload = (data: any) => {
+    payloadObj.value.organizationType = data.organizationType,
+    payloadObj.value.organizationName = data.organizationName,
+    payloadObj.value.ippisNumber = data.ippisNumber,
+    payloadObj.value.jobTitle = data.jobTitle,
+    payloadObj.value.officeAddress = data.officeAddress,
+    payloadObj.value.stateOfOffice = data.stateOfOffice,
+    payloadObj.value.documentBackCopy = data.documentBackCopy,
+    payloadObj.value.documentFrontCopy = data.documentFrontCopy
+  }
   
 
   return {
     uploadEmploymentInfo,
     loading,
     payloadObj,
+    setPayload
   };
 };

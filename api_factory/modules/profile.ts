@@ -17,6 +17,14 @@ export const profile_api = {
 		const url = '/user/upload-governmentid'
 		return GATEWAY_ENDPOINT.post(url, payload)
 	},
+	$_get_goverment_id: () => {
+		const url = '/user/governmentid'
+		return GATEWAY_ENDPOINT.get(url)
+	},
+	$_get_employmant_info: () => {
+		const url = '/user/employment-information'
+		return GATEWAY_ENDPOINT.get(url)
+	},
     $_upload_employment_info: (payload: any) => {
 		const url = '/user/employment-information'
 		return GATEWAY_ENDPOINT.post(url, payload)
