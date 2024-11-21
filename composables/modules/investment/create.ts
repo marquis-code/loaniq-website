@@ -7,6 +7,7 @@ const payload = ref({
   name: "",
   productId: "",
   principal: '',
+  tenor: 0,
   automatedFrequency: "",
   interestPaymentSchedule: ""
 });
@@ -45,7 +46,8 @@ export const useCreateInvestment = () => {
     payload.value.name = data.name,
     payload.value.productId = data.productId,
     payload.value.principal = data.principal
-    payload.value.automatedFrequency = data.automatedFrequency
+    payload.value.automatedFrequency = data.automatedFrequency,
+    payload.value.tenor = data.tenor,
     payload.value.interestPaymentSchedule = data.interestPaymentSchedule
   }
 

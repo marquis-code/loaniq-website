@@ -57,25 +57,6 @@ const { products, loading } = useFetchInvestmentProducts();
 const { investments, loading: processing } = useFetchActiveInvestments()
 const { investments: completedInvestments, loading: fetching } = useFetchCompletedInvestments()
 
-// // Mock data for different investment types
-// const myInvestments = ref([
-//   { image: 'image1.jpg', status: 'Active', title: 'Discount Note', returnRate: '9.4% Annual return', amount: '₦10,000,000.00', duration: '12 Month(s)' },
-//   { image: 'image2.jpg', status: 'Active', title: 'Target Savings Note', returnRate: '9.4% Annual return', amount: '₦10,000,000.00', duration: '12 Month(s)' },
-//   { image: 'image3.jpg', status: 'Active', title: 'Flexi Grow Savings Note', returnRate: '9.4% Annual return', amount: '₦10,000,000.00', duration: '12 Month(s)' },
-// ]);
-
-// const exploreInvestments = ref([
-//   { image: 'image1.jpg', status: 'Active', title: 'Discount Note', returnRate: '9.4% Annual return', amount: '₦10,000,000.00', duration: '12 Month(s)' },
-//   { image: 'image2.jpg', status: 'Active', title: 'Target Savings Note', returnRate: '9.4% Annual return', amount: '₦10,000,000.00', duration: '12 Month(s)' },
-//   { image: 'image3.jpg', status: 'Active', title: 'Flexi Grow Savings Note', returnRate: '9.4% Annual return', amount: '₦10,000,000.00', duration: '12 Month(s)' },
-// ]);
-
-// const completedInvestments = ref([
-//   { image: 'image1.jpg', status: 'Completed', title: 'Discount Note', returnRate: '9.4% Annual return', amount: '₦10,000,000.00', duration: '12 Month(s)' },
-//   { image: 'image2.jpg', status: 'Completed', title: 'Target Savings Note', returnRate: '9.4% Annual return', amount: '₦10,000,000.00', duration: '12 Month(s)' },
-//   { image: 'image3.jpg', status: 'Completed', title: 'Flexi Grow Savings Note', returnRate: '9.4% Annual return', amount: '₦10,000,000.00', duration: '12 Month(s)' },
-// ]);
-
 definePageMeta({
   layout: 'dashboard',
 });

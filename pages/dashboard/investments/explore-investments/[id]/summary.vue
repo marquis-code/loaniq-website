@@ -41,9 +41,9 @@
           </div>
           <div>
             <p class="font-medium text-[#687181] text-sm">
-              Total payout balance
+              Total Tenor (months)
             </p>
-            <p class="text-base font-semibold text-gray-900">₦5,045,300.25</p>
+            <p class="text-base font-semibold text-gray-900">{{ payload.tenor }} (months)</p>
           </div>
         </div>
       </div>
@@ -102,9 +102,9 @@ const { payload } = useCreateInvestment()
   const roi = ref({})
 
 const computedRoi = computed(() => {
-  const principal = payload.value.principal;
-  const annual_rate = product?.value?.interestRate / 100 || 0;
-  const days = product?.value?.tenor || 0;
+  const principal =  Number(payload.value.principal) || 0;
+  const annual_rate = Number(product?.value?.interestRate) / 100 || 0; // Ensure `annual_rate` is a number
+  const days = Number(payload?.value?.tenor) || 0; // Ensure `days` is a number
   const roi = calculate_roi(Number(principal), annual_rate, days);
   return formatCurrency(roi)
 })

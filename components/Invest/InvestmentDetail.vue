@@ -76,6 +76,33 @@
             </select>
           </div>
 
+          <!-- <div>
+            <label class="text-[#7D8799] text-sm">Interest Tenor</label>
+            <select v-model="payload.interestPaymentSchedule"
+              class="w-full outline-none border-none p-2 py-3.5 text-sm border bg-[#F4F5F7] border-gray-300 rounded">
+              <option value="">Please select an Interest payment option</option>
+              <option :value="item" v-for="(item, idx) in product?.interestPaymentSchedule" :key="idx">{{ item }}
+              </option>
+            </select>
+          </div> -->
+          <div>
+            <!-- <span class="text-red-500">Tenor(days) {{ payload.tenor }}</span><br />
+            <span class="text-red-500">Principal {{ payload.principal }}</span><br />
+            <span class="text-red-500">Rate {{ product?.interestRate }}</span> -->
+            <label class="text-[#7D8799] text-sm">Investment Tenor (months) {{ payload?.tenor }}</label>
+            <div class="flex items-center space-x-4 mt-3">
+               <input
+                type="range"
+                v-model="payload.tenor"
+                class="w-full appearance-none bg-[#F4F5F7] rounded-lg h-2 cursor-pointer"
+                :min="minTenor"
+                :max="maxTenor"
+                :disabled="!isValidRange"
+              />
+            </div>
+          </div>
+
+
           <!-- Amount and ROI Section -->
           <div class="flex flex-col  justify-between gap-y-4 border-b pb-4 border-gray-100">
             <h3 class="font-semibold text-[#7D8799]">Your Amount (₦)</h3>
@@ -164,9 +191,9 @@ const formatToNaira = (value) => {
 
 // Calculate and set ROI
 function calculateAndSetROI() {
-  const principal = Number(amount.value) || 0; // Ensure `principal` is a number
+  const principal = Number(payload.value.principal) || 0; // Ensure `principal` is a number
   const annual_rate = Number(product?.value?.interestRate) / 100 || 0; // Ensure `annual_rate` is a number
-  const days = Number(product?.value?.tenor) || 0; // Ensure `days` is a number
+  const days = Number(payload?.value?.tenor) || 0; // Ensure `days` is a number
   const months = days / 30; // Convert tenor to months
   roi.value = calculate_roi(principal, annual_rate, months);
 }
@@ -237,6 +264,28 @@ watch(
   },
   { immediate: true } // Trigger the watcher immediately
 );
+
+
+// Watch for changes in product and initialize amount and ROI
+watch(
+  () => payload?.value.tenor,
+  (newProduct) => {
+    calculateAndSetROI();
+  },
+  { immediate: true } // Trigger the watcher immediately
+);
+
+// Computed properties for min and max tenor
+const minTenor = computed(() => Number(product.value.minTenor) || 1); // Default to 1 if invalid
+const maxTenor = computed(() => Number(product.value.maxTenor) > 0 ? Number(product.value.maxTenor) : 10); // Default to 10 if invalid
+
+// Check if range is valid
+const isValidRange = computed(() => minTenor.value < maxTenor.value);
+
+// Initialize payload.tenor with a valid value
+onMounted(() => {
+  payload.value.tenor = minTenor.value;
+});
 
 // Watch for changes in the input field to update the raw amount and recalculate ROI
 watch(
@@ -310,9 +359,6 @@ watch(
   }
 );
 
-
-
-
 onMounted(() => {
   if (product?.value?.minInvestment) {
     amount.value = product?.value?.minInvestment; // Set initial raw amount
@@ -334,5 +380,30 @@ input[type="number"].no-caret::-webkit-outer-spin-button {
 }
 input[type="number"].no-caret {
   -moz-appearance: textfield; /* Firefox */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #7D8799;
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #7D8799;
+  cursor: pointer;
+}
+
+input[type="range"]::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #7D8799;
+  cursor: pointer;
 }
 </style>
