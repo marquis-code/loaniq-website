@@ -3,12 +3,12 @@
       <h2 class="text- font-medium mb-4">Personal information</h2>
       <form v-if="!loading && profileInfoObj?.profile" @submit.prevent="saveChanges" class="space-y-6">
         <div class="grid lg:grid-cols-2 gap-4">
-          <div class="flex justify-between items-center bg-blue-100 py-2 px-3 rounded-t-md">
+          <!-- <div class="flex justify-between items-center bg-blue-100 py-2 px-3 rounded-t-md">
               <h3 class="text-gray-700 font-medium text-center">Front Copy</h3>
               <input type="file" accept="image/*" @change="onFileChange" class="hidden"
                 ref="frontInput" />
-            </div>
-          <div class="flex items-center justify-center h-40 bg-white rounded-b-md">
+            </div> -->
+          <!-- <div class="flex items-center justify-center h-40 bg-white rounded-b-md">
               <template v-if="uploading">
                 <span class="loader"></span>
               </template>
@@ -27,14 +27,14 @@
                   </svg>
                 </button>
               </template>
-            </div>
+            </div> -->
           <div v-if="profileInfoObj.profile">
             <label class="block text-gray-600 text-sm pb-2">First And Last Name</label>
-            <input v-model="profileInfoObj.profile.firstName"  class="w-full border border-gray-300 rounded-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3" placeholder="Enter your full name" />
+            <input readonly v-model="profileInfoObj.profile.firstName"  class="w-full border border-gray-300 rounded-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3" placeholder="Enter your full name" />
           </div>
           <div>
             <label class="block text-gray-600 text-sm pb-2">Gender</label>
-            <select v-model="profileInfoObj.profile.gender"  class="w-full border border-gray-300 rounded-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3">
+            <select readonly v-model="profileInfoObj.profile.gender"  class="w-full border border-gray-300 rounded-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3">
               <option selected value="Male">Male</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
@@ -42,11 +42,11 @@
           </div>
           <div>
             <label class="block text-gray-600 text-sm pb-2">Date Of Birth</label>
-            <input type="date" v-model="profileInfoObj.profile.dateOfBirth"  class="w-full border border-gray-300 rounded-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3" />
+            <input readonly type="date" v-model="profileInfoObj.profile.dateOfBirth"  class="w-full border border-gray-300 rounded-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3" />
           </div>
           <div>
             <label class="block text-gray-600 text-sm pb-2">Marital Status</label>
-            <select v-model="profileInfoObj.profile.maritalStatus"  class="w-full border border-gray-300 rounded-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3">
+            <select readonly v-model="profileInfoObj.profile.maritalStatus"  class="w-full border border-gray-300 rounded-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3">
               <option selected value="Single">Single</option>
               <option value="Married">Married</option>
               <option value="Divorced">Divorced</option>
@@ -54,7 +54,7 @@
           </div>
           <div>
             <label class="block text-gray-600 text-sm pb-2">BVN</label>
-            <input v-model="profileInfoObj.profile.bvn"  class="w-full border border-gray-300 rounded-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3" placeholder="Enter your BVN" />
+            <input readonly v-model="profileInfoObj.profile.bvn"  class="w-full border border-gray-300 rounded-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3" placeholder="Enter your BVN" />
           </div>
         </div>
         
@@ -62,22 +62,22 @@
         <div class="grid lg:grid-cols-2 gap-4 mt-4">
           <div>
             <label class="block text-gray-600 text-sm pb-2">Email Address</label>
-            <input type="email" v-model="profileInfoObj.profile.email"  class="w-full border border-gray-300 rounded-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3" placeholder="Enter your email" />
+            <input readonly type="email" v-model="profileInfoObj.profile.email"  class="w-full border border-gray-300 rounded-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3" placeholder="Enter your email" />
           </div>
           <div>
             <label class="block text-gray-600 text-sm pb-2">Phone Number</label>
             <div class="flex items-center">
               <span class="px-3 py-4 border rounded-l-md border-[0.5px] bg-gray-100 text-gray-600 text-sm pb-2">+234</span>
-              <input v-model="profileInfoObj.profile.phoneNumber" class="w-full border border-gray-300 rounded-r-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3" placeholder="Enter your phone number" />
+              <input readonly v-model="profileInfoObj.profile.phoneNumber" class="w-full border border-gray-300 rounded-r-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3" placeholder="Enter your phone number" />
             </div>
           </div>
           <div class="col-span-2">
             <label class="block text-gray-600 text-sm pb-2">Residential Address</label>
-            <input v-model="profileInfoObj.profile.residentialAddress"  class="w-full border border-gray-300 rounded-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3" placeholder="Enter your residential address" />
+            <input readonly v-model="profileInfoObj.profile.residentialAddress"  class="w-full border border-gray-300 rounded-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3" placeholder="Enter your residential address" />
           </div>
           <div class="w-full">
             <label class="block text-gray-600 text-sm pb-2">State Of Residence</label>
-            <select v-model="profileInfoObj.profile.stateOfResidence"  class="w-full border border-gray-300 rounded-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3">
+            <select readonly v-model="profileInfoObj.profile.stateOfResidence"  class="w-full border border-gray-300 rounded-md py-3.5 bg-gray-50 text-sm border-none outline-none px-3">
               <option value="Lagos">Lagos</option>
               <option value="Abuja">Abuja</option>
               <option value="Kano">Kano</option>
