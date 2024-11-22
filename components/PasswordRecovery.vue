@@ -1,5 +1,6 @@
 <template>
-    <div class="flex flex-col items-center justify-center w-full h-screen">
+<main>
+  <div class="flex flex-col items-center justify-center w-full h-screen">
       <div class="lg:w-[500px] p-4  flex flex-col justify-start items-start">
        <div class="flex justify-start items-start">
         <img src="@/assets/icons/password-recovery.svg" alt="" class="mx-auto mb-4 w-24" />
@@ -25,6 +26,12 @@
           </div>
       </div>
     </div>
+    <CoreFullScreenLoader
+      :visible="loading"
+      text="Authenticating..."
+      logo="/path-to-your-logo.png"
+    />
+</main>
   </template>
   
   <script setup lang="ts">

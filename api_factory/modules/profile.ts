@@ -36,7 +36,7 @@ export const profile_api = {
     $_reset_transaction_pin: (payload: any) => {
 		const url = '/user/reset-pin'
 		return GATEWAY_ENDPOINT.post(url, payload)
-	},
+	}
 }
 
 

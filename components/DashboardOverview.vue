@@ -1,4 +1,5 @@
 <template>
+  <main>
     <div class="min-h-screen bg-gradient-to-br from-[#F1F7FD] via-[#E9F2FA] to-[#D7F4D7]">
       <!-- {{ profileInfoObj }} -->
       <!-- Main Container -->
@@ -360,6 +361,12 @@
         </div>
       </div>
     </div>
+    <CoreFullScreenLoader
+      :visible="loading"
+      text="Fetching account data"
+      logo="/path-to-your-logo.png"
+    />
+  </main>
   </template>
   
   <script setup lang="ts">

@@ -4,7 +4,7 @@ import { useUser } from "@/composables/auth/user";
 const isIdle = ref(false)
 const isModalVisible = ref(false)
 const countdown = ref(10) // Countdown timer
-const idleTimeout = 60 * 1000 // 1 minute in milliseconds
+const idleTimeout = 60 * 5000 // 1 minute in milliseconds
 let idleTimer: number | undefined = undefined
 let countdownInterval: number | undefined = undefined
 
@@ -39,7 +39,7 @@ const { logOut } = useUser();
         clearInterval(countdownInterval)
         logoutUser()
       }
-    }, 1000)
+    }, 5000)
   }
 
   function stopCountdown() {
@@ -85,6 +85,6 @@ const { logOut } = useUser();
     isModalVisible,
     countdown,
     stopCountdown,
-    // logoutUser,
+    logoutUser,
   }
 }

@@ -1,4 +1,5 @@
 <template>
+ <main>
   <div class="flex flex-col items-center justify-center w-full h-screen">
     <div class="lg:w-[500px] p-4  flex flex-col justify-start items-start">
       <h2 class="text-3xl font-medium text-[#323740] text-center mb-2">Secure your account</h2>
@@ -157,6 +158,12 @@
       </form>
     </div>
   </div>
+  <CoreFullScreenLoader
+      :visible="loading"
+      text="Authenticating..."
+      logo="/path-to-your-logo.png"
+    />
+ </main>
 </template>
 
 <script setup lang="ts">

@@ -70,7 +70,12 @@
       </div>
     </div>
 
-    <div
+    <CoreFullScreenLoader
+      :visible="livelinessLoading || processing"
+      :text="processing ? 'please wait while we upload your image...' : 'Please wait while we perform the liveliness check...'"
+      logo="/path-to-your-logo.png"
+    />
+    <!-- <div
       v-if="livelinessLoading || processing"
       class="loader-overlay fixed inset-0 bg-black bg-opacity-75 flex flex-col items-center justify-center z-50 text-white space-y-4"
     >
@@ -95,8 +100,13 @@
         {{ livelinessLoading ? 'Please wait while we perform the liveliness check...' : '' }}
         
       </p>
-    </div>
+    </div> -->
   </section>
+  <CoreFullScreenLoader
+      :visible="loading"
+      text="Please wait...."
+      logo="/path-to-your-logo.png"
+    />
 </template>
 
 <script lang="ts" setup>
@@ -119,6 +129,7 @@ const webcamButtonLabel = ref("ENABLE WEBCAM");
 const snapshot = ref<File | null>(null);
 const snapshotURL = ref<string | null>(null);
 const uploading = ref(false); // State to track upload status
+const loading = ref(true); // Add a loading state
 
 const video = ref<HTMLVideoElement | null>(null);
 const canvas = ref<HTMLCanvasElement | null>(null);
@@ -126,22 +137,59 @@ const webcamRunning = ref(false);
 let faceLandmarker: FaceLandmarker;
 let runningMode: "IMAGE" | "VIDEO" = "IMAGE";
 
+// const createFaceLandmarker = async () => {
+//   const filesetResolver = await FilesetResolver.forVisionTasks(
+//     "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/wasm"
+//   );
+//   faceLandmarker = await FaceLandmarker.createFromOptions(filesetResolver, {
+//     baseOptions: {
+//       modelAssetPath: `https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task`,
+//       delegate: "GPU",
+//     },
+//     outputFaceBlendshapes: true,
+//     runningMode,
+//     numFaces: 1,
+//   });
+//   demosSection.value?.classList.remove("invisible");
+//   console.log("FaceLandmarker model loaded:", faceLandmarker !== undefined);
+// };
+
+
 const createFaceLandmarker = async () => {
-  const filesetResolver = await FilesetResolver.forVisionTasks(
-    "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/wasm"
-  );
-  faceLandmarker = await FaceLandmarker.createFromOptions(filesetResolver, {
-    baseOptions: {
-      modelAssetPath: `https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task`,
-      delegate: "GPU",
-    },
-    outputFaceBlendshapes: true,
-    runningMode,
-    numFaces: 1,
-  });
-  demosSection.value?.classList.remove("invisible");
-  console.log("FaceLandmarker model loaded:", faceLandmarker !== undefined);
+  try {
+    // Start loading
+    loading.value = true;
+
+    // Load the FilesetResolver
+    const filesetResolver = await FilesetResolver.forVisionTasks(
+      "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/wasm"
+    );
+
+    // Create the FaceLandmarker instance
+    faceLandmarker = await FaceLandmarker.createFromOptions(filesetResolver, {
+      baseOptions: {
+        modelAssetPath: `https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task`,
+        delegate: "GPU",
+      },
+      outputFaceBlendshapes: true,
+      runningMode,
+      numFaces: 1,
+    });
+
+    // FaceLandmarker model loaded successfully
+    demosSection.value?.classList.remove("invisible");
+    console.log("FaceLandmarker model loaded:", faceLandmarker !== undefined);
+
+  } catch (error) {
+    // Handle any errors during loading
+    console.error("Error loading FaceLandmarker model:", error);
+  } finally {
+    // Stop loading
+    loading.value = false;
+  }
 };
+
+
 
 const enableCam = async () => {
   if (!faceLandmarker) return;

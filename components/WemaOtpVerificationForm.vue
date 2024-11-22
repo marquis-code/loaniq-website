@@ -1,5 +1,6 @@
 <template>
-    <div class="flex items-center justify-center w-full h-screen bg-white p-4 overflow-hidden">
+<main>
+  <div class="flex items-center justify-center w-full h-screen bg-white p-4 overflow-hidden">
       <div class="max-w-md w-full bg-white p-8 text-center space-y-6 overflow-y-auto">
         <div class="flex justify-center mb-4">
           <img
@@ -67,6 +68,12 @@
         </div>
       </div>
     </div>
+    <CoreFullScreenLoader
+      :visible="verifying"
+      text="Authenticating..."
+      logo="/path-to-your-logo.png"
+    />
+</main>
   </template>
   
   <script setup lang="ts">

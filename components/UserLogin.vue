@@ -104,6 +104,11 @@
       </div>
     </div>
   </div>
+  <CoreFullScreenLoader
+      :visible="loading"
+      text="Authenticating..."
+      logo="/path-to-your-logo.png"
+    />
 </main>
   </template>
   
