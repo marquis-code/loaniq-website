@@ -23,7 +23,7 @@
           <button @click="goBack" class="text-gray-500">
             <i class="fa fa-arrow-left"></i>
           </button>
-          <h2 class="text-lg font-medium">Add bank account</h2>
+          <h2 class="text-lg font-medium">Add bank account sss</h2>
         </div>
   
         <form @submit.prevent="submitForm" class="space-y-4">

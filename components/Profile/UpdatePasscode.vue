@@ -4,7 +4,7 @@
       <form @submit.prevent="savePasscode" class="space-y-6">
         <!-- Current Passcode -->
         <div>
-          <label for="currentPasscode" class="block text-gray-600 mb-2 text-sm">Current Passcode</label>
+          <label for="currentPasscode" class="block text-gray-600 mb-1 text-sm">Current Passcode</label>
           <div class="relative">
             <input
               :type="showCurrentPasscode ? 'text' : 'password'"
@@ -28,7 +28,7 @@
   
         <!-- New Passcode -->
         <div>
-          <label for="newPasscode" class="block text-gray-600 mb-2 text-sm">New Passcode</label>
+          <label for="newPasscode" class="block text-gray-600 mb-1 text-sm">New Passcode</label>
           <div class="relative">
             <input
               :type="showNewPasscode ? 'text' : 'password'"
@@ -76,7 +76,7 @@
   
         <!-- Repeat New Passcode -->
         <div>
-          <label for="repeatNewPasscode" class="block text-gray-600 mb-2 text-sm">Repeat New Passcode</label>
+          <label for="repeatNewPasscode" class="block text-gray-600 mb-1 text-sm">Repeat New Passcode</label>
           <div class="relative">
             <input
               :type="showRepeatPasscode ? 'text' : 'password'"
@@ -99,7 +99,7 @@
         </div>
   
         <!-- Save Changes Button -->
-        <button :disabled="loading" type="submit" class="mt-4 disabled:cursor-not-allowed disabled:opacity-25 px-4 py-2 bg-[#2F6D67] text-white rounded-md">
+        <button :disabled="loading || !isPasscodeValid || !isRepeatPasscodeValid" type="submit" class="mt-4 disabled:cursor-not-allowed disabled:opacity-25 px-4 py-2 bg-[#2F6D67] text-white rounded-md">
            {{ loading ? 'processing...' : 'Save changes' }}
         </button>
       </form>
@@ -117,6 +117,13 @@
   const showCurrentPasscode = ref(false)
   const showNewPasscode = ref(false)
   const showRepeatPasscode = ref(false)
+
+  const isRepeatPasscodeValid = computed(() => newPasscode.value === repeatNewPasscode.value);
+
+  // Computed property to check if all criteria are met
+const isPasscodeValid = computed(() => {
+  return isLengthValid.value && hasUppercase.value && hasNumberAndLetter.value;
+});
   
   // Toggle visibility of the passcodes
   const toggleVisibility = (field: 'current' | 'new' | 'repeat') => {
@@ -142,9 +149,6 @@
    };
     setPayload(payloadObj)
     updatePasscode()
-    console.log('Current Passcode:', currentPasscode.value)
-    console.log('New Passcode:', newPasscode.value)
-    console.log('Repeat New Passcode:', repeatNewPasscode.value)
     // Add logic to save the new passcode
   }
   </script>

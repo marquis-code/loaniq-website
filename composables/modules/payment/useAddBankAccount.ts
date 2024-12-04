@@ -6,6 +6,7 @@ const payload = ref({
   accountName: "",
   bankName: "",
   bankCode: "",
+  passcode: ""
 });
 export const useAddBankAccount = () => {
   const loading = ref(false);
@@ -34,9 +35,18 @@ export const useAddBankAccount = () => {
     }
   };
 
+  const setPayload = (data: any) => {
+    payload.value.accountNumber = data.accountNumber
+    payload.value.accountName = data.accountName
+    payload.value.bankName = data.bankName
+    payload.value.bankCode = data.bankCode
+    payload.value.passcode = data.password
+  }
+
   return {
     addBankAccount,
     loading,
-    payload
+    payload,
+    setPayload
   };
 };
