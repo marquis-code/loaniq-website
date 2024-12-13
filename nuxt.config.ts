@@ -1,6 +1,7 @@
 export default {
   ssr: false,
   target: "static",
+  plugins: ["~/plugins/aos.client.ts"],
 
   app: {
     head: {
@@ -34,7 +35,6 @@ export default {
     // Axios options here
     timeout: 10000, // Example: set timeout to 10 seconds
   },
-  plugins: [],
 
   compatibilityDate: "2024-10-30",
 };

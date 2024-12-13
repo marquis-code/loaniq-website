@@ -1,13 +1,13 @@
 <template>
-    <section class="container mx-auto px-4 py-6 md:py-24 flex flex-col md:flex-row items-center gap-12">
-      <div class="md:w-1/2 order-2 lg:order-1">
-        <h2 class="text-2xl md:text-5xl font-bold mb-6 leading-tight">
+    <section data-aos="fade-up" class="container mx-auto px-4 py-6 md:py-24 flex flex-col md:flex-row items-center gap-12">
+      <div data-aos="fade-up"  class="md:w-1/2 order-2 lg:order-1">
+        <h2 data-aos="fade-up" class="text-2xl md:text-5xl font-bold mb-6 leading-tight">
           Earn rewards as you spend
         </h2>
-        <p class="text-gray-600 text-lg mb-8">
+        <p data-aos="fade-up" class="text-gray-600 text-lg mb-8">
           We are building a digital community that will empower you to take control of your money and make it work for you.
         </p>
-        <button class="text-emerald-600 font-medium flex items-center gap-2 hover:gap-3 transition-all">
+        <button  data-aos="fade-up" class="text-emerald-600 font-medium flex items-center gap-2 hover:gap-3 transition-all">
           Learn More 
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -15,8 +15,8 @@
         </button>
       </div>
   
-      <div class="md:w-1/2 order-1 lg:order-2">
-          <img src="@/assets/img/reward.png" />
+      <div data-aos="fade-up" class="md:w-1/2 order-1 lg:order-2">
+          <img data-aos="fade-up" src="@/assets/img/reward.png" />
       </div>
     </section>
   </template>

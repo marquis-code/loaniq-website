@@ -32,13 +32,13 @@
         <div class="grid lg:grid-cols-2 gap-12 items-center">
           <!-- Left Column -->
           <div class="relative z-10">
-            <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-center lg:text-left leading-tight mb-6">
+            <h1 data-aos="fade-up" class="text-4xl lg:text-5xl xl:text-6xl font-bold text-center lg:text-left leading-tight mb-6">
               Africa in one financial platform
             </h1>
-            <p class="text-gray-600 text-lg mb-8 text-center lg:text-left max-w-xl">
+            <p data-aos="fade-up" class="text-gray-600 text-lg mb-8 text-center lg:text-left max-w-xl">
               Africash is a digital ecosystem designed to make Africa one. Its goal is to bring the dream of financial inclusion to all people across the continent.
             </p>
-           <div class="flex justify-center items-center lg:flex-start lg:items-start">
+           <div data-aos="fade-up" class="flex justify-center items-center lg:justify-start lg:flex-start lg:items-start">
             <button class="flex items-center px-8 py-4 bg-emerald-600 text-white rounded-full hover:bg-emerald-700 transition-colors shadow-lg">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,7 @@
           </div>
   
           <!-- Right Column -->
-          <div class="relative">
+          <div data-aos="fade-up" class="relative">
             <img
               src="@/assets/img/hero.png"
               alt="World Map"

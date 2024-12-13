@@ -1,9 +1,9 @@
 <template>
     <section class="bg-gradient-to-r from-emerald-600 to-emerald-500">
       <div class="container mx-auto  flex flex-col md:flex-row items-center gap-12">
-        <div class="md:w-1/2 text-white px-4 py-16 md:py-24 order-2 lg:order-1">
-          <h2 class="text-4xl md:text-5xl font-bold mb-8">Perks of using us?</h2>
-          <ul class="space-y-6">
+        <div data-aos="fade-up" class="md:w-1/2 text-white px-4 py-16 md:py-24 order-2 lg:order-1">
+          <h2 data-aos="fade-up" class="text-4xl md:text-5xl font-bold mb-8">Perks of using us?</h2>
+          <ul data-aos="fade-up" class="space-y-6">
             <li v-for="(perk, i) in perks" :key="i" class="flex items-center gap-3">
               <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
                 <circle cx="12" cy="12" r="10" class="stroke-white" stroke-width="2"/>
@@ -20,9 +20,9 @@
           </button>
         </div>
   
-        <div class="md:w-1/2 relative order-1 lg:order-2">
+        <div data-aos="fade-up" class="md:w-1/2 relative order-1 lg:order-2">
           <!-- <div class="w-[320px] md:w-[400px] aspect-square rounded-3xl overflow-hidden"> -->
-            <img src="@/assets/img/perk.png" alt="Happy user" class="w-full h-full object-cover" />
+            <img data-aos="fade-up" src="@/assets/img/perk.png" alt="Happy user" class="w-full h-full object-cover" />
           </div>
         <!-- </div> -->
       </div>

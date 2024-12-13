@@ -1,19 +1,19 @@
 <template>
   <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-xl lg:text-3xl font-bold text-center mb-8">
+    <div data-aos="fade-up" class="container mx-auto px-4">
+      <h2 data-aos="fade-up" class="text-xl lg:text-3xl font-bold text-center mb-8">
         Keep up with us by signing up for our newsletter
       </h2>
-      <div class="max-w-xl mx-auto flex gap-4 rounded-3xl p-1 px-1 border">
+      <div data-aos="fade-up" class="max-w-xl mx-auto flex gap-4 rounded-3xl p-1 px-1 border">
         <input type="email" placeholder="Email address" 
-               class="flex-1 px-4 py-2 border-none outline-none border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600" />
-      <div class="pr-3">
-        <button class="bg-emerald-600 text-white px-6 py-2 rounded-full hover:bg-emerald-700 transition-colors mr-3">
+               class="flex-1 px-4 py-3 border-none outline-none border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-emerald-600" />
+      <div class="">
+        <button class="bg-emerald-600 text-white px-6 py-3 rounded-full hover:bg-emerald-700 transition-colors mr-3">
           Subscribe
         </button>
       </div>
       </div>
-      <div class="flex justify-center mt-8 space-x-4">
+      <div data-aos="fade-up" class="flex justify-center mt-8 space-x-4">
         <a v-for="platform in socialPlatforms" 
            :key="platform.name"
            :href="platform.url"

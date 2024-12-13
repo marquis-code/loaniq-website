@@ -2,7 +2,7 @@
   <footer class="bg-emerald-700 text-white py-12">
     <div class="container mx-auto px-4">
       <div class="lg:grid grid-cols-2 space-y-6 lg:space-y-0 md:grid-cols-4 gap-8">
-        <div>
+        <div data-aos="fade-up">
           <h3 class="font-semibold mb-4">Company</h3>
           <ul class="space-y-2">
             <li v-for="link in companyLinks" :key="link">
@@ -10,7 +10,7 @@
             </li>
           </ul>
         </div>
-        <div>
+        <div data-aos="fade-up">
           <h3 class="font-semibold mb-4">Features</h3>
           <ul class="space-y-2">
             <li v-for="link in featureLinks" :key="link">
@@ -18,7 +18,7 @@
             </li>
           </ul>
         </div>
-        <div>
+        <div data-aos="fade-up">
           <h3 class="font-semibold mb-4">Help</h3>
           <ul class="space-y-2">
             <li v-for="link in helpLinks" :key="link">
@@ -26,7 +26,7 @@
             </li>
           </ul>
         </div>
-        <div>
+        <div data-aos="fade-up">
           <h3 class="font-semibold mb-4">Legal</h3>
           <ul class="space-y-2">
             <li v-for="link in legalLinks" :key="link">

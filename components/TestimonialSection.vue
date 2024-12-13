@@ -1,12 +1,12 @@
 <template>
   <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
-      <h2 class="text-2xl lg:text-4xl font-bold text-center mb-12">
+      <h2 data-aos="fade-up" class="text-2xl lg:text-4xl font-bold text-center mb-12">
         Still on the fence, here's what
         <span class="text-emerald-600">our users</span> are saying
       </h2>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <div data-aos="fade-up" class="grid md:grid-cols-3 gap-8">
         <div
           v-for="testimonial in testimonials"
           :key="testimonial.name"
