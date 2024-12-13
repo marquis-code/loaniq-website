@@ -1,12 +1,17 @@
 <template>
- <main>
-  <UserLogin />
- </main>
+  <main>
+    <Hero />
+    <LogoClouds />
+    <StatsBanner />
+    <TravelSection />
+    <RewardsSection />
+    <PerksSection />
+    <!-- <AppHeader /> -->
+    <main>
+      <TestimonialSection />
+      <CtaSection />
+      <NewsletterSection />
+    </main>
+    <AppFooter />
+  </main>
 </template>
-
-<script setup lang="ts">
-definePageMeta({
-  layout: 'auth',
-})
-const showLoader = ref(true)
-</script>

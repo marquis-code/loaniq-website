@@ -4,7 +4,7 @@ export default {
 
   app: {
     head: {
-      title: "LoanIQ",
+      title: "InvestIQ",
       script: [
         {
           src: "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0",
@@ -34,13 +34,6 @@ export default {
     // Axios options here
     timeout: 10000, // Example: set timeout to 10 seconds
   },
-
-  // buildModules: [
-  //   '@nuxtjs/moment'
-  // ]
-  // alias: {
-  // 	'@': '/'
-  // },
   plugins: [],
 
   compatibilityDate: "2024-10-30",
