@@ -5,7 +5,7 @@ export default {
 
   app: {
     head: {
-      title: "InvestIQ",
+      title: "LoanIQ",
       script: [
         {
           src: "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.0",
