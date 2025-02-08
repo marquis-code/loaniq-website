@@ -26,7 +26,7 @@ export default {
   loadingIndicator: false, // Completely removes the default Nuxt loading screen
 
   modules: ["@nuxtjs/tailwindcss"],
-  css: ["/assets/css/main.css", '@/assets/css/fonts.css'],
+  css: ["@/assets/css/main.css", '@/assets/css/fonts.css'],
 
   tailwindcss: {
     cssPath: "@/assets/css/main.css",

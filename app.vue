@@ -11,6 +11,14 @@
 
 
 <style>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  #app {
+    @apply min-h-screen font-sans;
+  }
+  
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Baskervville&display=swap');
