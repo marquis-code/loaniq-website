@@ -1,18 +1,17 @@
 <!-- pages/index.vue -->
 <template>
   <main>
-    <div class="relative min-h-screen pt-32 w-full">
-      <!-- Background image with overlay -->
+    <!-- <div class="relative min-h-screen pt-32 w-full">
+
       <div class="absolute inset-0 z-0">
         <img src="@/assets/img/loans1.jpg" alt="Background" class="h-full w-full object-cover" />
         <div class="absolute inset-0 bg-black/80"></div>
       </div>
 
-      <!-- Content -->
+
       <div class="relative z-10 px-4 py-12 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-7xl gap-x-32 lg:flex">
           <div>
-            <!-- Text Content -->
             <div class="mb-12 max-w-2xl">
               <h1 class="mb-6 text-4xl font-bold text-white sm:text-6xl">
                 Your Path to Prosperity Starts Here with Us.
@@ -24,7 +23,7 @@
               </p>
             </div>
 
-            <!-- Search Bar -->
+
             <div class="mb-8 max-w-2xl">
               <div class="relative">
                 <input type="text" placeholder="Search lender name"
@@ -38,11 +37,9 @@
               </div>
             </div>
           </div>
-          <!-- class="mx-auto max-w-2xl rounded-xl bg-white p-6 shadow-xl" -->
-          <!-- Calculator Card -->
           <div class="mx-auto max-w-2xl rounded-xl bg-white p-6 shadow-xl">
             <div class="">
-              <!-- Amount Section -->
+  
               <div class="mb-8">
                 <div class="mb-4 flex justify-between">
                   <h3 class="text-base font-medium text-gray-900">
@@ -60,7 +57,7 @@
                 </div>
               </div>
 
-              <!-- Duration Section -->
+
               <div class="mb-8">
                 <div class="mb-4 flex justify-between">
                   <h3 class="text-base font-medium text-gray-900">
@@ -79,7 +76,7 @@
               </div>
             </div>
 
-            <!-- Form Inputs -->
+    
             <div class="mb-6 grid gap-4 sm:grid-cols-2">
               <div class="relative">
                 <input type="text" :value="formatCurrency(amount)" readonly
@@ -103,7 +100,7 @@
               </div>
             </div>
 
-            <!-- Submit Button -->
+
             <div class="pt-6">
               <button
                 class="w-full rounded-lg bg-[#284d79] px-4 py-4 text-center text-white hover:bg-[#284d79] focus:outline-none focus:ring-2 focus:ring-[#284d79] focus:ring-offset-2">
@@ -113,17 +110,19 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+
+    <LoansHero />
 
 
     <section
   class="relative flex flex-col w-full h-[700px] bg-cover bg-fixed bg-center justify-center items-center"
   style="background-image: url('/group-transit.jpg');"
 >
-  <!-- Overlay -->
+
   <div class="absolute inset-0 bg-black/50"></div>
 
-  <!-- Content -->
+
   <div  data-aos="fade-up" class="relative z-10 text-center px-4">
     <h1 data-aos="fade-up" class="text-white text-5xl font-semibold mt-20 max-w-2xl mx-auto mb-10">
       Your Path to Prosperity Starts Here with us
@@ -166,8 +165,13 @@
             <rect width="100%" height="100%" stroke-width="0" fill="url(#83fd4e5a-9d52-42fc-97b6-718e5d7ee527)" />
           </svg>
         </div>
-        <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Get in touch</h2>
-        <p class="mt-6 text-lg/8 text-gray-600">Proin volutpat consequat porttitor cras nullam gravida at. Orci molestie a eu arcu. Sed ut tincidunt integer elementum id sem. Arcu sed malesuada et magna.</p>
+        <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Need a Loan? Let's Talk!</h2>
+        <p class="mt-6 text-lg/8 text-gray-600">
+            Get quick and hassle-free loans tailored to your needs. Whether it's for personal expenses, business growth, or emergency funds, we've got you covered. Apply today and take a step towards financial freedom!
+        </p>
+
+        <!-- <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Get in touch sss</h2> -->
+        <!-- <p class="mt-6 text-lg/8 text-gray-600">Proin volutpat consequat porttitor cras nullam gravida at. Orci molestie a eu arcu. Sed ut tincidunt integer elementum id sem. Arcu sed malesuada et magna.</p> -->
         <dl class="mt-10 space-y-4 text-base/7 text-gray-600">
           <div class="flex gap-x-4">
             <dt class="flex-none">
@@ -205,36 +209,36 @@
           <div>
             <label for="first-name" class="block text-sm/6 font-semibold text-gray-900">First name</label>
             <div class="mt-2.5">
-              <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600">
+              <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md bg-white px-3.5 py-3 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#284d79]">
             </div>
           </div>
           <div>
             <label for="last-name" class="block text-sm/6 font-semibold text-gray-900">Last name</label>
             <div class="mt-2.5">
-              <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600">
+              <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md bg-white px-3.5 py-3 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#284d79]">
             </div>
           </div>
           <div class="sm:col-span-2">
             <label for="email" class="block text-sm/6 font-semibold text-gray-900">Email</label>
             <div class="mt-2.5">
-              <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600">
+              <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md bg-white px-3.5 py-3 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#284d79]">
             </div>
           </div>
           <div class="sm:col-span-2">
             <label for="phone-number" class="block text-sm/6 font-semibold text-gray-900">Phone number</label>
             <div class="mt-2.5">
-              <input type="tel" name="phone-number" id="phone-number" autocomplete="tel" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600">
+              <input type="tel" name="phone-number" id="phone-number" autocomplete="tel" class="block w-full rounded-md bg-white px-3.5 py-3 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#284d79]">
             </div>
           </div>
           <div class="sm:col-span-2">
             <label for="message" class="block text-sm/6 font-semibold text-gray-900">Message</label>
             <div class="mt-2.5">
-              <textarea name="message" id="message" rows="4" class="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"></textarea>
+              <textarea name="message" id="message" rows="4" class="block w-full rounded-md bg-white px-3.5 py-3 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#284d79]"></textarea>
             </div>
           </div>
         </div>
         <div class="mt-8 flex justify-end">
-          <button type="submit" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Send message</button>
+          <button type="submit" class="rounded-md bg-[#284d79] w-full px-3.5 py-3.5 text-center text-sm font-semibold text-white shadow-sm  focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#284d79]">Send message</button>
         </div>
       </div>
     </form>
@@ -245,6 +249,7 @@
 </template>
 
 <script setup lang="ts">
+// import LoansHero from "../components/LoansHero.vue";
 const amount = ref(500000)
 const duration = ref(1)
 

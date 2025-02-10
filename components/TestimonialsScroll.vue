@@ -1,19 +1,19 @@
 <template>
     <div id="testimonials" class="w-full overflow-hidden bg-gray-25 py-32">
         <section class="pl-10 lg:pl-32">
-        <div data-aos="flip-left" class="inline-block px-4 py-2.5 mb-6 bg-gray-50 rounded-full">
+        <div data-aos="fade-up" class="inline-block px-4 py-2.5 mb-6 bg-gray-50 rounded-full">
         <span class="text-[#284d79] font-medium">Testimonials</span>
       </div>
       
-      <h1 data-aos="flip-left" class="text-4xl md:text-5xl font-medium text-gray-900 mb-4 -mt-2">
+      <h1 data-aos="fade-up" class="text-4xl md:text-5xl font-medium text-gray-900 mb-4 -mt-2">
         Don’t just take our word for it
       </h1>
       
-      <p data-aos="flip-left" class="text-gray-600  mb-16">
+      <p data-aos="fade-up" class="text-gray-600  mb-16">
         Here is what people are saying about us
       </p>
      </section>
-      <div data-aos="flip-left" class="relative">
+      <div data-aos="fade-up" class="relative">
         <!-- First row - Left to Right -->
         <div 
           class="flex animate-scroll-left"

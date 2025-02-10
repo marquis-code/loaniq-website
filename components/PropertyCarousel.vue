@@ -57,20 +57,6 @@
                     </span>
                   </button>
                 </template>
-              <!-- <button 
-                v-for="button in slide.buttons" 
-                :key="button.text"
-                @click="handleButtonClick(button)"
-                class="px-6 py-3 rounded-md transition-colors"
-                :class="button.primary ? 
-                  'bg-[#C78D6B] hover:bg-[#B67D5B] text-white' : 
-                  'bg-[#2A423A] hover:bg-[#1A322A] text-white'"
-              >
-                {{ button.text }}
-                <span v-if="button.yield" class="text-sm ml-2">
-                  (avg. yield {{ button.yield }})
-                </span>
-              </button> -->
             </div>
           </div>
         </div>
