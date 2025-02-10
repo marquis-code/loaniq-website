@@ -3,7 +3,10 @@
   <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
     <div class="mx-auto max-w-2xl text-center">
       <h2 class="text-base/7 font-semibold text-indigo-400">Get started</h2>
-      <p class="mt-2 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">Every step is a stride towards a brighter and wealthier future.</p>
+      <p class="mt-2 text-balance text-4xl font-semibold max-w-3xl tracking-tight text-white">
+        Take a bold step toward a brighter and more prosperous future.
+        <!-- Every step is a stride towards a brighter and wealthier future -->
+        .</p>
       <!-- <p class="mx-auto mt-6 max-w-xl text-pretty text-lg/8 text-gray-400">We’re dedicated to transforming financial aspirations into realities, offering expert solutions with a commitment to trust.</p> -->
       <div class="mt-8 flex justify-center">
         <a href="#" class="rounded-md bg-[#284d79] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#284d79]">Get started</a>

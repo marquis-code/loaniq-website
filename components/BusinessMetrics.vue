@@ -5,23 +5,27 @@
       </div>
       
       <h1 data-aos="fade-up" class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 -mt-2">
-        With 10+ years of experience
+        <!-- With 10+ years of experience -->
+        You can count on us!
+
       </h1>
       
       <p data-aos="fade-up" class="text-gray-600 max-w-3xl mx-auto mb-16">
-        Our commitment to personalized solutions, transparent processes, and unparalleled customer support ensures your path to success is guided with expertise and trust.
+        With our commitment to personalised solutions, transparent processes, and unparalleled customer support, we ensure your journey to success is guided by expertise and trust.
+
+        <!-- Our commitment to personalized solutions, transparent processes, and unparalleled customer support ensures your path to success is guided with expertise and trust. -->
       </p>
   
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Staff Moved -->
         <div class="bg-[#F8F9FF] rounded-3xl p-8">
           <div data-aos="fade-up" class="text-[#284d79] text-5xl font-bold mb-4">
             {{ numberWithCommas(currentValues.staff) }}+
           </div>
-          <h3 data-aos="fade-up" class="text-gray-900 text-xl font-semibold mb-2">Happy Customers</h3>
-          <p data-aos="fade-up" class="text-gray-600 text-sm">
+          <h3 data-aos="fade-up" class="text-gray-900 text-xl font-semibold mb-2">Up To 1 Million Loans In 5 Minutes</h3>
+          <!-- <p data-aos="fade-up" class="text-gray-600 text-sm">
             We've moved 10k+ staffs across 100+ different routes.
-          </p>
+          </p> -->
         </div>
   
         <!-- Business Clients -->
@@ -29,10 +33,10 @@
           <div data-aos="fade-up" class="text-[#284d79] text-5xl font-bold mb-4">
             {{ currentValues.clients }}+
           </div>
-          <h3 data-aos="fade-up" class="text-gray-900 text-xl font-semibold mb-2">Loan Proceessed</h3>
-          <p data-aos="fade-up" class="text-gray-600 text-sm">
+          <h3 data-aos="fade-up" class="text-gray-900 text-xl font-semibold mb-2">1,000+ Loan Proceessed</h3>
+          <!-- <p data-aos="fade-up" class="text-gray-600 text-sm">
             Our clients have about 10k+ staff that use our Transports.
-          </p>
+          </p> -->
         </div>
   
         <!-- Trips Taken -->
@@ -40,14 +44,14 @@
           <div data-aos="fade-up" class="text-[#284d79] text-5xl font-bold mb-4">
             {{ numberWithCommas(currentValues.trips) }}+
           </div>
-          <h3 data-aos="fade-up" class="text-gray-900 text-xl font-semibold mb-2">Years of Experience</h3>
-          <p data-aos="fade-up" class="text-gray-600 text-sm">
+          <h3 data-aos="fade-up" class="text-gray-900 text-xl font-semibold mb-2">500 Happy Customers</h3>
+          <!-- <p data-aos="fade-up" class="text-gray-600 text-sm">
             We have covered a lot of miles and taken 3M+ trips.
-          </p>
+          </p> -->
         </div>
   
         <!-- Vehicles -->
-        <div class="bg-[#F8F9FF] rounded-3xl p-8">
+        <!-- <div class="bg-[#F8F9FF] rounded-3xl p-8">
           <div data-aos="fade-up" class="text-[#284d79] text-5xl font-bold mb-4">
             {{ currentValues.vehicles }}+
           </div>
@@ -55,7 +59,7 @@
           <p data-aos="fade-up" class="text-gray-600 text-sm">
             We have vehicle partners that supply fleet of vehicles.
           </p>
-        </div>
+        </div> -->
       </div>
     </div>
   </template>
@@ -71,9 +75,9 @@
   }
   
   const targetValues: Metrics = {
-    staff: 10000,
-    clients: 90,
-    trips: 350000,
+    staff: 1000000,
+    clients: 1000,
+    trips: 500,
     vehicles: 330
   };
   

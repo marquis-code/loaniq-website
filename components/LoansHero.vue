@@ -26,7 +26,7 @@
             class="absolute inset-0 flex items-center justify-center px-4 md:px-8"
           >
             <div class="max-w-7xl w-full mx-auto text-center">
-              <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-6">
+              <h1 class="text-4xl md:text-6xl lg:text-7xl max-w-3xl mx-auto font-serif text-white mb-6">
                 {{ slide.title }}
               </h1>
               <p class="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto">
@@ -37,7 +37,7 @@
                     <a 
                       v-if="button.text === 'Browse Available Products'" 
                       href="#loan-products" 
-                      class="px-6 py-3 rounded-md transition-colors bg-[#C78D6B] hover:bg-[#B67D5B] text-white"
+                      class="px-6 py-3 rounded-md block max-w-lg transition-colors bg-[#C78D6B] hover:bg-[#B67D5B] text-white"
                     >
                       {{ button.text }}
                       <span v-if="button.yield" class="text-sm ml-2">
@@ -47,7 +47,7 @@
                     <button 
                       v-else
                       @click="handleButtonClick(button)"
-                      class="px-6 py-3 rounded-md transition-colors"
+                      class="px-6 py-3 rounded-md block max-w-lg transition-colors"
                       :class="button.primary ? 
                         'bg-[#C78D6B] hover:bg-[#B67D5B] text-white' : 
                         'bg-[#2A423A] hover:bg-[#1A322A] text-white'"
@@ -115,10 +115,10 @@
   const slides = ref<Slide[]>([
     {
       id: 1,
-      title: 'Your Path to Prosperity Starts Here with Us.',
-      description: 'Every step is a stride to a brighter and wealthier future.',
+      title: 'Stay Prepared for Life\'s Uncertainties.',
+      description: 'Secure your financial future with our flexible loan solutions.',
       buttons: [
-        { text: 'Looking to take a loan?', yield: '6.9%', action: 'openGame' },
+        { text: 'Looking to take a loan?', action: 'openGame' },
         { text: 'Browse Available Products', primary: true }
       ]
     }

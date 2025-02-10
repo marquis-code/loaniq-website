@@ -1,123 +1,12 @@
 <!-- pages/index.vue -->
 <template>
   <main>
-    <!-- <div class="relative min-h-screen pt-32 w-full">
-
-      <div class="absolute inset-0 z-0">
-        <img src="@/assets/img/loans1.jpg" alt="Background" class="h-full w-full object-cover" />
-        <div class="absolute inset-0 bg-black/80"></div>
-      </div>
-
-
-      <div class="relative z-10 px-4 py-12 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-7xl gap-x-32 lg:flex">
-          <div>
-            <div class="mb-12 max-w-2xl">
-              <h1 class="mb-6 text-4xl font-bold text-white sm:text-6xl">
-                Your Path to Prosperity Starts Here with Us.
-
-              </h1>
-              <p class="text-lg text-gray-200">
-                Every step is a stride to a brighter and wealthier future.
-
-              </p>
-            </div>
-
-
-            <div class="mb-8 max-w-2xl">
-              <div class="relative">
-                <input type="text" placeholder="Search lender name"
-                  class="w-full rounded-lg border border-gray-300 bg-white px-4 py-4 pr-12 text-gray-900 focus:border-[#284d79] focus:outline-none" />
-                <div class="absolute right-4 top-1/2 -translate-y-1/2">
-                  <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="mx-auto max-w-2xl rounded-xl bg-white p-6 shadow-xl">
-            <div class="">
-  
-              <div class="mb-8">
-                <div class="mb-4 flex justify-between">
-                  <h3 class="text-base font-medium text-gray-900">
-                    How much do you need?
-                  </h3>
-                  <span class="text-lg font-medium text-gray-900">
-                    {{ formatCurrency(amount) }}
-                  </span>
-                </div>
-                <input type="range" v-model="amount" :min="500" :max="1000000" step="500"
-                  class="w-full appearance-none rounded-lg bg-gray-200 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#284d79]" />
-                <div class="mt-2 flex justify-between text-sm text-gray-600">
-                  <span>500</span>
-                  <span>1,000,000</span>
-                </div>
-              </div>
-
-
-              <div class="mb-8">
-                <div class="mb-4 flex justify-between">
-                  <h3 class="text-base font-medium text-gray-900">
-                    How long do you need it
-                  </h3>
-                  <span class="text-lg font-medium text-gray-900">
-                    {{ duration }} {{ duration === 1 ? 'Month' : 'Months' }}
-                  </span>
-                </div>
-                <input type="range" v-model="duration" :min="1" :max="12"
-                  class="w-full appearance-none rounded-lg bg-gray-200 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#284d79]" />
-                <div class="mt-2 flex justify-between text-sm text-gray-600">
-                  <span>1 Month</span>
-                  <span>12 Months</span>
-                </div>
-              </div>
-            </div>
-
-    
-            <div class="mb-6 grid gap-4 sm:grid-cols-2">
-              <div class="relative">
-                <input type="text" :value="formatCurrency(amount)" readonly
-                  class="w-full rounded-lg border border-gray-300 px-4 py-3 pr-12" />
-                <div class="absolute right-4 top-1/2 -translate-y-1/2">
-                  <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
-                  </svg>
-                </div>
-              </div>
-              <div class="relative">
-                <input type="text" :value="`${duration} Month${duration > 1 ? 's' : ''}`" readonly
-                  class="w-full rounded-lg border border-gray-300 px-4 py-3" />
-                <div class="absolute right-4 top-1/2 -translate-y-1/2">
-                  <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clipRule="evenodd" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="pt-6">
-              <button
-                class="w-full rounded-lg bg-[#284d79] px-4 py-4 text-center text-white hover:bg-[#284d79] focus:outline-none focus:ring-2 focus:ring-[#284d79] focus:ring-offset-2">
-                View available offers
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
     <LoansHero />
 
 
     <section
   class="relative flex flex-col w-full h-[700px] bg-cover bg-fixed bg-center justify-center items-center"
-  style="background-image: url('/group-transit.jpg');"
+  style="background-image: url('/test2.png');"
 >
 
   <div class="absolute inset-0 bg-black/50"></div>
@@ -125,18 +14,33 @@
 
   <div  data-aos="fade-up" class="relative z-10 text-center px-4">
     <h1 data-aos="fade-up" class="text-white text-5xl font-semibold mt-20 max-w-2xl mx-auto mb-10">
-      Your Path to Prosperity Starts Here with us
+      Ready to experience financial empowerment with Loan IQ Limited?
     </h1>
 
     <p data-aos="fade-up" class="text-center max-w-2xl mx-auto  text-xl my-10 text-white/90">
-      Experience financial empowerment with Loan IQ Limited – effortlessly apply and secure a loan of up to 1 million naira in just minutes, ensuring swift access to the funds you need for your aspirations.
+      Easily apply and secure a loan of up to 1 million naira within minutes, giving you swift access to the funds needed to achieve your goals.
     </p>
+
+    <div class="w-full max-w-6xl mt-12 grid grid-cols-2 md:gridcols-3 lg:grid-cols-4 gap-6">
+        <!-- <div v-for="(stat, index) in ['5000+ Businesses Funded', '₦10B+ Disbursed', '98% Customer Satisfaction']" 
+             :key="index"
+             class="bg-white/10 backdrop-blur-md rounded-xl p-6 text-center transform hover:scale-105 transition-all duration-300">
+          <h3 class="text-2xl font-bold text-yellow-300">{{ stat }}</h3>
+        </div> -->
+        <div v-for="(stat, index) in ['Clear and Transparent Process', 'Quick and Easy Application', 'No Collateral Required', 'Real-time Support']" 
+          :key="index"
+          class="bg-white/10 backdrop-blur-md rounded-xl p-6 text-center transform hover:scale-105 transition-all duration-300">
+        <h3 class="text-sm font-bold text-yellow-300">{{ stat }}</h3>
+      </div>
+
+      </div>
+      
   </div>
     </section>
 
     <LogoClouds />
 
-    <AdvertCta />
+    <!-- <AdvertCta /> -->
 
     <HowItWorks />
 
