@@ -25,7 +25,7 @@
           class="absolute inset-0 flex items-center justify-center px-4 md:px-8"
         >
           <div class="max-w-7xl w-full mx-auto text-center">
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white mb-6">
+            <h1 class="text-4xl md:text-6xl mx-auto lg:text-5xl font-serif max-w-5xl text-white mb-6">
               {{ slide.title }}
             </h1>
             <p class="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto">

@@ -14,7 +14,7 @@ const steps: StepItem[] = [
   {
     number: "2",
     title: "Invest wisely",
-    description: "Choose th option that works for you from our array of wealth-buhilding investmentts plans."
+    description: "Choose the option that works for you from our array of wealth-buhilding investmentts plans."
   },
   {
     number: "3",
@@ -43,7 +43,7 @@ const getMarginClass = (index: number) => {
         <!-- Left Column -->
         <div class="space-y-6">
           <h1 class="text-4xl md:text-6xl font-bold text-navy-900 leading-tight">
-            Your path to <span class="italic">enduring</span> wealth<br class="hidden md:block" /> starts here with us
+            Your path to <span class="italic">enduring</span> wealth starts here with us
           </h1>
           <p class="text-xl md:text-2xl text-navy-900 opacity-90">
             Every step is a stride to a brighter and wealthier future.
