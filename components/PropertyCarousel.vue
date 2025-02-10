@@ -34,7 +34,7 @@
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <template v-for="button in slide.buttons" :key="button.text">
                   <a 
-                    v-if="button.text === 'Browse Available Investment'" 
+                    v-if="button.text === 'Browse Available Investments'" 
                     href="#investment-products" 
                     class="px-6 py-3 rounded-md transition-colors bg-[#C78D6B] hover:bg-[#B67D5B] text-white"
                   >
@@ -109,11 +109,11 @@ const videos = [
 const slides = ref<Slide[]>([
   {
     id: 1,
-    title: 'Real Estate Development in Lagos & Across Nigeria',
-    description: 'Our trusted and award-winning property development group delivers premium real estate projects, offering high-value investment opportunities in Nigeria.',
+    title: 'Maximise our Investment Opportunities that Guarantee a Wealthier Future.',
+    description: 'Partner with us to turn your financial aspirations into reality through our expert solutions, built on a foundation of trust.',
     buttons: [
       { text: 'Looking to invest?', yield: '6.9%', action: 'openGame' },
-      { text: 'Browse Available Investment', primary: true }
+      { text: 'Browse Available Investments', primary: true }
     ]
   }
 ]);
@@ -126,7 +126,7 @@ const slides = ref<Slide[]>([
 //     description: 'The Heaton Group is a trusted and award-winning UK property development group known for delivering premium developments.',
 //     buttons: [
 //       { text: 'Looking to invest?', yield: '6.9%', action: 'openGame' },
-//       { text: 'Browse Available Investment', primary: true }
+//       { text: 'Browse Available Investments', primary: true }
 //     ]
 //   }
 // ]);

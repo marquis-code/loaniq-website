@@ -48,7 +48,7 @@
                   class="w-full"
                 />
                 <span class="text-sm font-mono whitespace-nowrap">
-                  £{{ formatNumber(investment) }}
+                  ₦{{ formatNumber(investment) }}
                 </span>
               </div>
             </div>
@@ -154,7 +154,7 @@
   
   // Computed properties
   const formattedReturns = computed(() => {
-    return `£${formatNumber(returns.value)}`;
+    return `₦${formatNumber(returns.value)}`;
   });
   
   const getRiskProfile = computed(() => {
