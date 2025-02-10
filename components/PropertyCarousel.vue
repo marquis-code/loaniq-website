@@ -36,7 +36,7 @@
                   <a 
                     v-if="button.text === 'Browse Available Investments'" 
                     href="#investment-products" 
-                    class="px-6 py-3 rounded-md transition-colors bg-[#C78D6B] hover:bg-[#B67D5B] text-white"
+                    class="px-6 py-3 rounded-md block max-w-lg transition-colors bg-[#C78D6B] hover:bg-[#B67D5B] text-white"
                   >
                     {{ button.text }}
                     <span v-if="button.yield" class="text-sm ml-2">
@@ -46,10 +46,10 @@
                   <button 
                     v-else
                     @click="handleButtonClick(button)"
-                    class="px-6 py-3 rounded-md transition-colors"
+                    class="px-6 py-3 rounded-md block max-w-lg transition-colors"
                     :class="button.primary ? 
-                      'bg-[#C78D6B] hover:bg-[#B67D5B] text-white' : 
-                      'bg-[#2A423A] hover:bg-[#1A322A] text-white'"
+                      'bg-[#284d79] hover:bg-[#284d79] text-white' : 
+                      'bg-[#284d79] hover:bg-[#284d79] text-white'"
                   >
                     {{ button.text }}
                     <span v-if="button.yield" class="text-sm ml-2">
@@ -112,7 +112,7 @@ const slides = ref<Slide[]>([
     title: 'Maximise our Investment Opportunities that Guarantee a Wealthier Future.',
     description: 'Partner with us to turn your financial aspirations into reality through our expert solutions, built on a foundation of trust.',
     buttons: [
-      { text: 'Looking to invest?', yield: '6.9%', action: 'openGame' },
+      { text: 'Looking to invest?', action: 'openGame' },
       { text: 'Browse Available Investments', primary: true }
     ]
   }

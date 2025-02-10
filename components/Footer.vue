@@ -1,6 +1,6 @@
 <template>
     <footer class="bg-gray-900">
-  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
+  <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32 -mt-32">
     <div class="mx-auto max-w-2xl text-center">
       <h2 class="text-base/7 font-semibold text-indigo-400">Get started</h2>
       <p class="mt-2 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl">Every step is a stride towards a brighter and wealthier future.</p>
