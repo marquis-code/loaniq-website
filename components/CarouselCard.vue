@@ -21,7 +21,7 @@
           <div class="flex justify-start items-start flex-col">
             <p class="text-white text-start leading-snug">{{ item.extendedDescription }}</p>
 
-          <button class="bg-white px-6 py-3 rounded-lg  text-[#284d79] mt-6 font-semibold">Apply Now</button>
+          <NuxtLink :to="item.urlPath" class="bg-white px-6 py-3 rounded-lg  text-[#284d79] mt-6 font-semibold">Apply Now</NuxtLink>
           </div>
         </div>
       </div>

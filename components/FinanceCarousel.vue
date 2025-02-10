@@ -59,6 +59,7 @@ interface CarouselItem {
   image: string;
   title: string;
   description: string;
+  urlPath: string;
   extendedDescription: string;
 }
 
@@ -67,6 +68,7 @@ const items = ref<CarouselItem[]>([
     id: 1,
     image: investment,
     title: 'Discount Investment Note',
+     urlPath:'/invest/products/discount-investment-note',
     description: 'Earn upfront interest on your investment with a Discount Note.',
     extendedDescription: 'Our Discount Note investment offers immediate value by providing upfront interest payments on your investment. Your principal amount is disbursed upon maturity, and you can choose to reinvest or keep it in your LoanIQ Wallet for further transactions. Invest a minimum of ₦10 million and earn up to 23% interest.'
   },
@@ -74,6 +76,7 @@ const items = ref<CarouselItem[]>([
     id: 2,
      image: investment,
     title: 'Target Savings Note',
+     urlPath:'/invest/products/target-savings-note',
     description: 'Save conveniently towards your financial goals with the Target Savings Note.',
     extendedDescription: 'LoanIQ’s Target Savings Note helps you build financial discipline by allowing you to set and achieve savings goals on your own terms. Lock in a minimum of ₦50,000 for a pre-defined date and earn competitive returns while preventing premature withdrawals.'
   },
@@ -81,6 +84,7 @@ const items = ref<CarouselItem[]>([
     id: 3,
     image: investment,
     title: 'LoanIQ Wallet Account',
+     urlPath:'/invest/products/loaniq-wallet-account',
     description: 'Deposit and withdraw anytime while earning high interest on your savings.',
     extendedDescription: 'With LoanIQ Wallet Account, enjoy the flexibility of making deposits and withdrawals while earning attractive returns. Maintain a minimum balance of ₦10,000 and earn up to 15% interest. The wallet also allows seamless bill payments, money transfers, and other financial transactions without hassle.'
   },
@@ -88,6 +92,7 @@ const items = ref<CarouselItem[]>([
     id: 4,
      image: investment,
     title: 'Maximum Yield Note',
+     urlPath:'/invest/products/maximum-yield-note',
     description: 'Grow your portfolio with compound interest and higher returns.',
     extendedDescription: 'Invest a lump sum and grow your funds over time with compound interest. The Maximum Yield Note provides significantly higher returns compared to similar fixed-income instruments. Invest a minimum of ₦1 million for a minimum tenor of 2 years and earn up to 26% in compounded interest, with flexible payout options.'
   },
@@ -95,6 +100,7 @@ const items = ref<CarouselItem[]>([
     id: 5,
      image: investment,
     title: 'Fixed Investment Note',
+     urlPath:'/invest/products/fixed-investment-note',
     description: 'Earn stable returns with our flexible Fixed Investment Note.',
     extendedDescription: 'If you prefer security and passive income, the Fixed Investment Note is for you. Invest a minimum of ₦100,000 for a defined period and earn up to 25% in accrued interest. Choose between monthly, quarterly, bi-annual, or end-of-term payouts, with flexible rollover options.'
   }
