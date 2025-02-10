@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full max-w-7xl mx-auto px-4">
-    <h1 class="text-4xl font-bold text-center mb-12">See how InvestIQ is helping investors</h1>
+  <div class="w-full max-w-7xl mx-auto px-4 py-20">
+    <h1 class="text-4xl font-semibold text-center mb-12">See how InvestIQ is helping investors</h1>
     
     <!-- Carousel Container -->
     <div class="overflow-hidden relative">
