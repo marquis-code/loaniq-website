@@ -9,7 +9,7 @@ const steps: StepItem[] = [
   {
     number: "1",
     title: "Set your financial goals",
-    description: "Carefully list and priortise your financial goals"
+    description: "Carefully list and priortise your financial goals."
   },
   {
     number: "2",

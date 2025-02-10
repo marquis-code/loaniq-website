@@ -704,7 +704,7 @@
                 planning. Currently Head of HR at Loan iQ Limited.
               </p>
             </li>
-            <li>
+            <!-- <li>
               <img
                 class="aspect-[14/13] w-full rounded-2xl object-cover"
                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
@@ -721,8 +721,8 @@
                 expertise in public sector lending, portfolio management, and
                 client relations.
               </p>
-            </li>
-            <li>
+            </li> -->
+            <!-- <li>
               <img
                 class="aspect-[14/13] w-full rounded-2xl object-cover"
                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
@@ -739,7 +739,7 @@
                 sector lending, portfolio management, loan monitoring, and
                 credit exposure management.
               </p>
-            </li>
+            </li> -->
             <li>
               <img
                 class="aspect-[14/13] w-full rounded-2xl object-cover"

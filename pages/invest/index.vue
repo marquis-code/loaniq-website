@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// import InvestmentStats from "../../components/InvestmentStats.vue";
 // import WealthBuilder from '~/components/WealthBuilder.vue';
 </script>
 
@@ -6,11 +7,6 @@
   <main class="bg-gray-100 pb-20">
     <PropertyCarousel />
 
-    <WealthBuilder />
-
-   <div class="bg-white pb-32">
-    <InvestmentCalculator />
-   </div>
 
     <div
       class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0"
@@ -67,18 +63,19 @@
               <h1
                 class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
               >
-              Choose an investment option, Take control of your financial future.
+              Choose an investment option.
               </h1>
+              <h1> Take control of your financial future.</h1>
               <p class="mt-6 text-xl/8 text-gray-700">
                 <ul class="space-y-5">
                  <li>
-                <div class="flex items-center text-lg gap-x-3">
+                <div class="flex items-center text-xl gap-x-3">
                   <p>✅</p>
                   <p>Earn up to 27% per annum.</p>
                 </div>
               </li>
               <li>
-                <div class="flex items-center gap-x-3">
+                <div class="flex text-xl items-center gap-x-3">
                   <p>✅</p>
                   <p>Tenor from 90 days to 365 days.</p>
                 </div>
@@ -87,7 +84,7 @@
               </p>
 
 
-              <section class="flex justify-start gap-x-3 items-center pt-6">
+              <!-- <section class="flex justify-start gap-x-3 items-center pt-6">
                 <div class="flex -space-x-2 overflow-hidden">
   <img class="inline-block size-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
   <img class="inline-block size-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
@@ -95,22 +92,20 @@
   <img class="inline-block size-10 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
 </div>
 <p class="font-semibold">Over 1 Billion in investment.</p>
-              </section>
+              </section> -->
 
             </div>
           </div>
         </div>
-        <!-- <div
-          class="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden"
-        >
-          <img
-            class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
-            src="@/assets/img/portfolio.jpg"
-            alt=""
-          />
-        </div> -->
       </div>
     </div>
+
+    <WealthBuilder />
+
+   <div class="bg-white pb-32">
+    <InvestmentCalculator />
+   </div>
+
 
     <!-- <div class="overflow-hidden bg-white">
       <div class="relative mx-auto max-w-7xl px-6 py-16 lg:px-8">
@@ -199,9 +194,9 @@
     <section id="investment-products" class="py-20">
       <h2
         data-aos="fade-up"
-        class="text-2xl font-bold text-center text-gray-900 uppercase tracking-wider"
+        class="text-2xl font-bold text-center text-gray-909 tracking-wider"
       >
-        Our Investment Products
+        Investment offerings tailored just for you
       </h2>
       <p
         data-aos="fade-up"
@@ -270,6 +265,12 @@
                 yield of similar low-risk instruments in the fixed-income
                 market.
               </p>
+
+              <div class="pt-10">
+          <button data-aos="fade-up"  class="bg-[#284d79] rounded-lg text-white px-8 py-3  font-medium transition-colors duration-200">
+            Lets Talk
+          </button>
+        </div>
             </div>
           </div>
         </div>
@@ -286,6 +287,8 @@
     </div>
 
     <InvestmentTestimonialCarousel />
+
+    <InvestmentStats />
 
     <div
       class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0"
@@ -342,13 +345,18 @@
               <h1
                 class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
               >
-                Get personalised financial solutions.
+              Start investing with ease
               </h1>
               <p class="mt-6 text-xl/8 text-gray-700">
-                Our commitment to personalised solutions, transparent processes,
-                and unparalleled customer support ensures your path to success
-                is guided with expertise and trust.
+                We’re dedicated to transforming your financial 
+aspirations into realities, offering expert 
+solutions with a commitment to trust.
               </p>
+        <div class="pt-10">
+          <button data-aos="fade-up"  class="bg-[#284d79] rounded-lg text-white px-8 py-3  font-medium transition-colors duration-200">
+            Lets Talk
+          </button>
+        </div>
             </div>
           </div>
         </div>

@@ -3,13 +3,14 @@
     <div class="relative min-h-[500px] bg-slate-50 overflow-hidden">
       <!-- Wave background image -->
       <img 
+      data-aos="fade-up" 
         src="@/assets/img/wave-vector.png" 
         alt="Background pattern"
         class="absolute bottom-0 left-0 w-1/2 h-2/3 object-cover opacity-30"
       />
   
       <!-- Decorative circle top right -->
-      <div class="absolute top-4 right-4 w-16 h-16">
+      <div data-aos="fade-up"  class="absolute top-4 right-4 w-16 h-16">
         <div v-for="(_, index) in 3" 
              :key="index"
              class="absolute inset-0"
@@ -33,13 +34,13 @@
               <!-- <IconTrendingUp class="text-white" /> -->
             </div>
             
-            <h2 class="text-4xl font-bold text-gray-900 mb-4">
-              $7M+ paid out to investors
+            <h2 data-aos="fade-up"  class="text-4xl font-bold text-gray-900 mb-4">
+              NGN 300M+ paid out to investors
             </h2>
             
-            <p class="text-gray-600 max-w-md">
-              Next Invest has already paid out over $7M in cash returns to investors. 
-              Earn potential cash payments through unique revenue-share and debt financing investments.
+            <p data-aos="fade-up"  class="text-gray-600 max-w-md">
+              In just one year, we've paid out over ₦300 million to our investors, with many reinvesting their principal and earnings to further grow their wealth.
+               <!-- we have paid out over NGN 300M to our investors in just one year with most of them renvesting their principals and earnings to further grow their wealth. -->
             </p>
           </div>
   
@@ -48,6 +49,7 @@
             <!-- More options button -->
             <button class="absolute top-2 right-2 p-2 hover:bg-gray-100 rounded-full">
               <!-- <IconMoreVertical class="text-gray-400 w-5 h-5" /> -->
+               <!-- <img src="@/assets/img/spiral.png" class="h-" /> -->
             </button>
   
             <!-- Graph container -->
@@ -59,7 +61,7 @@
             <div class="absolute top-4 right-20 bg-pink-500 text-white text-xs px-2 py-1 rounded">
               Q2 2017
               <br />
-              $5,492,840
+              NGN5,492,840
             </div>
           </div>
         </div>
