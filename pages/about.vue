@@ -446,7 +446,19 @@
           <div
             class="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5"
           >
-            <img
+          <img data-aos="fade-up" class="max-h-12 w-full rounded-full object-contain object-left mix-blend-multiply" src="@/assets/img/lagos-state.webp" alt="Bank 1" width="105" height="48">
+          <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left mix-blend-multiply" src="@/assets/img/lenda-stack.png" alt="Bank 2" width="104" height="48">
+          <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left mix-blend-multiply" src="@/assets/img/paystack-logo2.png" alt="Bank 3" width="50" height="50">
+          <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left mix-blend-multiply" src="@/assets/img/reliance.png" alt="Bank 4" width="136" height="48">
+          <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left mix-blend-multiply" src="@/assets/img/remita.png" alt="Bank 5" width="158" height="48">
+
+          <!-- <img data-aos="fade-up" class="max-h-12 w-full rounded-full object-contain object-left" src="@/assets/img/lagos-state.webp" alt="Bank 1" width="105" height="48">
+      <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/lenda-stack.png" alt="Bank 2" width="104" height="48">
+      <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/paystack-logo2.png" alt="Bank 3" width="50" height="50">
+      <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/reliance.png" alt="Bank 4" width="136" height="48">
+      <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/remita.png" alt="Bank 5" width="158" height="48"> -->
+      <!-- <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/you-verify.png" alt="Bank 6" width="147" height="48"> -->
+            <!-- <img
               class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
               src="https://tailwindui.com/plus-assets/img/logos/158x48/transistor-logo-white.svg"
               alt="Transistor"
@@ -480,7 +492,7 @@
               alt="Statamic"
               width="158"
               height="48"
-            />
+            /> -->
           </div>
           <div
             class="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl"
@@ -652,7 +664,7 @@
             <li>
               <img
                 class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+                src="@/assets/img/team/ADESOLA-AYOBAMI.jpg"
                 alt=""
               />
               <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
@@ -671,7 +683,7 @@
             <li>
               <img
                 class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+                src="@/assets/img/team/AYOBAMI-ADELOYE.jpg"
                 alt=""
               />
               <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
@@ -689,7 +701,7 @@
             <li>
               <img
                 class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+                src="@/assets/img/team/ODEJOBI-BABAJIDE.jpg"
                 alt=""
               />
               <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
@@ -743,7 +755,7 @@
             <li>
               <img
                 class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+                src="@/assets/img/team/TEMIDAYO-FOWOSIRE.jpg"
                 alt=""
               />
               <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
@@ -787,7 +799,7 @@
             <li>
               <img
                 class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+                src="@/assets/img/team/OLUFEMI-ARIBALOYE.jpg"
                 alt=""
               />
               <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
@@ -803,7 +815,7 @@
             <li>
               <img
                 class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+                src="@/assets/img/team/MURITALA-IBRAHIM.jpg"
                 alt=""
               />
               <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
@@ -819,7 +831,7 @@
             <li>
               <img
                 class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+                src="@/assets/img/team/ABIOLA-OLORODE.jpg"
                 alt=""
               />
               <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
@@ -835,7 +847,7 @@
             <li>
               <img
                 class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
+                src="@/assets/img/team/KAZEEN-TEWOGBADE.jpg"
                 alt=""
               />
               <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
