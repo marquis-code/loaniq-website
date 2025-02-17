@@ -45,10 +45,11 @@
     <HowItWorks />
 
     <BusinessMetrics />
-
     <TestimonialsScroll />
 
+
     <FrequentlyAskedQuestions />
+
 
 
     <div id="contact-us" class="relative isolate bg-white">
@@ -153,6 +154,7 @@
 </template>
 
 <script setup lang="ts">
+import laptop from '@/assets/img/working-capital.jpg'
 // import LoansHero from "../components/LoansHero.vue";
 const amount = ref(500000)
 const duration = ref(1)
@@ -165,4 +167,21 @@ const formatCurrency = (value: number): string => {
     currencyDisplay: 'symbol',
   }).format(value);
 }
+
+
+interface Testimonial {
+    name: string
+    title: string
+    company: string
+    companyColor: string
+    quote: string
+    image: string
+    bio: string
+  }
 </script>
+
+<style scoped>
+.carousel-item {
+  scroll-snap-align: start;
+}
+</style>

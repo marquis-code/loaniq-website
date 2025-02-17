@@ -37,7 +37,7 @@
                     <a 
                       v-if="button.text === 'Browse Available Products'" 
                       href="#loan-products" 
-                      class="px-6 py-3 rounded-md block max-w-lg transition-colors bg-[#C78D6B] hover:bg-[#B67D5B] text-white"
+                      class="px-6 py-3 rounded-md block max-w-lg text-[#2A423A] font-semibold transition-colors bg-white"
                     >
                       {{ button.text }}
                       <span v-if="button.yield" class="text-sm ml-2">
@@ -47,7 +47,7 @@
                     <button 
                       v-else
                       @click="handleButtonClick(button)"
-                      class="px-6 py-3 rounded-md block max-w-lg transition-colors"
+                      class="px-6 py-3 rounded-md block max-w-lg font-semibold transition-colors"
                       :class="button.primary ? 
                         'bg-[#C78D6B] hover:bg-[#B67D5B] text-white' : 
                         'bg-[#2A423A] hover:bg-[#1A322A] text-white'"

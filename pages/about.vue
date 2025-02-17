@@ -656,213 +656,99 @@
        
       </ul> -->
         <div class="pt-10">
-          <h2 class="font-medium text-gray-800 text-2xl">Managemnt Profile</h2>
-          <ul
-            role="list"
-            class="mx-auto mt-4 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
-          >
-            <li>
-              <img
-                class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="@/assets/img/team/ADESOLA-AYOBAMI.jpg"
-                alt=""
-              />
-              <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
-                Sola Salami
-              </h3>
-              <p class="text-base/7 text-gray-300">
-                Co-Founder & Chief Executive Officer
-              </p>
-              <p class="text-sm/6 text-gray-500 text-justify">
-                An accomplished executive with over 30 years of experience
-                spanning IT, real estate, and finance. Formerly the Head of IT
-                at Skye Bank (now Polaris Bank), Sola has a distinguished track
-                record of driving technological innovation and strategic growth.
-              </p>
-            </li>
-            <li>
-              <img
-                class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="@/assets/img/team/AYOBAMI-ADELOYE.jpg"
-                alt=""
-              />
-              <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
-                Ayobami Adeloye
-              </h3>
-              <p class="text-base/7 text-gray-300">
-                Co-Founder & Managing Director
-              </p>
-              <p class="text-sm/6 text-gray-500 text-justify">
-                A distinguished finance professional with over 23 years of
-                experience in Nigeria’s finance industry. Formerly the Ikeja
-                Zonal Manager at Wema Bank and COO of Hallmark Finance.
-              </p>
-            </li>
-            <li>
-              <img
-                class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="@/assets/img/team/ODEJOBI-BABAJIDE.jpg"
-                alt=""
-              />
-              <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
-                Odejobi M. Babajide
-              </h3>
-              <p class="text-base/7 text-gray-300">
-                Head, Human Resources and Admin
-              </p>
-              <p class="text-sm/6 text-gray-500 text-justify">
-                Versatile HR professional with over 11 years of experience in
-                talent management, organisational structure, and strategic
-                planning. Currently Head of HR at Loan iQ Limited.
-              </p>
-            </li>
-            <!-- <li>
-              <img
-                class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
-                alt=""
-              />
-              <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
-                Liasu Babatunde
-              </h3>
-              <p class="text-base/7 text-gray-300">
-                Head, Business Development
-              </p>
-              <p class="text-sm/6 text-gray-500 text-justify">
-                Accomplished Senior Marketing Manager with over a decade of
-                expertise in public sector lending, portfolio management, and
-                client relations.
-              </p>
-            </li> -->
-            <!-- <li>
-              <img
-                class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
-                alt=""
-              />
-              <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
-                Sheriff Bayonle
-              </h3>
-              <p class="text-base/7 text-gray-300">
-                Head, Credit and Operations
-              </p>
-              <p class="text-sm/6 text-gray-500 text-justify">
-                Operations Manager with over 10 years of experience in public
-                sector lending, portfolio management, loan monitoring, and
-                credit exposure management.
-              </p>
-            </li> -->
-            <li>
-              <img
-                class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="@/assets/img/team/TEMIDAYO-FOWOSIRE.jpg"
-                alt=""
-              />
-              <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
-                Temidayo Fowosire
-              </h3>
-              <p class="text-base/7 text-gray-300">
-                Head, Customer Experience Management and Operations
-              </p>
-              <p class="text-sm/6 text-gray-500 text-justify">
-                Seasoned management consultant with over a decade of experience
-                in banking operations, customer service excellence, and
-                administrative efficiency.
-              </p>
-            </li>
-            <li>
-              <img
-                class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80"
-                alt=""
-              />
-              <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
-                Victoria Tony-Bekederemo
-              </h3>
-              <p class="text-base/7 text-gray-300">
-                Head, Wealth Management and Business Development
-              </p>
-              <p class="text-sm/6 text-gray-500 text-justify">
-                Over 12 years of expertise in financial product sales, liability
-                generation, and wealth management. Currently leading the Wealth
-                Management division at Loan iQ Limited.
-              </p>
-            </li>
-          </ul>
+          <h2 class="font-medium text-gray-800 text-2xl">Managemnt bio</h2>
+          <Animated :testimonials="managementTeam" />
         </div>
         <div class="pt-10">
           <h2 class="font-medium text-gray-800 text-2xl">Advisory Board</h2>
-          <ul
-            role="list"
-            class="mx-auto mt-4 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
-          >
-            <li>
-              <img
-                class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="@/assets/img/team/OLUFEMI-ARIBALOYE.jpg"
-                alt=""
-              />
-              <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
-                Olufemi Aribaloye
-              </h3>
-              <p class="text-base/7 text-gray-300">Advisory Board Member</p>
-              <p class="text-sm/6 text-gray-500 text-justify">
-                Highly disciplined professional with 34 years in banking,
-                specialising in business development and risk management. Former
-                Executive Director at Keystone Bank.
-              </p>
-            </li>
-            <li>
-              <img
-                class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="@/assets/img/team/MURITALA-IBRAHIM.jpg"
-                alt=""
-              />
-              <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
-                Muritala Ibrahim
-              </h3>
-              <p class="text-base/7 text-gray-300">Advisory Board Member</p>
-              <p class="text-sm/6 text-gray-500 text-justify">
-                Founder & Managing Director of Misa Limited, transforming the
-                company into a leading real estate and property development firm
-                since 1996.
-              </p>
-            </li>
-            <li>
-              <img
-                class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="@/assets/img/team/ABIOLA-OLORODE.jpg"
-                alt=""
-              />
-              <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
-                Dr. Abiola Olufunke Olorode
-              </h3>
-              <p class="text-base/7 text-gray-300">Advisory Board Member</p>
-              <p class="text-sm/6 text-gray-500 text-justify">
-                CEO of Diamed Centre, healthcare leader with 30+ years in
-                clinical practice, pharmaceuticals, and public health, including
-                roles at UNICEF and Pfizer.
-              </p>
-            </li>
-            <li>
-              <img
-                class="aspect-[14/13] w-full rounded-2xl object-cover"
-                src="@/assets/img/team/KAZEEN-TEWOGBADE.jpg"
-                alt=""
-              />
-              <h3 class="mt-6 text-lg/8 font-semibold tracking-tight">
-                Mr. Kazeem Tewogbade
-              </h3>
-              <p class="text-base/7 text-gray-300">Advisory Board Member</p>
-              <p class="text-sm/6 text-gray-500 text-justify">
-                Solutions Architect with over 25 years of experience, co-founder
-                of Bluechip Technologies, and investor in 100+ startups via
-                Voltron Capital.
-              </p>
-            </li>
-          </ul>
+          <Animated :testimonials="advisoryBoard" />
         </div>
       </div>
     </main>
   </div>
 </template>
+
+<script setup lang="ts">
+import ceo from '@/assets/img/team/ADESOLA-AYOBAMI.jpg'
+import cofounder from '@/assets/img/team/AYOBAMI-ADELOYE.jpg'
+import hr from '@/assets/img/team/ODEJOBI-BABAJIDE.jpg'
+import headOfCustomerExperience from '@/assets/img/team/TEMIDAYO-FOWOSIRE.jpg'
+import headOfWealthManagement from "@/assets/img/team/VICTORIA.jpg"
+import advisory1 from '@/assets/img/team/OLUFEMI-ARIBALOYE.jpg'
+import advisory2 from '@/assets/img/team/MURITALA-IBRAHIM.jpg'
+import advisory3 from '@/assets/img/team/ABIOLA-OLORODE.jpg'
+import advisory4 from '@/assets/img/team/KAZEEN-TEWOGBADE.jpg'
+const managementTeam  = ref([
+    {
+       image: ceo,
+        "name": "Sola Salami",
+        "title": "Co-Founder & Chief Executive Officer",
+        "bio": "Sola Salami is an accomplished executive with over 30 years of experience spanning IT, real estate, and finance. Formerly the Head of IT at Skye Bank (now Polaris Bank), Sola has a distinguished track record of driving technological innovation and strategic growth. A serial entrepreneur, Sola founded Gold Micro-Finance Bank and successfully led its acquisition by Piggytech Global Ltd. Currently, he manages a dynamic IT firm and serves as CEO of a leading real estate company, overseeing a portfolio exceeding N10 billion in developments and sales. He is known for his conscientious, enthusiastic, and responsible approach to business, consistently demonstrating high initiative and self-motivation. His adaptability to new situations and environments enables him to excel both independently and as a collaborative team member. A committed IT professional with core expertise in network and systems administration and system integration, Sola also excels as a manager of highly skilled professionals, leveraging excellent analytical and problem-solving skills. He holds several certificates and degrees, including an MBA from Lagos Business School and additional qualifications from prestigious institutions such as The Wharton School, University of Pennsylvania, and IESE Business School. These credentials reflect his robust educational foundation and unwavering commitment to continuous professional development."
+    },
+    {
+       image: cofounder,
+        "name": "Ayobami Adeloye",
+        "title": "Co-Founder & Managing Director",
+        "bio": "Ayobami Adeloye is a distinguished finance professional with over 23 years of experience in Nigeria’s finance industry. His experience is diverse, including finance, performance management, sales, and leadership roles. Ayobami served as the Ikeja Zonal Manager at Wema Bank for more than a decade, where he managed and expanded the bank's retail and commercial banking business. Following his impactful tenure at Wema Bank, he advanced to Hallmark Finance Company Limited as the Chief Operating Officer (COO) and Acting Chief Executive Officer (CEO). Under his leadership, Hallmark Finance, one of Nigeria’s leading finance companies, saw significant growth and operational improvements across its branches in Lagos, Abuja, Kano, Warri, Asaba, and Port Harcourt. He is an Alumnus of the University of Ilorin, a fellow of the Chartered Institute of Accountants of Nigeria and Certified in International Financial Reporting Standards (IFRS). Ayobami's extensive experience and qualifications make him a key figure in driving strategic growth and excellence in the business."
+    },
+    {
+       image: hr,
+        "name": "Odejobi M. Babajide",
+        "title": "Head, Human Resources and Admin",
+        "bio": "Odejobi M. Babajide is a versatile professional with over 11 years of rich experience in talent management, performance development, organisational structure, strategic planning, and product development across the telecommunications, chemical allied, and oil & gas industries. He excels in leadership, supervision, and communication, demonstrating a strong drive and enthusiasm for achieving organisational growth. He holds a B.Sc. (Ed) and an M.Sc. in Industrial Chemistry and is an esteemed member of several professional organisations, including Chartered Institute of Personnel Management (ACIPM), Institute of Chartered Chemists of Nigeria (MICCON), and Chemical Society of Nigeria (MSCN). Odejobi's leadership prowess is evident in his ability to empower individuals and guide teams toward achieving their full potential. His strategic acumen allows him to translate visionary goals into actionable plans, driving successful business outcomes. He is adept at identifying challenges, crafting innovative solutions, and making informed decisions to enhance efficiency and stimulate growth. Currently, Odejobi serves as the Head of Human Resources & Admin at Loan iQ Limited, where he spearheads initiatives in Talent Management, Employee Engagement & Satisfaction, and Performance Management. His role also encompasses overseeing Training and Development programmes that align with the company’s core values and strategic objectives."
+    },
+    // {
+    //    image: ceo,
+    //     "name": "Liasu Babatunde",
+    //     "title": "Head, Business Development",
+    //     "bio": "Liasu Babatunde is an accomplished Senior Marketing Manager with over a decade of expertise in public sector lending, portfolio management, client relations, and market expansion. His career is distinguished by a consistent record of success in new product activation, mandate execution, and market penetration. Liasu excels in elevating brand visibility and boosting sales within Nigeria’s public sector micro-lending and financial services industry. Throughout his career, Liasu has fostered and maintained robust business relationships with key stakeholders, achieving 100% collections on receivables, thereby safeguarding investor funds and driving financial growth. He has held significant roles at prestigious organisations including Zedvance, Quality Lifestyle Credit, Fast Credit, FTI Credit, Loanbook Limited, and Grand Treasurers Limited (now Hallmark Finance Company Limited). His titles have included Marketing Officer, Sales Supervisor, Team Lead, Marketing Manager, Regional Sales Head, and Head of Public Sector Business. Currently, Liasu serves as the Head of Business Development at Loan iQ Limited, where he plays a critical role in driving growth and ensuring the company’s competitive titleing in the market."
+    // },
+    // {
+    //    image: ceo,
+    //     "name": "Sheriff Bayonle",
+    //     "title": "Head, Credit and Operations",
+    //     "bio": "Sheriff Bayonle is an accomplished Operations Manager with over 10 years of extensive experience in public sector lending, portfolio management, loan monitoring and collections, delinquency management, credit exposure management, and customer relations. He has a proven track record of expertise in managing loan portfolios, optimising applicable ratios, and overseeing comprehensive credit management processes. Sheriff has held pivotal roles in notable organisations such as Fortis Microfinance Bank (MFB), IRL MFB, Richway MFB, and Hallmark Finance Company Limited. His career progression includes titles as Loan Operations Officer, Refund and Reconciliation Officer, Customer Care Manager, and ultimately, Head of Operations and Credit Management. He holds an HND in Accountancy and Finance and an MCP certification, reflecting his strong educational background and commitment to professional excellence."
+    // },
+    {
+       image: headOfCustomerExperience,
+        "name": "Temidayo Fowosire",
+        "title": "Head, Customer Experience Management and Operations",
+        "bio": "Temidayo Fowosire is a seasoned management consultant specialising in banking operations, customer service excellence, and administrative efficiency. With over a decade of experience, she has transformed and fostered high-performance teams through her strategic leadership. Temidayo's career encompasses extensive roles in Customer Service, Funds Transfer, Cash Management, and Operations. She has held pivotal titles, including three years with Finatrust Microfinance Bank and PurpleMoney Microfinance Bank as Head of Operations, Administration, and Customer Experience. She has an impressive educational background, including a Higher National Diploma (HND) in Banking and Finance, a Bachelor of Science (BSc) in Business Management and Entrepreneurship, and an MBA with a Specialisation in Fintech and Blockchain from Nexford University in Washington, D.C., USA. Additionally, she holds several professional certificates in Customer Service and Financial Analysis, rounding out her qualifications in the finance and business sectors. She is currently the Head of Customer Experience Management at Loan iQ Limited, where she drives customer satisfaction and ensures that all customer interactions align with the company’s values and objectives."
+    },
+    {
+       image: headOfWealthManagement,
+        "name": "Victoria Tony-Bekederemo",
+        "title": "Head, Wealth Management and Business Development",
+        "bio": "Victoria Tony-Bekederemo has over 12 years of expertise in the sales of financial products, liability generation, and a strong track record in wealth management, cross-selling, relationship management, and customer base acquisition. She has successfully built and managed client relationships, driving business growth through strategic financial solutions. Victoria holds an HND in Mass Communication and a BSc in Business Administration. She is an Associate Member of the Chartered Institute of Personnel Management (CIPM) and a member of the National Institute of Marketing of Nigeria (NIMN). Victoria has held pivotal roles at notable institutions such as Wema Bank Plc, Canary Point Corporate Services, and FairMoney MFB, where she honed her skills in financial services and customer relationship management. She is currently leading the Wealth Management division at Loan iQ Limited, overseeing the management of high-net-worth client portfolios and contributing to the firm’s financial product sales strategy."
+    }
+])
+
+
+const advisoryBoard  = ref([
+  {
+    image: advisory1,
+    "name": "Olufemi Aribaloye",
+    "title": "Advisory Board Member",
+    "bio": "Olufemi Aribaloye is a highly disciplined and focused professional with an extensive 34-year career in the banking sector, specialising in business development and risk management. He has consistently demonstrated a strong capacity to guide and support the achievement of corporate objectives across various roles, including Corporate Banking, Branch Banking, Treasury Marketing, and Risk Management. Olufemi holds a Bachelor's degree in Business Administration and an MBA in Finance. Throughout his banking career, he has been an integral part of critical Management and Board Committees. He has represented Skye Bank and Polaris Bank on the boards of both local and international subsidiaries as a Non-Executive Director and served as Executive Director of Risk Management and Compliance at Keystone Bank. An alumnus of Pan-Atlantic University (Lagos Business School), Olufemi has also completed the Senior Management Programme (SMP) at INSEAD, Fontainebleau, France, and the Stanford Graduate School of Business in the USA. He is a Chartered Risk Manager (CRM), a member of the Chartered Risk Management Institute of Nigeria (CRMI), an Honorary Senior Member of the Chartered Institute of Bankers of Nigeria (CIBN), and a Fellow of the Institute of Credit Administration of Nigeria (FICA)."
+  },
+  {
+     image: advisory2,
+    "name": "Muritala Ibrahim",
+    "title": "Advisory Board Member",
+    "bio": "Muritala Ibrahim is the visionary Founder and Managing Director of Misa Limited. With a Bachelor's degree in Business (Marketing) and a unique blend of self-taught accounting and corporate strategy skills, Muritala established Misa Nigeria Limited in December 1996. Under his leadership, the company has evolved from a real estate agency into a comprehensive enterprise that spans the full spectrum of property development. Today, Misa Limited is a multifaceted organisation engaged in various aspects of the property development value chain. Its services include the retailing of building materials, construction of high-rise structures and estates, project management, and facilities and property management. Muritala’s strategic foresight and entrepreneurial drive have been instrumental in transforming Misa Limited into a prominent player in the real estate industry."
+  },
+  {
+    image: advisory3,
+    "name": "Dr. Abiola Olufunke Olorode",
+    "title": "Advisory Board Member",
+    "bio": "Dr. Abiola Olufunke Olorode (née Adebutu) is a seasoned healthcare leader with over 30 years of experience in healthcare management, clinical practice, and pharmaceuticals. As the CEO of Diamed Centre in Nigeria, she excels in strategic leadership, driving innovation, and ensuring high-quality patient care. Her leadership style emphasises departmental collaboration, technological advancement, and staff development. Her career includes significant roles such as Health Manager at UNICEF, where she contributed to HIV/AIDS prevention, policy development, and capacity building. In the pharmaceutical sector, she has held titles at Glaxo Wellcome and Pfizer Products PLC, managing clinical trials and providing medical guidance on drug portfolios. Dr. Olorode's academic credentials include an MB, Ch.B from The Royal College of Surgeons in Ireland and an MSc in Pharmacology from the University of Lagos. She is pursuing an MBA from the Business School of the Netherlands. Her academic excellence is highlighted by several awards and her research contributions in medical journals. A member of the Irish and Nigerian Medical Associations, Dr. Olorode upholds high professional ethics and continues to impact medical practice. She is also active in extracurricular activities like badminton, squash, and traveling, showcasing her commitment to a well-rounded personal and professional life."
+  },
+  {
+    image: advisory4,
+    "name": "Mr. Kazeem Tewogbade",
+    "title": "Advisory Board Member",
+    "bio": "Mr. Kazeem Tewogbade is a highly accomplished and results-oriented Solutions Architect with a proven track record of success in leading architecture and design phases of key Information Technology projects. Over the past 16 years, he has led the transformation of Bluechip Technologies Ltd from a startup to a prominent player in the African IT marketplace. With over 25 years of experience, Mr. Tewogbade possesses a unique blend of technical expertise, strategic vision, and business acumen. Mr. Tewogbade is well known for his dedication to delivering cost-effective and superior-quality work. His professional journey has seen him through Information Projects Ltd, Computer Systems Associate (CSA), Cardbase Technologies, MTN and Accenture before co-founding Bluechip Technologies Ltd in 2008. With his strong team, he is rapidly titleing Bluechip Technologies as an eminent pan-African systems integrator with stable operations in eight African countries. He has a passion for technology innovation and with his partner, has been very active in the Technology Venture Capital space with investments in more than 100 startups across Africa via Voltron Capital. Mr. Tewogbade is a graduate of Computer Science in the first class division from the University of Ibadan and has a master’s degree in Information Systems Management from the University of Liverpool. He is happily married with kids."
+  }
+]
+)
+</script>
