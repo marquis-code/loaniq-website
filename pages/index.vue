@@ -72,7 +72,9 @@
         </div>
         <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Need a Loan? Let's Talk!</h2>
         <p class="mt-6 text-lg/8 text-gray-600">
-            Get quick and hassle-free loans tailored to your needs. Whether it's for personal expenses, business growth, or emergency funds, we've got you covered. Apply today and take a step towards financial freedom!
+            Get quick and hassle-free loan. 
+            <!-- tailored to your needs. Whether it's for personal expenses, business growth, or emergency funds, we've got you covered. -->
+             Apply today and take a step towards financial freedom!
         </p>
 
         <!-- <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Get in touch sss</h2> -->

@@ -13,25 +13,25 @@
             <nav aria-label="Global">
               <ul class="flex items-center gap-6 text-sm">
                 <li>
-                  <NuxtLink to="/about" class="text-gray-500 font-semibold transition hover:text-gray-500/75" href="#"> About Us</NuxtLink>
+                  <NuxtLink to="/about" class="text-gray-500 text-lg font-semibold transition hover:text-gray-500/75" href="#"> About Us</NuxtLink>
+                </li>
+
+                <!-- <li>
+                  <a class="text-gray-500 font-semibold text-lg transition hover:text-gray-500/75" href="#loan-products">Products</a>
+                </li> -->
+
+                <li>
+                  <NuxtLink class="text-gray-500 text-lg font-semibold transition hover:text-gray-500/75" to="/invest"> Investments</NuxtLink>
                 </li>
 
                 <li>
-                  <a class="text-gray-500 font-semibold transition hover:text-gray-500/75" href="#loan-products">Products</a>
-                </li>
-
-                <li>
-                  <NuxtLink class="text-gray-500 font-semibold transition hover:text-gray-500/75" to="/invest"> Investments</NuxtLink>
-                </li>
-
-                <li>
-                  <a class="text-gray-500 font-semibold transition hover:text-gray-500/75" href="#testimonials"> Testimonials </a>
+                  <a class="text-gray-500 text-lg font-semibold transition hover:text-gray-500/75" href="#testimonials"> Testimonials </a>
                 </li>
 
 
 
                 <li>
-                  <a class="text-gray-500 font-semibold transition hover:text-gray-500/75" href="#contact-us"> Contact Us </a>
+                  <a class="text-gray-500 text-lg font-semibold transition hover:text-gray-500/75" href="#contact-us"> Contact Us </a>
                 </li>
               </ul>
             </nav>

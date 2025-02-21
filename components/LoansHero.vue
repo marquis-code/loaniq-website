@@ -119,7 +119,7 @@
       description: 'Secure your financial future with our flexible loan solutions.',
       buttons: [
         { text: 'Looking to take a loan?', action: 'openGame' },
-        { text: 'Browse Available Products', primary: true }
+        // { text: 'Browse Available Products', primary: true }
       ]
     }
   ]);

@@ -5,7 +5,12 @@
                 <div class="lg:grid lg:grid-cols-12 lg:gap-8">
                     <div class="lg:col-span-5" data-aos="fade-up">
                         <h2 class="text-2xl font-bold leading-10 tracking-tight">Frequently asked questions</h2>
-                        <p class="mt-6 max-w-2xl text-base leading-7 text-gray-800">Have a different question and can’t find the answer you’re looking for? Reach out to our support team by <a href="#" class="font-semibold text-indigo-400 hover:text-indigo-300">sending us an email</a> and we’ll get back to you as soon as we can.</p>
+                        <p class="mt-6 max-w-2xl text-base leading-7 text-gray-800">Have a different question and can’t find the answer you’re looking for? Reach out to our support team by
+                            <!-- <a href="mailto:info@loaniq.ng" class="font-semibold text-indigo-400 hover:text-indigo-300">sending us an email</a>  -->
+                            <a href="mailto:info@loaniq.ng" class="font-semibold text-indigo-400 hover:text-indigo-300">
+  Send us an email
+</a>
+                            and we’ll get back to you as soon as we can.</p>
                     </div>
                     <div class="lg:col-span-7 lg:mt-0 space-y-8 pt-6 md:pt-0" data-aos="fade-up">
                         <div v-for="item in faqs" :key="item.id" class="overflow-hidden border-b">
@@ -52,11 +57,11 @@ const faqs = [
         question: 'How do I apply for a loan with Loan IQ Limited?', 
         answer: `Applying for a loan is easy! Fill out the online application form, and our team will guide you through the rest of the process.`
     },
-    {
-        id: 2, 
-        question: 'What types of loans do you offer?', 
-        answer: `We offer a range of loans, including personal loans, business loans, and more. Explore our diverse loan products designed to meet your unique financial needs.`
-    },
+    // {
+    //     id: 2, 
+    //     question: 'What types of loans do you offer?', 
+    //     answer: `We offer a range of loans, including personal loans, business loans, and more. Explore our diverse loan products designed to meet your unique financial needs.`
+    // },
     {
         id: 3,
         question: `What are the interest rates on your loans?`,

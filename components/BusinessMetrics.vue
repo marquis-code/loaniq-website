@@ -20,9 +20,9 @@
         <!-- Staff Moved -->
         <div class="bg-[#F8F9FF] rounded-3xl p-8">
           <div data-aos="fade-up" class="text-[#284d79] text-5xl font-bold mb-4">
-            {{ numberWithCommas(currentValues.staff) }}+
+            ₦{{ numberWithCommas(currentValues.staff) }}+
           </div>
-          <h3 data-aos="fade-up" class="text-gray-900 text-xl font-semibold mb-2">Up To 1 Million Loans In 5 Minutes</h3>
+          <h3 data-aos="fade-up" class="text-gray-900 text-xl font-semibold mb-2">Loan In 5 Minutes</h3>
           <!-- <p data-aos="fade-up" class="text-gray-600 text-sm">
             We've moved 10k+ staffs across 100+ different routes.
           </p> -->
@@ -33,7 +33,7 @@
           <div data-aos="fade-up" class="text-[#284d79] text-5xl font-bold mb-4">
             {{ currentValues.clients }}+
           </div>
-          <h3 data-aos="fade-up" class="text-gray-900 text-xl font-semibold mb-2">1,000+ Loan Proceessed</h3>
+          <h3 data-aos="fade-up" class="text-gray-900 text-xl font-semibold mb-2">Loans Processed</h3>
           <!-- <p data-aos="fade-up" class="text-gray-600 text-sm">
             Our clients have about 10k+ staff that use our Transports.
           </p> -->
@@ -42,9 +42,10 @@
         <!-- Trips Taken -->
         <div class="bg-[#F8F9FF] rounded-3xl p-8">
           <div data-aos="fade-up" class="text-[#284d79] text-5xl font-bold mb-4">
-            {{ numberWithCommas(currentValues.trips) }}+
+            <!-- {{ numberWithCommas(currentValues.trips) }}+ -->
+            {{ currentValues.trips }}+
           </div>
-          <h3 data-aos="fade-up" class="text-gray-900 text-xl font-semibold mb-2">500 Happy Customers</h3>
+          <h3 data-aos="fade-up" class="text-gray-900 text-xl font-semibold mb-2">Happy Customers</h3>
           <!-- <p data-aos="fade-up" class="text-gray-600 text-sm">
             We have covered a lot of miles and taken 3M+ trips.
           </p> -->
@@ -77,7 +78,7 @@
   const targetValues: Metrics = {
     staff: 1000000,
     clients: 1000,
-    trips: 500,
+    trips: 1000,
     vehicles: 330
   };
   
