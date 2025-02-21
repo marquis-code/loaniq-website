@@ -11,12 +11,12 @@
       </div>
     </div>
     <div class="mx-auto grid w-full max-w-xl grid-cols-2 items-center gap-y-12 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:pl-8">
-      <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/lagos-state.webp" alt="Bank 1" width="105" height="48">
-      <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/lenda-stack.png" alt="Bank 2" width="104" height="48">
-      <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/paystack-logo2.png" alt="Bank 3" width="50" height="50">
-      <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/reliance.png" alt="Bank 4" width="136" height="48">
-      <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/remita.png" alt="Bank 5" width="158" height="48">
-      <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/you-verify.png" alt="Bank 6" width="147" height="48">
+      <img data-aos="fade-up" class="max-h-24 w-full object-contain object-left" src="@/assets/img/lagos-state.webp" alt="Bank 1">
+      <img data-aos="fade-up" class="max-h-24 w-full object-contain object-left" src="@/assets/img/lenda-stack.png" alt="Bank 2">
+      <img data-aos="fade-up" class="max-h-24 w-full object-contain object-left" src="@/assets/img/paystack-logo3.png" alt="Bank 3">
+      <img data-aos="fade-up" class="max-h-24 w-full object-contain object-left" src="@/assets/img/reliance.png" alt="Bank 4">
+      <img data-aos="fade-up" class="max-h-24 w-full object-contain object-left" src="@/assets/img/remita-logo.webp" alt="Bank 5">
+      <img data-aos="fade-up" class="max-h-24 w-full object-contain object-left" src="@/assets/img/you-verify.png" alt="Bank 6">
     </div>
   </div>
 </div>

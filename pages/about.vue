@@ -94,7 +94,7 @@
                 >
                   <div class="relative">
                     <img
-                      src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
+                      src="@/assets/img/about/team1.jpg"
                       alt=""
                       class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                     />
@@ -108,7 +108,7 @@
                 >
                   <div class="relative">
                     <img
-                      src="https://images.unsplash.com/photo-1485217988980-11786ced9454?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
+                       src="@/assets/img/about/team2.jpg"
                       alt=""
                       class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                     />
@@ -118,7 +118,7 @@
                   </div>
                   <div class="relative">
                     <img
-                      src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-x=.4&w=396&h=528&q=80"
+                       src="@/assets/img/about/team15.jpg"
                       alt=""
                       class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                     />
@@ -130,7 +130,7 @@
                 <div class="w-44 flex-none space-y-8 pt-32 sm:pt-0">
                   <div class="relative">
                     <img
-                      src="https://images.unsplash.com/photo-1670272504528-790c24957dda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=left&w=400&h=528&q=80"
+                      src="@/assets/img/about/team12.jpg"
                       alt=""
                       class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                     />
@@ -140,7 +140,7 @@
                   </div>
                   <div class="relative">
                     <img
-                      src="https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
+                     src="@/assets/img/about/team11.jpg"
                       alt=""
                       class="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
                     />
@@ -155,42 +155,49 @@
         </div>
       </div>
 
-         <!-- Header section -->
-
-    <!-- Content section -->
-<section class="pb-32">
-    <div
-          class="relative isolate overflow-hidden max-w-7xl mx-auto bg-gray-900 px-6 pt-16 shadow-2xl sm:rounded-3xl sm:px-16 md:py-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0"
-        >
-        <svg viewBox="0 0 1024 1024" class="absolute left-1/2 top-1/2 -z-10 size-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0" aria-hidden="true">
-        <circle cx="512" cy="512" r="512" fill="url(#759c1415-0410-454c-8f7c-9a820de03641)" fill-opacity="0.7" />
-        <defs>
-          <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
-            <stop stop-color="#7775D6" />
-            <stop offset="1" stop-color="#E935C1" />
-          </radialGradient>
-        </defs>
+      <div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
+  <div class="absolute inset-0 -z-10 overflow-hidden">
+    <svg class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]" aria-hidden="true">
+      <defs>
+        <pattern id="e813992c-7d03-4cc4-a2bd-151760b470a0" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+          <path d="M100 200V.5M.5 .5H200" fill="none" />
+        </pattern>
+      </defs>
+      <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
+        <path d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z" stroke-width="0" />
       </svg>
-    <div class="mx-auto mt-20 max-w-7xl px-6 pb-16 lg:pb-0 lg:px-8">
-      <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-        <div class="grid max-w-xl grid-cols-1 gap-8 text-base/7 text-gray-300 lg:max-w-none lg:grid-cols-2">
-          <div>
-            <p class="text-start text-white">We offer a range of products and services that help our clients grow and manage their finances. Whether you are looking for a personal loan, a business loan, or an investment opportunity, we have the tools and resources to help you succeed.</p>
-            <p class="mt-8 text-start text-lg text-white">At the heart of our business is a commitment to trust and transparency; we believe that every successful partnership is built on a foundation of mutual respect and understanding. That is why we work closely with our clients to understand their unique financial needs and provide tailored solutions that fit their goals.</p>
-          </div>
-          <div>
-            <p class="text-start text-white">Whether you are looking to enhance your cash flow, finance a major purchase, consolidate your debt or simply grow your funds, LoanIQ Limited is here to help. Contact us today to learn more about our lending and investment options and how we can help you achieve financial success.
-            </p>
-            <!-- <p class="mt-8 text-start">Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id blandit molestie auctor fermentum dignissim. Lacus diam tincidunt ac cursus in vel. Mauris varius vulputate et ultrices hac adipiscing egestas. Iaculis convallis ac tempor et ut. Ac lorem vel integer orci.</p> -->
-          </div>
+      <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)" />
+    </svg>
+  </div>
+  <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10">
+    <div class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+      <div class="lg:pr-4">
+        <div class="lg:max-w-lg">
+          <!-- <p class="text-base/7 font-semibold text-indigo-600">Deploy faster</p> -->
+          <h1 class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">A brand you can trust.</h1>
+          <p class="mt-6 text-xl/8 text-gray-700">With deep expertise in the lending and investment space, we offer a range of products and services that help our clients grow and manage their finances. Whether you’re looking for a personal loan, a business loan, or an investment opportunity, we have the tools and resources to help you succeed.</p>
         </div>
       </div>
     </div>
+    <div class="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden">
+      <img class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]" src="@/assets/img/about/team1.jpg" alt="">
     </div>
-</section>
+    <div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+      <div class="lg:pr-4">
+        <div class="max-w-xl text-base/7 text-gray-700 lg:max-w-lg">
+          <p class="mt-6 text-xl/8 text-gray-700">At the heart of our business is a commitment to trust and transparency, we believe that every successful partnership is built on a foundation of mutual respect and understanding. That’s why we work closely with our clients to understand their unique financial needs and provide tailored solutions that fit their goals.</p>
+          <p class="mt-6 text-xl/8 text-gray-700">Whether you are looking to enhance your cash flow, finance a major purchase, consolidate your debt or simply grow your funds, Loan IQ Limited is here to help. Contact us today to learn more about our lending and investment options and how we can help you achieve financial success.</p>
+          <!-- <h2 class="mt-16 text-2xl font-bold tracking-tight text-gray-900">No server? No problem.</h2> -->
+          <!-- <p class="mt-6">Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in. Convallis arcu ipsum urna nibh. Pharetra, euismod vitae interdum mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi. Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis diam.</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       <!-- Content section -->
-      <div class="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8 xl:-mt-8">
+      <div class="mx-auto -mt-12 max-w-7xl px-6 sm:mt-0 lg:px-8">
         <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
           <h2
             class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
@@ -268,7 +275,7 @@
                 >
                   What drives us
                 </h2>
-                <p class="mt-6 text-pretty text-lg/8 text-gray-300">
+                <p class="mt-6 text-pretty text-lg/8 text-white">
                   Our relentless drive stems from a passion for delivering
                   personalised financial solutions, fostering enduring
                   relationships, achieving sustainable growth, and maintaining
@@ -438,7 +445,7 @@
           >
             Our vision
           </h2>
-          <p class="mx-auto mt-6 max-w-xl text-lg/8 text-gray-300">
+          <p class="mx-auto mt-6 max-w-xl text-lg/8 text-white">
             To be the most trusted and respected financial services company,
             helping individuals and businesses achieve their financial goals
             through innovative solutions and exceptional customer service
@@ -446,11 +453,11 @@
           <div
             class="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5"
           >
-          <img data-aos="fade-up" class="max-h-12 w-full rounded-full object-contain object-left mix-blend-multiply" src="@/assets/img/lagos-state.webp" alt="Bank 1" width="105" height="48">
+          <!-- <img data-aos="fade-up" class="max-h-12 w-full rounded-full object-contain object-left mix-blend-multiply" src="@/assets/img/lagos-state.webp" alt="Bank 1" width="105" height="48">
           <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left mix-blend-multiply" src="@/assets/img/lenda-stack.png" alt="Bank 2" width="104" height="48">
           <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left mix-blend-multiply" src="@/assets/img/paystack-logo2.png" alt="Bank 3" width="50" height="50">
           <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left mix-blend-multiply" src="@/assets/img/reliance.png" alt="Bank 4" width="136" height="48">
-          <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left mix-blend-multiply" src="@/assets/img/remita.png" alt="Bank 5" width="158" height="48">
+          <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left mix-blend-multiply" src="@/assets/img/remita.png" alt="Bank 5" width="158" height="48"> -->
 
           <!-- <img data-aos="fade-up" class="max-h-12 w-full rounded-full object-contain object-left" src="@/assets/img/lagos-state.webp" alt="Bank 1" width="105" height="48">
       <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/lenda-stack.png" alt="Bank 2" width="104" height="48">
@@ -656,11 +663,11 @@
        
       </ul> -->
         <div class="pt-10">
-          <h2 class="font-medium text-gray-800 text-2xl">Managemnt Bio</h2>
+          <h2 class="font-medium text-gray-800 text-2xl uppercase">Managemet Bio</h2>
           <Animated :testimonials="managementTeam" />
         </div>
         <div class="pt-10">
-          <h2 class="font-medium text-gray-800 text-2xl">Advisory Board</h2>
+          <h2 class="font-medium text-gray-800 text-2xl uppercase">Advisory Board</h2>
           <Animated :testimonials="advisoryBoard" />
         </div>
       </div>

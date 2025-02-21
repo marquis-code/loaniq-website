@@ -87,7 +87,7 @@
     <div class="mx-auto max-w-2xl text-center">
       <hgroup>
         <!-- <h2 class="text-base/7 font-semibold text-indigo-600">Get started</h2> -->
-        <p class="mt-2 text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Take a bold step toward a brighter and more prosperous future.</p>
+        <p class="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Take a bold step toward a brighter and more prosperous future.</p>
       </hgroup>
       <!-- <p class="mx-auto mt-6 max-w-xl text-pretty text-lg/8 text-gray-600">Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur commodo do ea.</p> -->
       <div class="mt-8 flex justify-center">
