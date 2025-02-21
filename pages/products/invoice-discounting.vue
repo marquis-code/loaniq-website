@@ -6,6 +6,20 @@ import { useForm } from 'vee-validate'
 import * as yup from 'yup'
 import { Dialog, DialogPanel, TransitionChild, TransitionRoot } from '@headlessui/vue'
 
+useHead({
+  title: "Dynamic Page Title",
+  meta: [
+    { name: "description", content: "This is a specific page description" },
+    { property: "og:title", content: "Dynamic Page Title" },
+    { property: "og:description", content: "This is a specific page description for Open Graph" },
+    { property: "og:image", content: "/page-specific-image.jpg" },
+    { name: "twitter:title", content: "Dynamic Page Title" },
+    { name: "twitter:description", content: "This is a specific page description for Twitter" },
+    { name: "twitter:image", content: "/page-specific-image.jpg" },
+  ],
+  link: [{ rel: "canonical", href: "https://yourwebsite.com/dynamic-page" }],
+});
+
 interface Feature {
   id: number
   text: string

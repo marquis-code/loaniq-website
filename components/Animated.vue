@@ -26,7 +26,7 @@
             <div>
               <h3 class="font-semibold text-lg">{{ testimonial.name }}</h3>
               <p class="text-sm">
-                {{ testimonial.title }},
+                {{ testimonial.title }}
                 <span :class="`text-${testimonial.companyColor}`">{{ testimonial.company }}</span>
               </p>
             </div>

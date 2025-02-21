@@ -9,6 +9,20 @@ const features = ref([
   "Get 50% to 60% of the first sale value of your car."
 ]);
 
+useHead({
+  title: "Dynamic Page Title",
+  meta: [
+    { name: "description", content: "This is a specific page description" },
+    { property: "og:title", content: "Dynamic Page Title" },
+    { property: "og:description", content: "This is a specific page description for Open Graph" },
+    { property: "og:image", content: "/page-specific-image.jpg" },
+    { name: "twitter:title", content: "Dynamic Page Title" },
+    { name: "twitter:description", content: "This is a specific page description for Twitter" },
+    { name: "twitter:image", content: "/page-specific-image.jpg" },
+  ],
+  link: [{ rel: "canonical", href: "https://yourwebsite.com/dynamic-page" }],
+});
+
 const whyChoose = ref([
   "Easy access to working capital for business growth",
   "Highly competitive interest rates",

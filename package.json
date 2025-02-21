@@ -29,6 +29,7 @@
     "@tensorflow/tfjs-converter": "^4.22.0",
     "@tensorflow/tfjs-core": "^4.22.0",
     "@vueuse/core": "^12.5.0",
+    "@vueuse/head": "^2.0.0",
     "@vueuse/nuxt": "^12.5.0",
     "aos": "^2.3.4",
     "apexcharts": "^4.2.0",
