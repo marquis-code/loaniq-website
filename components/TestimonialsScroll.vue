@@ -35,7 +35,7 @@
               </div>
               <div class="flex items-center mt-4 flex-shrink-0">
                 <img 
-                  :src="testimonial.avatar" 
+                  src="@/assets/icons/avatar.svg" 
                   :alt="testimonial.name"
                   class="w-12 h-12 rounded-full object-cover flex-shrink-0"
                 />
@@ -69,10 +69,15 @@
               </div>
               <div class="flex items-center mt-4 flex-shrink-0">
                 <img 
-                  :src="testimonial.avatar" 
+                  src="@/assets/icons/avatar.svg" 
                   :alt="testimonial.name"
                   class="w-12 h-12 rounded-full object-cover flex-shrink-0"
                 />
+                <!-- <img 
+                  :src="testimonial.avatar" 
+                  :alt="testimonial.name"
+                  class="w-12 h-12 rounded-full object-cover flex-shrink-0"
+                /> -->
                 <div class="ml-3 flex-shrink-0">
                   <p class="text-gray-900 font-medium">{{ testimonial.name }}</p>
                   <p class="text-gray-500 text-sm">{{ testimonial.role }}</p>

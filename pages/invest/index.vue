@@ -17,7 +17,7 @@ useHead({
 </script>
 
 <template>
-  <main class="bg-gray-100 pb-20">
+  <main class="pb-20">
     <PropertyCarousel />
 
 
@@ -115,10 +115,10 @@ useHead({
 
     <WealthBuilder />
 
-   <div class="bg-white pb-32">
+   <!-- <div class="bg-white pb-32">
     <InvestmentCalculator />
-   </div>
-
+   </div> -->
+   <InvestmentUpdatedCalculator />
 
     <!-- <div class="overflow-hidden bg-white">
       <div class="relative mx-auto max-w-7xl px-6 py-16 lg:px-8">
@@ -204,7 +204,7 @@ useHead({
       </div>
     </div> -->
 
-    <section id="investment-products" class="py-20">
+    <section id="investment-products" class="py-20 px-6">
       <h2
         data-aos="fade-up"
         class="text-2xl font-bold text-center text-gray-909 tracking-wider"
@@ -299,9 +299,15 @@ useHead({
       </div>
     </div>
 
-    <InvestmentTestimonialCarousel />
+    <!-- <InvestmentTestimonialCarousel /> -->
+
+    <SingleTestimonial />
 
     <InvestmentStats />
+
+
+    <!-- <InvestmentTestimonialSection /> -->
+
 
     <div
       class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0"

@@ -222,7 +222,7 @@
                   <dd
                     class="text-5xl font-semibold tracking-tight text-gray-900"
                   >
-                    44 million
+                    50 Million
                   </dd>
                 </div>
                 <div class="flex flex-col-reverse gap-y-4">
@@ -232,7 +232,7 @@
                   <dd
                     class="text-5xl font-semibold tracking-tight text-gray-900"
                   >
-                    $119 trillion
+                  ₦ 750 Million +
                   </dd>
                 </div>
                 <div class="flex flex-col-reverse gap-y-4">

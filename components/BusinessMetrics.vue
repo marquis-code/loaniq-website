@@ -76,7 +76,7 @@
   }
   
   const targetValues: Metrics = {
-    staff: 1000000,
+    staff: 50000000,
     clients: 1000,
     trips: 1000,
     vehicles: 330

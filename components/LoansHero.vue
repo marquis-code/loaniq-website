@@ -44,7 +44,9 @@
                         (avg. yield {{ button.yield }})
                       </span>
                     </a>
-                    <button 
+
+                    <a href="#loan-calculator" class="bg-[#1A322A] text-white py-3 rounded-lg px-6 ">Looking to take a loan ?</a>
+                    <!-- <button 
                       v-else
                       @click="handleButtonClick(button)"
                       class="px-6 py-3 rounded-md block max-w-lg font-semibold transition-colors"
@@ -56,7 +58,7 @@
                       <span v-if="button.yield" class="text-sm ml-2">
                         (avg. yield {{ button.yield }})
                       </span>
-                    </button>
+                    </button> -->
                   </template>
               </div>
             </div>
@@ -65,13 +67,13 @@
   
         <!-- Navigation Dots -->
         <div class="absolute bottom-8 left-0 right-0 flex justify-center gap-2">
-          <button 
+          <!-- <button 
             v-for="(_, index) in slides" 
             :key="index"
             @click="currentIndex = index"
             class="w-3 h-3 rounded-full transition-colors"
             :class="currentIndex === index ? 'bg-[#C78D6B]' : 'bg-white/50'"
-          />
+          /> -->
         </div>
       </div>
   
@@ -118,7 +120,7 @@
       title: 'Stay Prepared for Life\'s Uncertainties.',
       description: 'Secure your financial future with our flexible loan solutions.',
       buttons: [
-        { text: 'Looking to take a loan?', action: 'openGame' },
+        { text: 'Looking to take a loan?', action: '#loan-calculator' },
         // { text: 'Browse Available Products', primary: true }
       ]
     }

@@ -27,6 +27,12 @@ module.exports = {
           925: "#0d0d0d",
         },
       },
+      spacing: {
+        '112': '28rem',
+        '144': '36rem',
+        '192': '48rem',
+        '240': '60rem',
+      }
     },
   },
   variants: {

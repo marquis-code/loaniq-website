@@ -178,7 +178,7 @@
                 <p class="font-bold">{{ formatCurrency(interestAmount) }}</p>
               </div>
               <div class="bg-white p-4 rounded shadow-sm">
-                <p class="text-sm text-gray-600">Daily Repayment</p>
+                <p class="text-sm text-gray-600">Monthly Repayment</p>
                 <p class="font-bold">{{ formatCurrency(dailyRepayment) }}</p>
               </div>
             </div>

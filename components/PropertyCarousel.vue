@@ -69,7 +69,7 @@
           :key="index"
           @click="currentIndex = index"
           class="w-3 h-3 rounded-full transition-colors"
-          :class="currentIndex === index ? 'bg-[#C78D6B]' : 'bg-white/50'"
+          :class="currentIndex === index ? 'bg-[#C78D6B]' : 'bg-[#C78D6B]'"
         />
       </div>
     </div>
@@ -112,7 +112,7 @@ const slides = ref<Slide[]>([
     title: 'Maximise our Investment Opportunities that Guarantee a Wealthier Future.',
     description: 'Partner with us to turn your financial aspirations into reality through our expert solutions, built on a foundation of trust.',
     buttons: [
-      { text: 'Looking to invest?', action: 'openGame' },
+      // { text: 'Looking to invest?', action: 'openGame' },
       { text: 'Browse Available Investments', primary: true }
     ]
   }

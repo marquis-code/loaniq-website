@@ -13,7 +13,7 @@
             <nav aria-label="Global">
               <ul class="flex items-center gap-6 text-sm">
                 <li>
-                  <NuxtLink to="/about" class="text-gray-500 text-lg font-semibold transition hover:text-gray-500/75" href="#"> About Us</NuxtLink>
+                  <NuxtLink to="/about" class="text-gray-500 text-base font-semibold transition hover:text-gray-500/75" href="#"> About Us</NuxtLink>
                 </li>
 
                 <!-- <li>
@@ -21,18 +21,18 @@
                 </li> -->
 
                 <li>
-                  <NuxtLink class="text-gray-500 text-lg font-semibold transition hover:text-gray-500/75" to="/invest"> Investments</NuxtLink>
+                  <NuxtLink class="text-gray-500 text-base font-semibold transition hover:text-gray-500/75" to="/invest"> Investments</NuxtLink>
                 </li>
 
-                <li>
+                <!-- <li>
                   <a class="text-gray-500 text-lg font-semibold transition hover:text-gray-500/75" href="#testimonials"> Testimonials </a>
-                </li>
+                </li> -->
 
 
 
-                <li>
-                  <a class="text-gray-500 text-lg font-semibold transition hover:text-gray-500/75" href="#contact-us"> Contact Us </a>
-                </li>
+                <!-- <li>
+                  <a class="text-gray-500 text-base font-semibold transition hover:text-gray-500/75" href="#contact-us"> Contact Us </a>
+                </li> -->
               </ul>
             </nav>
           </div>
@@ -126,31 +126,31 @@
                       About Us
                     </NuxtLink>
                   </li>
-                  <li>
+                  <!-- <li>
                     <a @click="isOpen = false" href="#loan-products" class="group flex gap-x-3 rounded-md px-2 py-3 text-sm/6 font-semibold text-gray-400 hover:bg-gray-800 hover:text-white">
                       <svg class="size-6 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
                       </svg>
                       Products
                     </a>
-                  </li>
-                  <li>
+                  </li> -->
+                  <!-- <li>
                     <NuxtLink  @click="isOpen = false" to="/invest" class="group flex gap-x-3 rounded-md px-2 py-3 text-sm/6 font-semibold text-gray-400 hover:bg-gray-800 hover:text-white">
                       <svg class="size-6 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
                       </svg>
                      Investments
                     </NuxtLink>
-                  </li>
-                  <li>
+                  </li> -->
+                  <!-- <li>
                     <a @click="isOpen = false" href="#testimonials" class="group flex gap-x-3 rounded-md px-2 py-3 text-sm/6 font-semibold text-gray-400 hover:bg-gray-800 hover:text-white">
                       <svg class="size-6 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75" />
                       </svg>
                      Testimonials
                     </a>
-                  </li>
-                  <li>
+                  </li> -->
+                  <!-- <li>
                     <a @click="isOpen = false" href="#contact-us" class="group flex gap-x-3 rounded-md px-2 py-3 text-sm/6 font-semibold text-gray-400 hover:bg-gray-800 hover:text-white">
                       <svg class="size-6 shrink-0" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 1 0 7.5 7.5h-7.5V6Z" />
@@ -158,7 +158,7 @@
                       </svg>
                       Contact Us
                     </a>
-                  </li>
+                  </li> -->
                 </ul>
               </li>
             </ul>
