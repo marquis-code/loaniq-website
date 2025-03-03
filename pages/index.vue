@@ -44,7 +44,7 @@
 
     <LoanCalculator id="loan-calculator" />
 
-    <HowItWorks />
+    <HowItWorks id="loan-product" />
 
     <BusinessMetrics />
     <TestimonialsScroll />

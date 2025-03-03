@@ -39,7 +39,8 @@
             </h2>
             
             <p data-aos="fade-up"  class="text-gray-600 max-w-md">
-              In just one year, we've paid out over ₦300 million to our investors, with many reinvesting their principal and earnings to further grow their wealth.
+              <!-- In just one year,  -->
+              We've paid out over ₦300 million to our investors, with many reinvesting their principal and earnings to further grow their wealth.
                <!-- we have paid out over NGN 300M to our investors in just one year with most of them renvesting their principals and earnings to further grow their wealth. -->
             </p>
           </div>

@@ -43,7 +43,7 @@ const getMarginClass = (index: number) => {
         <!-- Left Column -->
         <div class="space-y-6">
           <h1 class="text-4xl md:text-6xl font-bold text-navy-900 leading-tight">
-            Your path to <span class="italic">enduring</span> wealth starts here with us
+            Your path to <span class="italic">enduring</span> wealth starts here with us.
           </h1>
           <p class="text-xl md:text-2xl text-navy-900 opacity-90">
             Every step is a stride to a brighter and wealthier future.
@@ -64,7 +64,7 @@ const getMarginClass = (index: number) => {
               <div class="bg-white rounded-lg p-6 shadow-lg flex-grow relative z-10">
                 <div class="flex justify-between items-start">
                   <div>
-                    <h3 class="font-bold text-navy-900 text-lg mb-2">{{ step.title }}</h3>
+                    <h3 class="font-bold text-navy-900 text-lg mb-2">{{ step.title }}.</h3>
                     <p class="text-[#284d79]">{{ step.description }}</p>
                   </div>
                   <div class="bg-[#284d79] text-white w-8 h-8 rounded-full flex items-center justify-center font-bold shrink-0">

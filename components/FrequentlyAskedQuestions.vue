@@ -7,7 +7,7 @@
                         <h2 class="text-2xl font-bold leading-10 tracking-tight">Frequently asked questions</h2>
                         <p class="mt-6 max-w-2xl text-base leading-7 text-gray-800">Have a different question and can’t find the answer you’re looking for? Reach out to our support team by
                             <!-- <a href="mailto:info@loaniq.ng" class="font-semibold text-indigo-400 hover:text-indigo-300">sending us an email</a>  -->
-                            <a href="mailto:info@loaniq.ng" class="font-semibold text-indigo-400 hover:text-indigo-300">
+                            <a href="mailto:info@loaniq.ng" class="font-semibold text-[#284d79]">
   Send us an email
 </a>
                             and we’ll get back to you as soon as we can.</p>

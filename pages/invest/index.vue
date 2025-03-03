@@ -14,6 +14,12 @@ useHead({
 });
 // import InvestmentStats from "../../components/InvestmentStats.vue";
 // import WealthBuilder from '~/components/WealthBuilder.vue';
+const dataObj = ref({
+  subject: 'investment',
+  title: "Ready to invest with us?",
+  options: ['Competitive interest rates', 'Hassle-free liquidation', 'Investment security'],
+  description: 'Invest with us today and take a step towards financial freedom!'
+})
 </script>
 
 <template>
@@ -215,8 +221,9 @@ useHead({
         data-aos="fade-up"
         class="mt-2 text-base max-w-xl pb-6 text-center text-center mx-auto text-gray-700"
       >
-        From personal aspirations to business endeavors, our comprehensive range
-        of loans ensures flexible solutions for every financial chapter in your
+        <!-- From personal aspirations to business endeavors,  -->
+        Our comprehensive range
+        of investments ensures flexible solutions for every financial chapter in your
         life.
       </p>
       <FinanceCarousel />
@@ -280,9 +287,9 @@ useHead({
               </p>
 
               <div class="pt-10">
-          <button data-aos="fade-up"  class="bg-[#284d79] rounded-lg text-white px-8 py-3  font-medium transition-colors duration-200">
-            Lets Talk
-          </button>
+          <a href="#contact" data-aos="fade-up"  class="bg-[#284d79] rounded-lg text-white px-8 py-3  font-medium transition-colors duration-200">
+            Let's Talk!
+          </a>
         </div>
             </div>
           </div>
@@ -372,9 +379,9 @@ aspirations into realities, offering expert
 solutions with a commitment to trust.
               </p>
         <div class="pt-10">
-          <button data-aos="fade-up"  class="bg-[#284d79] rounded-lg text-white px-8 py-3  font-medium transition-colors duration-200">
-            Lets Talk
-          </button>
+          <a href="#contact" data-aos="fade-up"  class="bg-[#284d79] rounded-lg text-white px-8 py-3  font-medium transition-colors duration-200">
+            Let's Talk!
+          </a>
         </div>
             </div>
           </div>
@@ -390,6 +397,11 @@ solutions with a commitment to trust.
         </div> -->
       </div>
     </div>
+
+
+    <LocationMap id="contact" :content="dataObj"/>
+
+    <!-- <FrequentlyAskedQuestions id="faqs" /> -->
 
     <!-- <button></button> -->
 

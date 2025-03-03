@@ -23,7 +23,8 @@
             <!-- <h2 class="text-2xl font-bold text-gray-900">LoanIQ</h2> -->
           </div>
           <p class="text-gray-600 mb-6">
-            Providing quick and hassle-free loans to help you achieve financial freedom.
+            <!-- Providing quick and hassle-free loans to help you achieve financial freedom. -->
+             <!-- Your financial partner of choice. -->
           </p>
           <div class="flex space-x-4">
             <a href="#" class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-600 hover:text-teal-600 hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
@@ -184,9 +185,9 @@ import { useMotion } from '@vueuse/motion';
 const quickLinks = [
   { label: 'Home', url: '/' },
   { label: 'About Us', url: '/about' },
-  { label: 'Loan Services', url: '/services' },
-  { label: 'Apply Now', url: '#loan-products' },
-  { label: 'FAQs', url: '#faqs' },
+  { label: 'Loan Product', url: '#loan-product' },
+  { label: 'Investment Products', url: '#investment-products' },
+  // { label: 'FAQs', url: '#faqs' },
   { label: 'Contact Us', url: '#contact' }
 ];
 

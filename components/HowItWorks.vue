@@ -1,7 +1,7 @@
 <template>
     <section id="loan-products" class="max-w-7xl mx-auto px-6 lg:px-0  text-center">
       <!-- Title Section -->
-       <h1 class="text-4xl font-bold text-gray-900 tracking-wider mb-20">Our Loan Product</h1>
+       <h1 class="text-4xl font-bold text-gray-900 tracking-wider mt-32 mb-10">Our Loan Product</h1>
       <!-- <h2 data-aos="fade-up" class="text-2xl font-bold text-gray-900 tracking-wider">Comprehensive range of loans for every financial chapter of your life</h2> -->
       <!-- <p data-aos="fade-up" class="mt-2 text-base  max-w-xl text-center mx-auto  text-gray-700">
         Whether you're looking for a loan to achieve your dreams or finance your business, our flexible solutions have you covered.
@@ -21,7 +21,7 @@
       </svg>
       <div class="mx-auto max-w-md text-center lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
         <h2 class="text-balance text-3xl font-semibold tracking-tight text-white sm:text-4xl">Public Payroll Loan</h2>
-        <p class="mt-6 text-pretty text-lg/8 text-gray-300">As a public or civil servant, you can get a loan up to ₦5 million and pay back monthly within 3 to 24 months from the source</p>
+        <p class="mt-6 text-pretty text-lg/8 text-gray-300">As a public or civil servant, you can get a loan up to ₦5 million and pay back monthly within 3 to 24 months from the source.</p>
         <div class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
           <NuxtLink to="'/products/public-payroll" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Get started</NuxtLink>
           <!-- <NuxtLink to="'/products/public-payroll" class="text-sm/6 font-semibold text-white">Learn more <span aria-hidden="true">→</span></NuxtLink> -->

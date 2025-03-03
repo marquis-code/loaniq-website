@@ -362,7 +362,7 @@ onUnmounted(() => {
           />
           <h2 class="text-2xl font-bold text-center mb-2">{{ selectedProfile.name }}</h2>
           <p class="text-center text-gray-600 mb-4">
-            {{ selectedProfile.title }} at
+            {{ selectedProfile.title }}
             <span :class="`text-${selectedProfile.companyColor}`">{{ selectedProfile.company }}</span>
           </p>
           <p class="text-gray-700 mb-4 text-justify h-72 overflow-auto leading-relaxed">{{ selectedProfile.bio }}</p>

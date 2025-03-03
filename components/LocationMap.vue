@@ -8,9 +8,12 @@
           <div class="inline-block p-2 bg-[#284d79] rounded-full text-teal-600 mb-4">
             <CurrencyIcon class="w-8 h-8" />
           </div>
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Need a Loan? Let's Talk!</h1>
+          <!-- {{ content }} -->
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            {{ content?.title || 'Need a Loan? Let\'s Talk!' }}
+          </h1>
           <p class="text-xl text-gray-600">
-            Get quick and hassle-free loan. Apply today and take a step towards financial freedom!
+            {{ content?.description || 'Get quick and hassle-free loan. Apply today and take a step towards financial freedom!' }}
           </p>
         </div>
   
@@ -26,7 +29,7 @@
           </div>
           <div class="bg-white rounded-2xl shadow-xl overflow-hidden p-8 border border-gray-100">
             <div class="grid md:grid-cols-2 gap-8 items-center">
-              <div class="order-2 md:order-1" v-motion
+              <div v-if="content?.subject !== 'investment'" class="order-2 md:order-1" v-motion
                 :initial="{ opacity: 0, x: -50 }"
                 :enter="{ opacity: 1, x: 0, transition: { delay: 500, duration: 800 } }">
                 <h2 class="text-2xl font-bold text-gray-900 mb-4">Financial Solutions Tailored For You</h2>
@@ -48,6 +51,31 @@
                       <CheckCircleIcon class="w-5 h-5 text-teal-600" />
                     </div>
                     <p class="text-gray-700">Flexible repayment options</p>
+                  </div>
+                </div>
+              </div>
+              <div v-else class="order-2 md:order-1" v-motion
+                :initial="{ opacity: 0, x: -50 }"
+                :enter="{ opacity: 1, x: 0, transition: { delay: 500, duration: 800 } }">
+                <!-- <h2 class="text-2xl font-bold text-gray-900 mb-4">Financial Solutions Tailored For You</h2> -->
+                <div class="space-y-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-[#284d79] flex items-center justify-center flex-shrink-0">
+                      <CheckCircleIcon class="w-5 h-5 text-teal-600" />
+                    </div>
+                    <p class="text-gray-700">Competitive interest rates</p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-[#284d79] flex items-center justify-center flex-shrink-0">
+                      <CheckCircleIcon class="w-5 h-5 text-teal-600" />
+                    </div>
+                    <p class="text-gray-700">Hassle-free liquidation</p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-[#284d79] flex items-center justify-center flex-shrink-0">
+                      <CheckCircleIcon class="w-5 h-5 text-teal-600" />
+                    </div>
+                    <p class="text-gray-700">Investment security</p>
                   </div>
                 </div>
               </div>
@@ -152,7 +180,7 @@
             <div class="w-10 h-10 rounded-full bg-[#284d79] flex items-center justify-center">
               <MessageSquareIcon class="w-5 h-5 text-teal-600" />
             </div>
-            <h2 class="text-2xl font-bold text-gray-900">Request a Demo</h2>
+            <h2 class="text-2xl font-bold text-gray-900">Send us a message</h2>
           </div>
           
           <form @submit.prevent="handleSubmit" class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -166,36 +194,6 @@
                   id="fullName"
                   class="block w-full pl-10 pr-3 py-3 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 hover:border-teal-300"
                   placeholder="Enter your name..."
-                  required
-                />
-              </div>
-            </div>
-  
-            <div class="space-y-2">
-              <label for="jobPosition" class="block text-sm font-medium text-gray-700">Job Position*</label>
-              <div class="relative group">
-                <BriefcaseIcon class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 group-hover:text-teal-500 transition-colors duration-300" />
-                <input
-                  v-model="form.jobPosition"
-                  type="text"
-                  id="jobPosition"
-                  class="block w-full pl-10 pr-3 py-3 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 hover:border-teal-300"
-                  placeholder="Enter your job position..."
-                  required
-                />
-              </div>
-            </div>
-  
-            <div class="space-y-2">
-              <label for="email" class="block text-sm font-medium text-gray-700">Email Address*</label>
-              <div class="relative group">
-                <MailIcon class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 group-hover:text-teal-500 transition-colors duration-300" />
-                <input
-                  v-model="form.email"
-                  type="email"
-                  id="email"
-                  class="block w-full pl-10 pr-3 py-3 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 hover:border-teal-300"
-                  placeholder="Enter your email..."
                   required
                 />
               </div>
@@ -216,6 +214,50 @@
               </div>
             </div>
   
+            <div class="space-y-2">
+              <label for="email" class="block text-sm font-medium text-gray-700">Email Address*</label>
+              <div class="relative group">
+                <MailIcon class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 group-hover:text-teal-500 transition-colors duration-300" />
+                <input
+                  v-model="form.email"
+                  type="email"
+                  id="email"
+                  class="block w-full pl-10 pr-3 py-3 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 hover:border-teal-300"
+                  placeholder="Enter your email..."
+                  required
+                />
+              </div>
+            </div>
+  
+            <!-- <div class="space-y-2">
+              <label for="phone" class="block text-sm font-medium text-gray-700">Phone Number*</label>
+              <div class="relative group">
+                <PhoneIcon class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 group-hover:text-teal-500 transition-colors duration-300" />
+                <input
+                  v-model="form.phone"
+                  type="tel"
+                  id="phone"
+                  class="block w-full pl-10 pr-3 py-3 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 hover:border-teal-300"
+                  placeholder="Enter your phone number..."
+                  required
+                />
+              </div>
+            </div> -->
+            <div class="space-y-2">
+              <label for="subject" class="block text-sm font-medium text-gray-700">Subject*</label>
+              <div class="relative group">
+                <BriefcaseIcon class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 group-hover:text-teal-500 transition-colors duration-300" />
+                <input
+                  v-model="form.subject"
+                  type="text"
+                  id="subject"
+                  class="block w-full pl-10 pr-3 py-3 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 hover:border-teal-300"
+                  placeholder="Enter your message subject"
+                  required
+                />
+              </div>
+            </div>
+
             <div class="md:col-span-2 space-y-2">
               <label for="message" class="block text-sm font-medium text-gray-700">Your Message</label>
               <div class="relative group">
@@ -225,7 +267,7 @@
                   id="message"
                   rows="4"
                   class="block w-full pl-10 pr-3 py-3 bg-white border border-gray-200 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-all duration-300 hover:border-teal-300"
-                  placeholder="Tell us about your loan requirements..."
+                  placeholder="Your message"
                 ></textarea>
               </div>
             </div>
@@ -238,7 +280,7 @@
                 :disabled="isSubmitting"
               >
                 <span v-if="isSubmitting">Processing...</span>
-                <span v-else>Submit Request</span>
+                <span v-else>Submit Message</span>
                 <ArrowRightIcon v-if="!isSubmitting" class="w-4 h-4" />
                 <LoaderIcon v-else class="w-4 h-4 animate-spin" />
               </button>
@@ -278,7 +320,7 @@
   
   interface FormData {
     fullName: string;
-    jobPosition: string;
+    subject: string;
     email: string;
     phone: string;
     message: string;
@@ -286,7 +328,7 @@
   
   const form = ref<FormData>({
     fullName: '',
-    jobPosition: '',
+    subject: '',
     email: '',
     phone: '',
     message: ''
@@ -294,6 +336,13 @@
   
   const isSubmitting = ref(false);
   const formSubmitted = ref(false);
+
+  const props = defineProps({
+    content: {
+      type: Object,
+      default: () => {}
+    }
+  })
   
   // Lagos coordinates
   const LAGOS_LOCATION = {
@@ -321,7 +370,7 @@
       // Reset form
       form.value = {
         fullName: '',
-        jobPosition: '',
+        subject: '',
         email: '',
         phone: '',
         message: ''

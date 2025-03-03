@@ -174,8 +174,10 @@
       <div class="lg:pr-4">
         <div class="lg:max-w-lg">
           <!-- <p class="text-base/7 font-semibold text-indigo-600">Deploy faster</p> -->
-          <h1 class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">A brand you can trust.</h1>
+          <h1 class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">A brand you can trust</h1>
           <p class="mt-6 text-xl/8 text-gray-700">With deep expertise in the lending and investment space, we offer a range of products and services that help our clients grow and manage their finances. Whether you’re looking for a personal loan, a business loan, or an investment opportunity, we have the tools and resources to help you succeed.</p>
+          <p class="mt-6 text-xl/8 text-gray-700">At the heart of our business is a commitment to trust and transparency, we believe that every successful partnership is built on a foundation of mutual respect and understanding. That’s why we work closely with our clients to understand their unique financial needs and provide tailored solutions that fit their goals.</p>
+          <p class="mt-6 text-xl/8 text-gray-700">Whether you are looking to enhance your cash flow, finance a major purchase, consolidate your debt or simply grow your funds, Loan IQ Limited is here to help. Contact us today to learn more about our lending and investment options and how we can help you achieve financial success.</p>
         </div>
       </div>
     </div>
@@ -185,8 +187,8 @@
     <div class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8">
       <div class="lg:pr-4">
         <div class="max-w-xl text-base/7 text-gray-700 lg:max-w-lg">
-          <p class="mt-6 text-xl/8 text-gray-700">At the heart of our business is a commitment to trust and transparency, we believe that every successful partnership is built on a foundation of mutual respect and understanding. That’s why we work closely with our clients to understand their unique financial needs and provide tailored solutions that fit their goals.</p>
-          <p class="mt-6 text-xl/8 text-gray-700">Whether you are looking to enhance your cash flow, finance a major purchase, consolidate your debt or simply grow your funds, Loan IQ Limited is here to help. Contact us today to learn more about our lending and investment options and how we can help you achieve financial success.</p>
+          <!-- <p class="mt-6 text-xl/8 text-gray-700">At the heart of our business is a commitment to trust and transparency, we believe that every successful partnership is built on a foundation of mutual respect and understanding. That’s why we work closely with our clients to understand their unique financial needs and provide tailored solutions that fit their goals.</p>
+          <p class="mt-6 text-xl/8 text-gray-700">Whether you are looking to enhance your cash flow, finance a major purchase, consolidate your debt or simply grow your funds, Loan IQ Limited is here to help. Contact us today to learn more about our lending and investment options and how we can help you achieve financial success.</p> -->
           <!-- <h2 class="mt-16 text-2xl font-bold tracking-tight text-gray-900">No server? No problem.</h2> -->
           <!-- <p class="mt-6">Id orci tellus laoreet id ac. Dolor, aenean leo, ac etiam consequat in. Convallis arcu ipsum urna nibh. Pharetra, euismod vitae interdum mauris enim, consequat vulputate nibh. Maecenas pellentesque id sed tellus mauris, ultrices mauris. Tincidunt enim cursus ridiculus mi. Pellentesque nam sed nullam sed diam turpis ipsum eu a sed convallis diam.</p> -->
         </div>
@@ -194,6 +196,102 @@
     </div>
   </div>
 </div>
+
+<div class="mx-auto mt-32 max-w-7xl sm:mt-40 sm:px-6 lg:px-8 mb-32">
+        <div
+          class="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16"
+        >
+          <h2
+            class="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl"
+          >
+            Our vision
+          </h2>
+          <p class="mx-auto mt-6 max-w-xl text-lg/8 text-white">
+            To be the most trusted and respected financial services company,
+            helping individuals and businesses achieve their financial goals
+            through innovative solutions and exceptional customer service
+          </p>
+          <div
+            class="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5"
+          >
+          <!-- <img data-aos="fade-up" class="max-h-12 w-full rounded-full object-contain object-left mix-blend-multiply" src="@/assets/img/lagos-state.webp" alt="Bank 1" width="105" height="48">
+          <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left mix-blend-multiply" src="@/assets/img/lenda-stack.png" alt="Bank 2" width="104" height="48">
+          <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left mix-blend-multiply" src="@/assets/img/paystack-logo2.png" alt="Bank 3" width="50" height="50">
+          <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left mix-blend-multiply" src="@/assets/img/reliance.png" alt="Bank 4" width="136" height="48">
+          <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left mix-blend-multiply" src="@/assets/img/remita.png" alt="Bank 5" width="158" height="48"> -->
+
+          <!-- <img data-aos="fade-up" class="max-h-12 w-full rounded-full object-contain object-left" src="@/assets/img/lagos-state.webp" alt="Bank 1" width="105" height="48">
+      <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/lenda-stack.png" alt="Bank 2" width="104" height="48">
+      <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/paystack-logo2.png" alt="Bank 3" width="50" height="50">
+      <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/reliance.png" alt="Bank 4" width="136" height="48">
+      <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/remita.png" alt="Bank 5" width="158" height="48"> -->
+      <!-- <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/you-verify.png" alt="Bank 6" width="147" height="48"> -->
+            <!-- <img
+              class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+              src="https://tailwindui.com/plus-assets/img/logos/158x48/transistor-logo-white.svg"
+              alt="Transistor"
+              width="158"
+              height="48"
+            />
+            <img
+              class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+              src="https://tailwindui.com/plus-assets/img/logos/158x48/reform-logo-white.svg"
+              alt="Reform"
+              width="158"
+              height="48"
+            />
+            <img
+              class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
+              src="https://tailwindui.com/plus-assets/img/logos/158x48/tuple-logo-white.svg"
+              alt="Tuple"
+              width="158"
+              height="48"
+            />
+            <img
+              class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
+              src="https://tailwindui.com/plus-assets/img/logos/158x48/savvycal-logo-white.svg"
+              alt="SavvyCal"
+              width="158"
+              height="48"
+            />
+            <img
+              class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
+              src="https://tailwindui.com/plus-assets/img/logos/158x48/statamic-logo-white.svg"
+              alt="Statamic"
+              width="158"
+              height="48"
+            /> -->
+          </div>
+          <div
+            class="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl"
+            aria-hidden="true"
+          >
+            <div
+              class="aspect-[1404/767] w-[87.75rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-25"
+              style="
+                clip-path: polygon(
+                  73.6% 51.7%,
+                  91.7% 11.8%,
+                  100% 46.4%,
+                  97.4% 82.2%,
+                  92.5% 84.9%,
+                  75.7% 64%,
+                  55.3% 47.5%,
+                  46.5% 49.4%,
+                  45% 62.9%,
+                  50.3% 87.2%,
+                  21.3% 64.1%,
+                  0.1% 100%,
+                  5.4% 51.1%,
+                  21.4% 63.9%,
+                  58.9% 0.2%,
+                  73.6% 51.7%
+                );
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
 
 
       <!-- Content section -->
@@ -436,101 +534,6 @@
         </div>
       </div>
 
-      <div class="mx-auto mt-32 max-w-7xl sm:mt-40 sm:px-6 lg:px-8">
-        <div
-          class="relative isolate overflow-hidden bg-gray-900 px-6 py-24 text-center shadow-2xl sm:rounded-3xl sm:px-16"
-        >
-          <h2
-            class="mx-auto max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl"
-          >
-            Our vision
-          </h2>
-          <p class="mx-auto mt-6 max-w-xl text-lg/8 text-white">
-            To be the most trusted and respected financial services company,
-            helping individuals and businesses achieve their financial goals
-            through innovative solutions and exceptional customer service
-          </p>
-          <div
-            class="mx-auto mt-20 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-12 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 sm:gap-y-14 lg:max-w-4xl lg:grid-cols-5"
-          >
-          <!-- <img data-aos="fade-up" class="max-h-12 w-full rounded-full object-contain object-left mix-blend-multiply" src="@/assets/img/lagos-state.webp" alt="Bank 1" width="105" height="48">
-          <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left mix-blend-multiply" src="@/assets/img/lenda-stack.png" alt="Bank 2" width="104" height="48">
-          <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left mix-blend-multiply" src="@/assets/img/paystack-logo2.png" alt="Bank 3" width="50" height="50">
-          <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left mix-blend-multiply" src="@/assets/img/reliance.png" alt="Bank 4" width="136" height="48">
-          <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left mix-blend-multiply" src="@/assets/img/remita.png" alt="Bank 5" width="158" height="48"> -->
-
-          <!-- <img data-aos="fade-up" class="max-h-12 w-full rounded-full object-contain object-left" src="@/assets/img/lagos-state.webp" alt="Bank 1" width="105" height="48">
-      <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/lenda-stack.png" alt="Bank 2" width="104" height="48">
-      <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/paystack-logo2.png" alt="Bank 3" width="50" height="50">
-      <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/reliance.png" alt="Bank 4" width="136" height="48">
-      <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/remita.png" alt="Bank 5" width="158" height="48"> -->
-      <!-- <img data-aos="fade-up" class="max-h-12 w-full object-contain object-left" src="@/assets/img/you-verify.png" alt="Bank 6" width="147" height="48"> -->
-            <!-- <img
-              class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              src="https://tailwindui.com/plus-assets/img/logos/158x48/transistor-logo-white.svg"
-              alt="Transistor"
-              width="158"
-              height="48"
-            />
-            <img
-              class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              src="https://tailwindui.com/plus-assets/img/logos/158x48/reform-logo-white.svg"
-              alt="Reform"
-              width="158"
-              height="48"
-            />
-            <img
-              class="col-span-2 max-h-12 w-full object-contain lg:col-span-1"
-              src="https://tailwindui.com/plus-assets/img/logos/158x48/tuple-logo-white.svg"
-              alt="Tuple"
-              width="158"
-              height="48"
-            />
-            <img
-              class="col-span-2 max-h-12 w-full object-contain sm:col-start-2 lg:col-span-1"
-              src="https://tailwindui.com/plus-assets/img/logos/158x48/savvycal-logo-white.svg"
-              alt="SavvyCal"
-              width="158"
-              height="48"
-            />
-            <img
-              class="col-span-2 col-start-2 max-h-12 w-full object-contain sm:col-start-auto lg:col-span-1"
-              src="https://tailwindui.com/plus-assets/img/logos/158x48/statamic-logo-white.svg"
-              alt="Statamic"
-              width="158"
-              height="48"
-            /> -->
-          </div>
-          <div
-            class="absolute -top-24 right-0 -z-10 transform-gpu blur-3xl"
-            aria-hidden="true"
-          >
-            <div
-              class="aspect-[1404/767] w-[87.75rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-25"
-              style="
-                clip-path: polygon(
-                  73.6% 51.7%,
-                  91.7% 11.8%,
-                  100% 46.4%,
-                  97.4% 82.2%,
-                  92.5% 84.9%,
-                  75.7% 64%,
-                  55.3% 47.5%,
-                  46.5% 49.4%,
-                  45% 62.9%,
-                  50.3% 87.2%,
-                  21.3% 64.1%,
-                  0.1% 100%,
-                  5.4% 51.1%,
-                  21.4% 63.9%,
-                  58.9% 0.2%,
-                  73.6% 51.7%
-                );
-              "
-            ></div>
-          </div>
-        </div>
-      </div>
 
       <!-- Values section -->
       <div class="mx-auto mt-32 max-w-7xl px-6 sm:mt-40 lg:px-8">
@@ -538,7 +541,7 @@
           <h2
             class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl"
           >
-            Our Core Values
+            Our core values
           </h2>
           <p class="mt-6 text-lg/8 text-gray-600">
             Our Core Values form the bedrock of our commitment to providing
@@ -663,7 +666,7 @@
        
       </ul> -->
         <div class="pt-10">
-          <h2 class="font-medium text-gray-800 text-2xl uppercase">Managemet Bio</h2>
+          <h2 class="font-medium text-gray-800 text-2xl uppercase">Management Team</h2>
           <Animated :testimonials="managementTeam" />
         </div>
         <div class="pt-10">
