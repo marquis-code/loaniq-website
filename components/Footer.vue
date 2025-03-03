@@ -117,7 +117,7 @@
               :class="{ 'opacity-75 cursor-wait': isSubscribing }"
               :disabled="isSubscribing"
             >
-              <span v-if="isSubscribing">Processing...</span>
+              <span v-if="isSubscribing || loading">Processing...</span>
               <span v-else>Subscribe</span>
               <SendIcon v-if="!isSubscribing" class="w-4 h-4" />
               <LoaderIcon v-else class="w-4 h-4 animate-spin" />
@@ -162,6 +162,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
+import axios from 'axios';
 import { 
   MapPinIcon, 
   PhoneIcon, 
@@ -191,10 +192,14 @@ const quickLinks = [
   { label: 'Contact Us', url: '#contact' }
 ];
 
+const MAILCHIMP_URL = "https://loaniq.us15.list-manage.com/subscribe/post-json?u=3f4782f316a92f2fe056c2650&id=25a90ded26&c=?";
 // Newsletter subscription
 const email = ref('');
 const isSubscribing = ref(false);
+const loading = ref(false);
 const subscribed = ref(false);
+const successMessage = ref('');
+const errorMessage = ref('');
 
 async function subscribeNewsletter() {
   if (!email.value) return;
@@ -202,23 +207,39 @@ async function subscribeNewsletter() {
   isSubscribing.value = true;
   
   try {
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    // // Simulate API call
+    // await new Promise(resolve => setTimeout(resolve, 1500));
     
-    // Handle newsletter subscription
-    console.log('Newsletter subscription:', email.value);
+    // // Handle newsletter subscription
+    // console.log('Newsletter subscription:', email.value);
     
-    // Show success message
-    subscribed.value = true;
-    email.value = '';
+    // // Show success message
+    // subscribed.value = true;
+    // email.value = '';
     
-    // Hide success message after 5 seconds
-    setTimeout(() => {
-      subscribed.value = false;
-    }, 5000);
+    // // Hide success message after 5 seconds
+    // setTimeout(() => {
+    //   subscribed.value = false;
+    // }, 5000);
+    const response = await axios.get(MAILCHIMP_URL, {
+        params: { EMAIL: email.value },
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (response.data.result === 'success') {
+        successMessage.value = 'Subscription successful! Check your email.';
+        email.value = '';
+      } else {
+        errorMessage.value = response.data.msg || 'An error occurred.';
+      }
+
   } catch (error) {
-    console.error('Error subscribing to newsletter:', error);
+    errorMessage.value = 'Subscription failed. Please try again later.';
+    // console.error('Error subscribing to newsletter:', error);
   } finally {
+    loading.value = false;
     isSubscribing.value = false;
   }
 }

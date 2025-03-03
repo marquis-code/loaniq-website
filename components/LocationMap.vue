@@ -299,6 +299,7 @@
   
   <script setup lang="ts">
   import { ref, onMounted } from 'vue';
+  import axios from 'axios'
   import { 
     MapPinIcon, 
     PhoneIcon, 
@@ -325,6 +326,8 @@
     phone: string;
     message: string;
   }
+
+  const mailchimpUrl = 'https://loaniq.us15.list-manage.com/subscribe/post-json?u=3f4782f316a92f2fe056c2650&id=25a90ded26&c=?';
   
   const form = ref<FormData>({
     fullName: '',
@@ -356,30 +359,46 @@
   
   async function handleSubmit() {
     isSubmitting.value = true;
+
+
+    const params = new URLSearchParams();
+      params.append('MMERGE9', form.value.fullName);
+      params.append('EMAIL', form.value.email);
+      params.append('PHONE', form.value.phone);
+      params.append('MMERGE8', form.value.subject);
+      params.append('MMERGE7', form.value.message);
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Handle form submission here
-      console.log('Form submitted:', form.value);
-      
-      // Show success message
-      formSubmitted.value = true;
-      
-      // Reset form
-      form.value = {
-        fullName: '',
-        subject: '',
-        email: '',
-        phone: '',
-        message: ''
-      };
-      
-      // Hide success message after 5 seconds
-      setTimeout(() => {
+      const response = await axios.get(mailchimpUrl, { params }).then(() => {
+        formSubmitted.value = true;
+      }).catch(() => {
+
+      }).finally(() => {
         formSubmitted.value = false;
-      }, 5000);
+        isSubmitting.value = false;
+      })
+      // Simulate API call
+      // await new Promise(resolve => setTimeout(resolve, 1500));
+      
+      // // Handle form submission here
+      // console.log('Form submitted:', form.value);
+      
+      // // Show success message
+      // formSubmitted.value = true;
+      
+      // // Reset form
+      // form.value = {
+      //   fullName: '',
+      //   subject: '',
+      //   email: '',
+      //   phone: '',
+      //   message: ''
+      // };
+      
+      // // Hide success message after 5 seconds
+      // setTimeout(() => {
+      //   formSubmitted.value = false;
+      // }, 5000);
     } catch (error) {
       console.error('Error submitting form:', error);
     } finally {

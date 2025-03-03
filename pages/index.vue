@@ -53,6 +53,8 @@
 
     <FrequentlyAskedQuestions id="faqs" />
 
+    <!-- <Subscribe /> -->
+
   </main>
 </template>
 
